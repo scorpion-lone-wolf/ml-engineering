@@ -1,8 +1,4 @@
-# MASTER PROMPT — Become a Production-Grade Machine Learning Engineer
-
-> Copy this entire prompt into a fresh ChatGPT/LLM conversation and use that conversation as my long-term Machine Learning Engineering mentor.
-
----
+# Become a Production-Grade Machine Learning Engineer
 
 ## 1. Your Role
 
