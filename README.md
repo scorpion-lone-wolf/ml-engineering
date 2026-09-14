@@ -1,30 +1,76 @@
-# Production-Grade ML Engineer Learning Program
+# Machine Learning → Deep Learning Engineering Program
 
-This repository is a **single linear two-track learning program**:
+This repository is a long-running, evidence-based learning program for developing advanced Machine Learning Engineering and Deep Learning Engineering capability.
 
-1. **Track 1 — Classical ML + Production/MLOps**
-2. **Track 2 — Deep Learning**
+The program is deliberately broader and deeper than a typical course-completion roadmap. Its stretch target is the technical breadth, depth, engineering judgment, research literacy, production competence, and system-design ability associated with very strong Senior/Staff-level ML engineers. A job title or percentile is **not** granted by curriculum completion alone; those require sustained real-world impact and repeated evidence.
 
-Track 2 stays locked until Track 1's curriculum, portfolio/readiness requirements, and final gate are complete. Do not run the two curricula as independent parallel roadmaps.
+## Program Order
 
-## Canonical Files
+The program has two strictly ordered tracks:
 
-| File | Purpose | Update policy |
-|---|---|---|
-| `docs/PROGRAM_INDEX.md` | Global learning contract, file map, read order, source-of-truth hierarchy | Change only when the program structure itself changes |
-| `docs/PROGRAM_STATUS.md` | Active track, global gate, exact current continuation point | Update at substantial session checkpoints |
-| `docs/DECISIONS.md` | Shared durable decisions/ADRs across both tracks | Append-only; supersede, never erase history |
-| `ML/ML_CURRICULUM.md` | Authoritative Track 1 syllabus/order | Normally stable |
-| `ML/docs/ML_MILESTONE_STATUS.md` | Actual Track 1 implementation/practice progress | Update after substantial Track 1 work |
-| `ML/docs/ML_LEARNING_STATE.md` | Demonstrated Track 1 understanding/gaps | Update after substantial Track 1 learning |
-| `DL/DL_CURRICULUM.md` | Authoritative Track 2 syllabus/order | Normally stable |
-| `DL/docs/DL_MILESTONE_STATUS.md` | Actual Track 2 implementation/practice progress | Update after substantial Track 2 work |
-| `DL/docs/DL_LEARNING_STATE.md` | Demonstrated Track 2 understanding/gaps | Update after substantial Track 2 learning |
+1. **Track 1 — Classical ML + Production ML/MLOps**: `ML/ML_CURRICULUM.md`
+2. **Track 2 — Deep Learning**: `DL/DL_CURRICULUM.md`
 
-## Session Startup
+Track 2 remains **LOCKED** until Track 1 passes its final readiness gate.
 
-Start every substantial session by reading `docs/PROGRAM_INDEX.md` and `docs/PROGRAM_STATUS.md`, then follow the active track's startup protocol. The curricula define **what and in what order**; status files define **where we actually are**.
+## Repository Structure
 
-## Hard Preservation Rule
+```text
+repo/
+├── README.md
+├── docs/
+│   ├── PROGRAM_INDEX.md
+│   ├── PROGRAM_STATUS.md
+│   └── DECISIONS.md
+├── ML/
+│   ├── ML_CURRICULUM.md
+│   └── docs/
+│       ├── ML_LEARNING_STATE.md
+│       └── ML_MILESTONE_STATUS.md
+└── DL/
+    ├── DL_CURRICULUM.md
+    └── docs/
+        ├── DL_LEARNING_STATE.md
+        └── DL_MILESTONE_STATUS.md
+```
 
-Do not delete a curriculum topic merely because it was completed, moved, or seems less fashionable. Curriculum revisions may clarify, split, or reorder material to satisfy prerequisites, but all meaningful ML/DL learning content must remain represented unless the learner explicitly approves a scope removal.
+## Learner Math Baseline
+
+The mentor must use these assumptions unless later evidence updates them:
+
+- Python: already known well enough to begin ML-specific work.
+- Linear algebra: **basic familiarity only**.
+- Calculus: **basic familiarity only**.
+- Probability: **do not assume prior mastery**.
+- Statistics: **do not assume prior mastery**.
+- More advanced mathematics must be taught **just in time**, inside the ML/DL topic that needs it.
+- Do **not** create a detached mathematics prerequisite course.
+- Do **not** turn required mathematics into a black box.
+
+Examples: teach Bayes' theorem when Naive Bayes requires it; likelihood when a modeling topic requires it; confidence intervals and hypothesis testing when evaluation/experimentation requires them; eigenvectors/SVD when PCA requires them; and chain rule/backprop math when neural networks require them.
+
+## Starting a New Chat / Mentor Session
+
+Read, in this order:
+
+1. `docs/PROGRAM_INDEX.md`
+2. `docs/PROGRAM_STATUS.md`
+3. Curriculum for the currently active track
+4. Active track's `*_LEARNING_STATE.md`
+5. Active track's `*_MILESTONE_STATUS.md`
+6. Relevant entries in `docs/DECISIONS.md`
+7. Current repository/code when implementation state matters
+
+Then resume from the **exact saved next action**. A new chat is never a reason to restart completed material.
+
+## State vs. Curriculum
+
+- Curriculum files define **what and in what order** to learn.
+- Learning-state files record **what the learner demonstrably understands**.
+- Milestone-status files record **what has actually been built/practiced/passed**.
+- `PROGRAM_STATUS.md` controls the global Track 1 → Track 2 gate.
+- `DECISIONS.md` stores durable choices so they are not repeatedly re-litigated.
+
+## Core Rule
+
+**Understanding before speed. Fundamentals before abstractions. Evidence before labels. Production reasoning before portfolio polish.**
