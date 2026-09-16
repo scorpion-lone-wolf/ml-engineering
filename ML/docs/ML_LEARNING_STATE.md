@@ -7,10 +7,10 @@
 - **Track:** Track 1 — Classical ML + Production ML/MLOps
 - **State:** LEARNING
 - **Current stage:** Stage 0 — Environment and Engineering Setup
-- **Current topic:** Dependency resolution/locking with uv while Conda remains the environment manager
-- **Last mastered topic:** Environment isolation + direct/transitive dependency distinction + `pyproject.toml` vs. lockfile roles
+- **Current topic:** Professional ML project structure and notebook-to-module workflow
+- **Last mastered topic:** Stage 0 environment isolation, dependency declaration, direct/transitive dependencies, locking, and exact environment synchronization
 - **Unresolved core prerequisite gaps:** Probability/statistics is near-zero by self-report; this is expected and will be taught from first principles contextually rather than blocking Stage 0
-- **Needs review:** uv project mode vs. uv pip-compatible mode when Conda already owns the environment
+- **Needs review:** Keep the terminology precise: dependency intent = broad requirements in `pyproject.toml`; resolution = exact graph in lockfile; sync = applying that resolution to an environment
 - **Last updated:** 2026-09-16
 
 ## Learner Baseline
@@ -191,3 +191,15 @@ Install uv as a standalone tool, verify `uv --version`, generate an exact lock f
 - Learner correctly explained direct vs. transitive dependencies, version-range drift, `pyproject.toml` as project dependency metadata, and lockfiles as exact resolved dependency graphs.
 - Correction retained: transitive dependencies usually should not be manually declared, but they still must be resolved, locked, audited and can cause conflicts/security issues.
 - Tooling nuance identified: full uv project mode normally manages a project `.venv`; because Conda already owns the current `.venv`, current lessons will use uv's pip-compatible resolver/sync interface against the Conda interpreter to avoid two environment managers controlling one directory.
+
+
+### 2026-09-16 — Dependency intent/resolution/sync misconception repaired
+
+- Learner initially described dependency intent as what is in the lockfile and resolution as syncing to the environment.
+- Correct model:
+  - dependency intent = project requirements/constraints declared in `pyproject.toml`;
+  - dependency resolution = exact compatible versions selected and recorded in a lockfile;
+  - synchronization = making the actual environment match that resolved state.
+- Learner correctly identified Requests as the direct package and certifi/charset-normalizer/idna/urllib3 as transitive dependencies in the drift exercise.
+- Learner correctly explained why the package-management tool itself is not a runtime application dependency.
+- Dependency reproducibility concept checkpoint is complete; next Stage 0 teaching topic is professional project structure and notebook-to-module workflow.
