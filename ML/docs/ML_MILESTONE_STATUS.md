@@ -9,7 +9,7 @@
 - **Current implementation milestone:** Environment isolation + dependency declaration/locking/synchronization demonstrated
 - **Current project:** Stage 0 reusable professional ML project template
 - **Last verified completed deliverable:** Stage 0 dependency reproducibility exercise/checkpoint
-- **Exact next work step:** Build the professional ML project skeleton and learn when work stays in notebooks vs. moves into reusable Python modules/scripts
+- **Exact next work step:** Provide the project tree + demo output for the skeleton, then wire it as a proper importable src-layout package and continue to configuration/environment variables
 - **Last updated:** 2026-09-16
 
 ---
