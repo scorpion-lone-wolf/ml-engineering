@@ -6,10 +6,10 @@
 
 - **Track state:** ACTIVE
 - **Current stage:** Stage 0 — Environment and Engineering Setup
-- **Current implementation milestone:** Environment isolation + dependency declaration/locking/synchronization demonstrated
+- **Current implementation milestone:** Environment/dependency workflow + reusable src-layout package/script demonstrated
 - **Current project:** Stage 0 reusable professional ML project template
-- **Last verified completed deliverable:** Stage 0 dependency reproducibility exercise/checkpoint
-- **Exact next work step:** Provide the project tree + demo output for the skeleton, then wire it as a proper importable src-layout package and continue to configuration/environment variables
+- **Last verified completed deliverable:** Stage 0 project-structure/package exercise implemented and verified (conceptual packaging details retained for review)
+- **Exact next work step:** Add configuration/environment-variable/secrets foundations to the Stage 0 project, then continue with logging and tests
 - **Last updated:** 2026-09-16
 
 ---
@@ -18,7 +18,7 @@
 
 | Stage | Status | Required Evidence / Deliverable | Evidence Location |
 |---|---|---|---|
-| 0 — Environment and Engineering Setup | LEARNING | Reusable professional ML project template; environment/reproducibility/testing workflow demonstrated | `ML/exercises/stage_00_environment/` environment exercise (local evidence reported in session) |
+| 0 — Environment and Engineering Setup | LEARNING | Reusable professional ML project template; environment/reproducibility/testing workflow demonstrated | `ML/exercises/stage_00_environment/`; `ML/exercises/stage_00_project_structure/` |
 | 1 — ML Python Ecosystem Checkpoint | NOT STARTED | Gap-focused scientific-Python/data tasks; messy-data mini work | — |
 | 2 — SQL and Data Handling | NOT STARTED | Correct ML-oriented SQL tasks including point-in-time/leakage reasoning | — |
 | 3 — Contextual Math/Probability/Stats Bridge | NOT STARTED | Integration checkpoint demonstrating prerequisites needed for upcoming algorithms | — |
@@ -60,7 +60,8 @@ Add evidence instead of writing "done" without proof.
 
 | Evidence ID | Stage/Project | Type | Repository/File/PR | What It Proves | Verified? |
 |---|---|---|---|---|---|
-| — | — | — | — | No evidence recorded yet | — |
+| ML-EVID-001 | Stage 0 | Environment/dependency exercise | `ML/exercises/stage_00_environment/` | Conda environment workflow, dependency declaration/locking/sync practice | YES |
+| ML-EVID-002 | Stage 0 | Project structure/package exercise | `ML/exercises/stage_00_project_structure/` | Reusable src-layout package, package imports, runnable script, project metadata | YES |
 
 Evidence can include code, tests, experiment reports, design docs, benchmark reports, deployment manifests, dashboards, postmortems, project retrospectives, and mastery-review notes.
 
@@ -72,7 +73,7 @@ Stage 0 environment-isolation practice has started. The learner created a projec
 
 ### Exact Next Engineering / Practice Step
 
-Create the Stage 0 reusable professional ML project skeleton with `README.md`, `pyproject.toml`, `configs/`, `data/`, `notebooks/`, `src/`, `tests/`, and `scripts/`. Then implement one tiny flow that begins as exploratory notebook work and is extracted into a reusable module/script, before adding configuration, logging, and tests.
+Extend the Stage 0 project with a small configuration example that clearly separates code defaults/configuration from environment-provided values and secrets. After that, add logging and a first unit test before completing the Stage 0 reusable-template gate.
 
 ---
 
@@ -128,3 +129,12 @@ Do not mark `COMPLETE` until all are evidenced:
 - Direct/transitive dependency graph was observed using Requests and its dependencies.
 - Exact-sync behavior was conceptually understood as stronger than repeated installs because it removes undeclared extras and matches the lock state.
 - Stage 0 remains active; next engineering evidence is the professional project skeleton and notebook-to-module transition.
+
+
+### 2026-09-16 — Project structure/package implementation verified
+
+- Repository verification confirmed `pyproject.toml`, `src/ml_stage0/`, package `__init__.py` files, reusable `cleaning.py`, and `scripts/demo_cleaning.py`.
+- User previously demonstrated successful editable installation and correct execution output.
+- Implementation evidence is accepted.
+- Packaging internals are intentionally **not** marked fully mastered; they remain a review item because the learner can use the workflow but does not yet find the packaging model intuitive.
+- Next engineering topic: configuration vs. environment variables vs. secrets.
