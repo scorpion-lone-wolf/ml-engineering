@@ -6,10 +6,10 @@
 
 - **Track state:** ACTIVE
 - **Current stage:** Stage 0 — Environment and Engineering Setup
-- **Current implementation milestone:** Environment isolation and dependency declaration concepts demonstrated; exact locking workflow next
+- **Current implementation milestone:** Environment isolation + dependency declaration/locking/synchronization demonstrated
 - **Current project:** Stage 0 reusable professional ML project template
-- **Last verified completed deliverable:** Stage 0 environment + dependency metadata concept checkpoints
-- **Exact next work step:** Install uv, generate an exact dependency lock from `pyproject.toml` using uv's pip-compatible workflow, and sync explicitly to the Conda interpreter
+- **Last verified completed deliverable:** Stage 0 dependency reproducibility exercise/checkpoint
+- **Exact next work step:** Build the professional ML project skeleton and learn when work stays in notebooks vs. moves into reusable Python modules/scripts
 - **Last updated:** 2026-09-16
 
 ---
@@ -72,7 +72,7 @@ Stage 0 environment-isolation practice has started. The learner created a projec
 
 ### Exact Next Engineering / Practice Step
 
-In `ML/exercises/stage_00_environment/`, keep Conda responsible for the environment/interpreter, install uv as a standalone tool, generate an exact lock with `uv pip compile pyproject.toml -o requirements.lock`, inspect the resolved dependency graph, and use an explicit Conda interpreter when syncing/installing. Then continue the reusable project-template deliverable with configuration, logging, tests, and README/setup instructions.
+Create the Stage 0 reusable professional ML project skeleton with `README.md`, `pyproject.toml`, `configs/`, `data/`, `notebooks/`, `src/`, `tests/`, and `scripts/`. Then implement one tiny flow that begins as exploratory notebook work and is extracted into a reusable module/script, before adding configuration, logging, and tests.
 
 ---
 
@@ -120,3 +120,11 @@ Do not mark `COMPLETE` until all are evidenced:
 - Current exercise environment: Python 3.14.7, NumPy 2.5.3, pip 26.2.1.
 - No transitive dependency chain is visible yet because the tiny environment only contains NumPy and pip.
 - Next evidence: produce and inspect an exact lock and reproduce/sync the environment from it.
+
+
+### 2026-09-16 — Dependency reproducibility checkpoint completed
+
+- Dependency intent, exact resolution, and environment synchronization were exercised.
+- Direct/transitive dependency graph was observed using Requests and its dependencies.
+- Exact-sync behavior was conceptually understood as stronger than repeated installs because it removes undeclared extras and matches the lock state.
+- Stage 0 remains active; next engineering evidence is the professional project skeleton and notebook-to-module transition.
