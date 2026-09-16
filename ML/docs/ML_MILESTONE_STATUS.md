@@ -6,10 +6,10 @@
 
 - **Track state:** ACTIVE
 - **Current stage:** Stage 0 — Environment and Engineering Setup
-- **Current implementation milestone:** Environment isolation exercised with a project-local Conda environment
+- **Current implementation milestone:** Environment isolation and dependency declaration concepts demonstrated; exact locking workflow next
 - **Current project:** Stage 0 reusable professional ML project template
-- **Last verified completed deliverable:** Stage 0 environment-isolation exercise / concept checkpoint
-- **Exact next work step:** Add dependency declaration/reproducibility foundations (`pyproject.toml` + lock strategy), then continue toward the reusable Stage 0 project template
+- **Last verified completed deliverable:** Stage 0 environment + dependency metadata concept checkpoints
+- **Exact next work step:** Install uv, generate an exact dependency lock from `pyproject.toml` using uv's pip-compatible workflow, and sync explicitly to the Conda interpreter
 - **Last updated:** 2026-09-16
 
 ---
@@ -72,7 +72,7 @@ Stage 0 environment-isolation practice has started. The learner created a projec
 
 ### Exact Next Engineering / Practice Step
 
-In `ML/exercises/stage_00_environment/`, add a minimal `pyproject.toml`, learn direct vs. transitive dependency declaration and version constraints, introduce the exact-lock concept, and demonstrate that the environment can be recreated rather than committed. Then continue the reusable project-template deliverable with configuration, logging, tests, and README/setup instructions.
+In `ML/exercises/stage_00_environment/`, keep Conda responsible for the environment/interpreter, install uv as a standalone tool, generate an exact lock with `uv pip compile pyproject.toml -o requirements.lock`, inspect the resolved dependency graph, and use an explicit Conda interpreter when syncing/installing. Then continue the reusable project-template deliverable with configuration, logging, tests, and README/setup instructions.
 
 ---
 
@@ -111,3 +111,12 @@ Do not mark `COMPLETE` until all are evidenced:
 - Interpreter switched from Anaconda base (`/opt/anaconda3/bin/python`) to the exercise environment after activation.
 - Learner correctly explained isolation, Git exclusion, and the role difference between an environment and dependency metadata.
 - Stage 0 remains in progress; dependency declaration/locking and the reusable project-template deliverable are not yet complete.
+
+
+### 2026-09-16 — Dependency declaration checkpoint
+
+- `pyproject.toml` dependency intent vs. exact lockfile state understood.
+- Direct vs. transitive dependency distinction explained correctly.
+- Current exercise environment: Python 3.14.7, NumPy 2.5.3, pip 26.2.1.
+- No transitive dependency chain is visible yet because the tiny environment only contains NumPy and pip.
+- Next evidence: produce and inspect an exact lock and reproduce/sync the environment from it.
