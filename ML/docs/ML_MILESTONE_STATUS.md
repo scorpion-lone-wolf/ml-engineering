@@ -69,7 +69,7 @@ Evidence can include code, tests, experiment reports, design docs, benchmark rep
 
 ## Active Work
 
-Stage 0 environment-isolation practice has started. The learner created a project-local Conda environment and verified the active interpreter path.
+Stage 0 environment/dependency and project-structure exercises are implemented and verified. Current work has moved to configuration vs. environment variables vs. secrets; packaging internals remain scheduled for reinforcement before the Stage 0 completion gate.
 
 ### Exact Next Engineering / Practice Step
 
