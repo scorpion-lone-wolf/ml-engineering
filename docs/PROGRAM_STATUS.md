@@ -9,22 +9,22 @@
 - **Track 1 state:** ACTIVE
 - **Track 2 state:** LOCKED
 - **Current Track 1 stage:** Stage 0 — Environment and Engineering Setup
-- **Current sub-stage/topic:** Exact dependency resolution/locking with uv while Conda owns the environment
-- **Last verified completed item:** Stage 0 environment isolation + dependency declaration/`pyproject.toml` concept checkpoints
+- **Current sub-stage/topic:** Professional ML project structure and notebook-to-module workflow
+- **Last verified completed item:** Stage 0 environment isolation + dependency declaration/locking/synchronization checkpoint
 - **Blocking prerequisite gap:** None blocking Stage 0. Probability/statistics baseline is near-zero and will be taught contextually in later stages as designed.
 - **Initialized:** 2026-09-14
 
 ## Exact Global Next Action
 
-Continue **Track 1 Stage 0** by implementing exact dependency locking. Keep Conda as the local environment/interpreter manager, and use uv's pip-compatible compile/sync workflow so uv does not take ownership of the existing Conda `.venv`. Do not begin Deep Learning.
+Continue **Track 1 Stage 0** with the professional ML project structure and the notebook → reusable module/script transition. Do not begin Deep Learning.
 
 ## Exact Next Teaching Step
 
-Teach uv's two operating models: full project mode (`uv.lock` + uv-managed environment) versus pip-compatible resolution/sync. For the current Conda setup, generate an exact lock from `pyproject.toml` and target the Conda interpreter explicitly.
+Teach why ML work commonly starts in notebooks but production-quality logic must move into importable/testable modules and scripts. Build the minimal professional project skeleton and explain each directory by responsibility rather than memorization.
 
 ## Exact Next Practice / Engineering Step
 
-Install uv, create and inspect an exact lock for `ML/exercises/stage_00_environment/`, reproduce/sync dependencies against the Conda environment, then continue the Stage 0 project template (configuration, logging, testing, README/setup workflow).
+Create the Stage 0 professional project skeleton and extract one small exploratory transformation from notebook-style code into `src/` plus a runnable script. Then continue with configuration, logging, testing, and README/setup workflow.
 
 ---
 
