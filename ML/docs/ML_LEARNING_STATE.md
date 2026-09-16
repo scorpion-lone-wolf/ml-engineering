@@ -7,10 +7,10 @@
 - **Track:** Track 1 — Classical ML + Production ML/MLOps
 - **State:** LEARNING
 - **Current stage:** Stage 0 — Environment and Engineering Setup
-- **Current topic:** Dependency declaration, reproducibility, and `pyproject.toml`
-- **Last mastered topic:** Stage 0 environment isolation basics (Conda path environment, activation, interpreter verification, why environments are not committed)
+- **Current topic:** Dependency resolution/locking with uv while Conda remains the environment manager
+- **Last mastered topic:** Environment isolation + direct/transitive dependency distinction + `pyproject.toml` vs. lockfile roles
 - **Unresolved core prerequisite gaps:** Probability/statistics is near-zero by self-report; this is expected and will be taught from first principles contextually rather than blocking Stage 0
-- **Needs review:** Exact dependency locking/reproduction distinction (`pyproject.toml` vs. lockfile/environment specification)
+- **Needs review:** uv project mode vs. uv pip-compatible mode when Conda already owns the environment
 - **Last updated:** 2026-09-16
 
 ## Learner Baseline
@@ -160,11 +160,11 @@ For important topics, keep compact retention notes:
 
 ### Next Teaching Step
 
-Continue Stage 0 with dependency declaration and reproducibility: distinguish environment contents from project metadata and exact lock state; introduce `pyproject.toml`, direct vs. transitive dependencies, version constraints, and lockfiles. Keep Conda as the local environment manager per ADR-001; teach pip semantics before introducing uv.
+Introduce uv as a resolver/locking tool without letting it compete with the existing Conda-managed environment. Teach the difference between uv's full project mode (`uv.lock` + uv-managed `.venv`) and its pip-compatible compile/sync mode. For the current Conda workflow, use `uv pip compile pyproject.toml -o requirements.lock` and install/sync explicitly against the Conda interpreter.
 
 ### Practice Before/With Next Lesson
 
-Create/inspect the Stage 0 exercise environment with Conda, verify the active interpreter, keep `.venv/` ignored, and then build a minimal `pyproject.toml` plus reproducible dependency workflow in the next exercise.
+Install uv as a standalone tool, verify `uv --version`, generate an exact lock from the existing `pyproject.toml`, inspect the resolved file, then recreate/sync dependencies into the Conda environment using an explicit interpreter path.
 
 ---
 
@@ -183,3 +183,11 @@ Create/inspect the Stage 0 exercise environment with Conda, verify the active in
 - Learner demonstrated project-local Conda environment creation with `conda create -p .venv python`, activation via `conda activate ./.venv`, and interpreter verification via `which python`.
 - Concept check passed for why virtual environments exist, why `.venv` is not dependency metadata, why explicit interpreter/package-manager binding matters, and why environments should not be committed.
 - Nuance retained for review: `pyproject.toml` declares project requirements but does not by itself guarantee an exact resolved environment; lock/reproduction mechanics are the next topic.
+
+
+### 2026-09-16 — Dependency metadata/locking concept checkpoint
+
+- Active environment reported Python 3.14.7, NumPy 2.5.3, pip 26.2.1.
+- Learner correctly explained direct vs. transitive dependencies, version-range drift, `pyproject.toml` as project dependency metadata, and lockfiles as exact resolved dependency graphs.
+- Correction retained: transitive dependencies usually should not be manually declared, but they still must be resolved, locked, audited and can cause conflicts/security issues.
+- Tooling nuance identified: full uv project mode normally manages a project `.venv`; because Conda already owns the current `.venv`, current lessons will use uv's pip-compatible resolver/sync interface against the Conda interpreter to avoid two environment managers controlling one directory.
