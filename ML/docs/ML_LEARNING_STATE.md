@@ -7,7 +7,7 @@
 - **Track:** Track 1 — Classical ML + Production ML/MLOps
 - **State:** LEARNING
 - **Current stage:** Stage 0 — Environment and Engineering Setup
-- **Current topic:** Professional ML project structure and notebook-to-module workflow
+- **Current topic:** Python package/import structure, then configuration/environment variables
 - **Last mastered topic:** Stage 0 environment isolation, dependency declaration, direct/transitive dependencies, locking, and exact environment synchronization
 - **Unresolved core prerequisite gaps:** Probability/statistics is near-zero by self-report; this is expected and will be taught from first principles contextually rather than blocking Stage 0
 - **Needs review:** Keep the terminology precise: dependency intent = broad requirements in `pyproject.toml`; resolution = exact graph in lockfile; sync = applying that resolution to an environment
@@ -203,3 +203,12 @@ Install uv as a standalone tool, verify `uv --version`, generate an exact lock f
 - Learner correctly identified Requests as the direct package and certifi/charset-normalizer/idna/urllib3 as transitive dependencies in the drift exercise.
 - Learner correctly explained why the package-management tool itself is not a runtime application dependency.
 - Dependency reproducibility concept checkpoint is complete; next Stage 0 teaching topic is professional project structure and notebook-to-module workflow.
+
+
+### 2026-09-16 — Project-structure concept check passed; implementation evidence pending
+
+- Learner correctly explained that notebooks are for exploration/experimentation and reusable stable logic should move into `src/`.
+- Learner correctly distinguished `src/` as reusable implementation from `scripts/` as runnable entry points/workflows.
+- Learner correctly identified duplicated preprocessing logic as a maintenance and consistency risk.
+- Important nuance: notebooks are not inherently bad; the risk is keeping critical reusable/production logic only in notebooks or duplicating it across notebooks.
+- Implementation evidence for the project-structure exercise (directory tree + script output) is still pending, so the milestone is not complete.
