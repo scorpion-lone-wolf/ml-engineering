@@ -6,25 +6,25 @@
 
 - **Program state:** ACTIVE
 - **Active track:** Track 1 — Classical ML + Production ML/MLOps
-- **Track 1 state:** ACTIVE — INITIAL SETUP
+- **Track 1 state:** ACTIVE
 - **Track 2 state:** LOCKED
 - **Current Track 1 stage:** Stage 0 — Environment and Engineering Setup
-- **Current sub-stage/topic:** First-session diagnostic and setup have not yet been completed
-- **Last verified completed item:** None yet
-- **Blocking prerequisite gap:** None identified yet; diagnostic pending
+- **Current sub-stage/topic:** Dependency declaration, reproducibility, and `pyproject.toml`
+- **Last verified completed item:** Initial diagnostic + Stage 0 environment-isolation concept/exercise checkpoint
+- **Blocking prerequisite gap:** None blocking Stage 0. Probability/statistics baseline is near-zero and will be taught contextually in later stages as designed.
 - **Initialized:** 2026-09-14
 
 ## Exact Global Next Action
 
-Start the **first-ever Track 1 session** by following `ML/ML_CURRICULUM.md` Section 21 in order. Run the required diagnostic/setup calibration before beginning Stage 0 teaching work. Do not begin Deep Learning.
+Continue **Track 1 Stage 0** from dependency declaration/reproducibility. Teach `pyproject.toml`, direct vs. transitive dependencies, version constraints, and lockfiles; keep Conda as the local environment manager per ADR-001. Do not begin Deep Learning.
 
 ## Exact Next Teaching Step
 
-Establish the learner's current ML-specific baseline and constraints without retesting core Python unnecessarily. Confirm SQL, ML, probability/statistics, Linux/Git, Docker/cloud, study-time, hardware/budget, and pacing context.
+Teach the distinction between project dependency metadata and an exact reproducible resolution. Build a minimal `pyproject.toml`, then introduce the lockfile concept and how pip/uv fit around the Conda-managed environment.
 
 ## Exact Next Practice / Engineering Step
 
-After the diagnostic, begin the Stage 0 professional ML repository/environment setup and produce the Stage 0 reusable project-template deliverable according to the curriculum.
+Extend `ML/exercises/stage_00_environment/` with dependency metadata/locking practice, then continue the Stage 0 reusable project-template deliverable (configuration, logging, testing, README/setup workflow).
 
 ---
 
@@ -59,3 +59,11 @@ All must be true before changing Track 2 to `ACTIVE`:
 - Track 2 set to `LOCKED`.
 - No learning or implementation milestones were fabricated as complete.
 - Initial next action: first-ever Track 1 diagnostic/setup flow.
+
+### 2026-09-16 — Initial diagnostic completed; Stage 0 environment isolation demonstrated
+
+- Learner baseline recorded across SQL, ML exposure, probability/statistics, NumPy/Pandas, Git/Linux, Docker, AWS, study capacity, and interview horizon.
+- Stage 0 moved from initial setup to active learning.
+- Project-local Conda environment creation/activation and interpreter verification demonstrated.
+- ADR-001 records Conda as the local environment/interpreter manager, with pip fundamentals taught before uv is introduced.
+- Exact next topic: dependency declaration and reproducibility with `pyproject.toml` and lockfiles.
