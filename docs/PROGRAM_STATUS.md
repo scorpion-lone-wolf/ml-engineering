@@ -9,22 +9,22 @@
 - **Track 1 state:** ACTIVE
 - **Track 2 state:** LOCKED
 - **Current Track 1 stage:** Stage 0 — Environment and Engineering Setup
-- **Current sub-stage/topic:** Dependency declaration, reproducibility, and `pyproject.toml`
-- **Last verified completed item:** Initial diagnostic + Stage 0 environment-isolation concept/exercise checkpoint
+- **Current sub-stage/topic:** Exact dependency resolution/locking with uv while Conda owns the environment
+- **Last verified completed item:** Stage 0 environment isolation + dependency declaration/`pyproject.toml` concept checkpoints
 - **Blocking prerequisite gap:** None blocking Stage 0. Probability/statistics baseline is near-zero and will be taught contextually in later stages as designed.
 - **Initialized:** 2026-09-14
 
 ## Exact Global Next Action
 
-Continue **Track 1 Stage 0** from dependency declaration/reproducibility. Teach `pyproject.toml`, direct vs. transitive dependencies, version constraints, and lockfiles; keep Conda as the local environment manager per ADR-001. Do not begin Deep Learning.
+Continue **Track 1 Stage 0** by implementing exact dependency locking. Keep Conda as the local environment/interpreter manager, and use uv's pip-compatible compile/sync workflow so uv does not take ownership of the existing Conda `.venv`. Do not begin Deep Learning.
 
 ## Exact Next Teaching Step
 
-Teach the distinction between project dependency metadata and an exact reproducible resolution. Build a minimal `pyproject.toml`, then introduce the lockfile concept and how pip/uv fit around the Conda-managed environment.
+Teach uv's two operating models: full project mode (`uv.lock` + uv-managed environment) versus pip-compatible resolution/sync. For the current Conda setup, generate an exact lock from `pyproject.toml` and target the Conda interpreter explicitly.
 
 ## Exact Next Practice / Engineering Step
 
-Extend `ML/exercises/stage_00_environment/` with dependency metadata/locking practice, then continue the Stage 0 reusable project-template deliverable (configuration, logging, testing, README/setup workflow).
+Install uv, create and inspect an exact lock for `ML/exercises/stage_00_environment/`, reproduce/sync dependencies against the Conda environment, then continue the Stage 0 project template (configuration, logging, testing, README/setup workflow).
 
 ---
 
