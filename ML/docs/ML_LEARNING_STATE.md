@@ -5,13 +5,13 @@
 ## Current Snapshot
 
 - **Track:** Track 1 — Classical ML + Production ML/MLOps
-- **State:** NOT STARTED / INITIAL DIAGNOSTIC PENDING
+- **State:** LEARNING
 - **Current stage:** Stage 0 — Environment and Engineering Setup
-- **Current topic:** First-session diagnostic/setup
-- **Last mastered topic:** None recorded yet
-- **Unresolved core prerequisite gaps:** None identified yet; diagnostic pending
-- **Needs review:** None recorded yet
-- **Last updated:** 2026-09-14
+- **Current topic:** Professional ML project structure and notebook-to-module workflow
+- **Last mastered topic:** Stage 0 environment isolation, dependency declaration, direct/transitive dependencies, locking, and exact environment synchronization
+- **Unresolved core prerequisite gaps:** Probability/statistics is near-zero by self-report; this is expected and will be taught from first principles contextually rather than blocking Stage 0
+- **Needs review:** Keep the terminology precise: dependency intent = broad requirements in `pyproject.toml`; resolution = exact graph in lockfile; sync = applying that resolution to an environment
+- **Last updated:** 2026-09-16
 
 ## Learner Baseline
 
@@ -50,16 +50,16 @@ If a supposedly "basic" linear-algebra/calculus concept is shaky when needed, te
 | Area | Status | Evidence / Notes |
 |---|---|---|
 | Core Python | ASSUMED SUFFICIENT | Do not reteach as a prerequisite course |
-| NumPy/Pandas/scientific Python | UNKNOWN | Stage 1 checkpoint |
-| SQL | UNKNOWN | Diagnostic pending |
-| ML fundamentals | UNKNOWN | Diagnostic pending |
-| Probability | DO NOT ASSUME | Teach contextually |
-| Statistics | DO NOT ASSUME | Teach contextually |
+| NumPy/Pandas/scientific Python | BASIC | Stage 1 checkpoint; fill gaps rather than reteach core Python |
+| SQL | BASIC | Simple queries only; Stage 2 will build ML-oriented SQL depth |
+| ML fundamentals | EARLY BEGINNER | Prior exposure to linear regression and basic classification |
+| Probability | NEAR-ZERO | Self-rated below 1/5; teach from first principles contextually |
+| Statistics | NEAR-ZERO | Self-rated below 1/5; teach from first principles contextually |
 | Linear algebra | BASIC | Extend contextually when needed |
 | Calculus | BASIC | Extend contextually when needed |
-| Linux/Git | UNKNOWN | Diagnostic pending |
-| Docker | UNKNOWN | Diagnostic pending |
-| Cloud | UNKNOWN | Diagnostic pending |
+| Linux/Git | BASIC | Strengthen through Stage 0 and project work |
+| Docker | BASIC | Reinforce now; deeper production use in Stage 9+ |
+| Cloud | BASIC / LIGHT AWS | Small prior AWS exposure; formal cloud work later |
 | Spark/Kafka/Kubernetes | NO ASSUMPTION | Curriculum teaches from first principles |
 
 ---
@@ -68,7 +68,7 @@ If a supposedly "basic" linear-algebra/calculus concept is shaky when needed, te
 
 | Stage | Learning Status | Conceptual | Math/Stats | Coding | Applied Reasoning | Notes |
 |---|---|---:|---:|---:|---:|---|
-| 0 — Environment/Engineering Setup | NOT STARTED | — | N/A | — | — | First active stage |
+| 0 — Environment/Engineering Setup | LEARNING | Environment isolation understood | N/A | Conda environment creation/activation + interpreter verification demonstrated | Correctly explained dependency isolation and Git exclusion | Dependency declaration/locking is next |
 | 1 — ML Python Ecosystem | NOT STARTED | — | — | — | — | |
 | 2 — SQL/Data Handling | NOT STARTED | — | — | — | — | |
 | 3 — Contextual Math/Probability/Stats Bridge | NOT STARTED | — | — | — | — | Integration checkpoint, not standalone math course |
@@ -160,11 +160,11 @@ For important topics, keep compact retention notes:
 
 ### Next Teaching Step
 
-Run the first-session diagnostic required by `ML/ML_CURRICULUM.md` without retesting core Python as a standalone prerequisite. Establish SQL/ML/statistics-probability/Linux-Git/Docker-cloud/study constraints, then enter Stage 0.
+Introduce uv as a resolver/locking tool without letting it compete with the existing Conda-managed environment. Teach the difference between uv's full project mode (`uv.lock` + uv-managed `.venv`) and its pip-compatible compile/sync mode. For the current Conda workflow, use `uv pip compile pyproject.toml -o requirements.lock` and install/sync explicitly against the Conda interpreter.
 
 ### Practice Before/With Next Lesson
 
-No prerequisite homework is assumed before the diagnostic. After calibration, begin the Stage 0 environment/repository setup deliverable.
+Install uv as a standalone tool, verify `uv --version`, generate an exact lock from the existing `pyproject.toml`, inspect the resolved file, then recreate/sync dependencies into the Conda environment using an explicit interpreter path.
 
 ---
 
@@ -176,3 +176,30 @@ No prerequisite homework is assumed before the diagnostic. After calibration, be
 - No topic marked mastered without evidence.
 - Math baseline recorded as basic linear algebra + basic calculus; probability/statistics not assumed.
 - Next step set to the first-session diagnostic/setup flow.
+
+### 2026-09-16 — Initial diagnostic + Stage 0 environment isolation checkpoint
+
+- Diagnostic recorded: SQL basic; prior ML exposure limited to linear regression/basic classification; probability/statistics near-zero; NumPy/Pandas basic; Git/Linux basic; Docker basic; light AWS exposure; 10–15 study hours/week; ~1-year interview horizon.
+- Learner demonstrated project-local Conda environment creation with `conda create -p .venv python`, activation via `conda activate ./.venv`, and interpreter verification via `which python`.
+- Concept check passed for why virtual environments exist, why `.venv` is not dependency metadata, why explicit interpreter/package-manager binding matters, and why environments should not be committed.
+- Nuance retained for review: `pyproject.toml` declares project requirements but does not by itself guarantee an exact resolved environment; lock/reproduction mechanics are the next topic.
+
+
+### 2026-09-16 — Dependency metadata/locking concept checkpoint
+
+- Active environment reported Python 3.14.7, NumPy 2.5.3, pip 26.2.1.
+- Learner correctly explained direct vs. transitive dependencies, version-range drift, `pyproject.toml` as project dependency metadata, and lockfiles as exact resolved dependency graphs.
+- Correction retained: transitive dependencies usually should not be manually declared, but they still must be resolved, locked, audited and can cause conflicts/security issues.
+- Tooling nuance identified: full uv project mode normally manages a project `.venv`; because Conda already owns the current `.venv`, current lessons will use uv's pip-compatible resolver/sync interface against the Conda interpreter to avoid two environment managers controlling one directory.
+
+
+### 2026-09-16 — Dependency intent/resolution/sync misconception repaired
+
+- Learner initially described dependency intent as what is in the lockfile and resolution as syncing to the environment.
+- Correct model:
+  - dependency intent = project requirements/constraints declared in `pyproject.toml`;
+  - dependency resolution = exact compatible versions selected and recorded in a lockfile;
+  - synchronization = making the actual environment match that resolved state.
+- Learner correctly identified Requests as the direct package and certifi/charset-normalizer/idna/urllib3 as transitive dependencies in the drift exercise.
+- Learner correctly explained why the package-management tool itself is not a runtime application dependency.
+- Dependency reproducibility concept checkpoint is complete; next Stage 0 teaching topic is professional project structure and notebook-to-module workflow.

@@ -4,13 +4,13 @@
 
 ## Current Snapshot
 
-- **Track state:** ACTIVE — INITIAL SETUP
+- **Track state:** ACTIVE
 - **Current stage:** Stage 0 — Environment and Engineering Setup
-- **Current implementation milestone:** Not started
-- **Current project:** None
-- **Last verified completed deliverable:** None
-- **Exact next work step:** Complete diagnostic/setup calibration, then build the Stage 0 reusable professional ML project template
-- **Last updated:** 2026-09-14
+- **Current implementation milestone:** Environment isolation + dependency declaration/locking/synchronization demonstrated
+- **Current project:** Stage 0 reusable professional ML project template
+- **Last verified completed deliverable:** Stage 0 dependency reproducibility exercise/checkpoint
+- **Exact next work step:** Build the professional ML project skeleton and learn when work stays in notebooks vs. moves into reusable Python modules/scripts
+- **Last updated:** 2026-09-16
 
 ---
 
@@ -18,7 +18,7 @@
 
 | Stage | Status | Required Evidence / Deliverable | Evidence Location |
 |---|---|---|---|
-| 0 — Environment and Engineering Setup | NOT STARTED | Reusable professional ML project template; environment/reproducibility/testing workflow demonstrated | — |
+| 0 — Environment and Engineering Setup | LEARNING | Reusable professional ML project template; environment/reproducibility/testing workflow demonstrated | `ML/exercises/stage_00_environment/` environment exercise (local evidence reported in session) |
 | 1 — ML Python Ecosystem Checkpoint | NOT STARTED | Gap-focused scientific-Python/data tasks; messy-data mini work | — |
 | 2 — SQL and Data Handling | NOT STARTED | Correct ML-oriented SQL tasks including point-in-time/leakage reasoning | — |
 | 3 — Contextual Math/Probability/Stats Bridge | NOT STARTED | Integration checkpoint demonstrating prerequisites needed for upcoming algorithms | — |
@@ -68,11 +68,11 @@ Evidence can include code, tests, experiment reports, design docs, benchmark rep
 
 ## Active Work
 
-No implementation task started yet.
+Stage 0 environment-isolation practice has started. The learner created a project-local Conda environment and verified the active interpreter path.
 
 ### Exact Next Engineering / Practice Step
 
-After the first-session diagnostic, create the Stage 0 reusable ML project template with reproducible environment/dependency setup, clean project structure, Git workflow, configuration/environment-variable handling, logging, debugging/testing foundation, and clear README/setup instructions.
+Create the Stage 0 reusable professional ML project skeleton with `README.md`, `pyproject.toml`, `configs/`, `data/`, `notebooks/`, `src/`, `tests/`, and `scripts/`. Then implement one tiny flow that begins as exploratory notebook work and is extracted into a reusable module/script, before adding configuration, logging, and tests.
 
 ---
 
@@ -103,3 +103,28 @@ Do not mark `COMPLETE` until all are evidenced:
 
 - No stage or project marked complete without evidence.
 - Track 1 positioned at Stage 0 initial setup.
+
+### 2026-09-16 — Stage 0 environment isolation checkpoint
+
+- Initial diagnostic completed.
+- Project-local Conda environment workflow demonstrated.
+- Interpreter switched from Anaconda base (`/opt/anaconda3/bin/python`) to the exercise environment after activation.
+- Learner correctly explained isolation, Git exclusion, and the role difference between an environment and dependency metadata.
+- Stage 0 remains in progress; dependency declaration/locking and the reusable project-template deliverable are not yet complete.
+
+
+### 2026-09-16 — Dependency declaration checkpoint
+
+- `pyproject.toml` dependency intent vs. exact lockfile state understood.
+- Direct vs. transitive dependency distinction explained correctly.
+- Current exercise environment: Python 3.14.7, NumPy 2.5.3, pip 26.2.1.
+- No transitive dependency chain is visible yet because the tiny environment only contains NumPy and pip.
+- Next evidence: produce and inspect an exact lock and reproduce/sync the environment from it.
+
+
+### 2026-09-16 — Dependency reproducibility checkpoint completed
+
+- Dependency intent, exact resolution, and environment synchronization were exercised.
+- Direct/transitive dependency graph was observed using Requests and its dependencies.
+- Exact-sync behavior was conceptually understood as stronger than repeated installs because it removes undeclared extras and matches the lock state.
+- Stage 0 remains active; next engineering evidence is the professional project skeleton and notebook-to-module transition.
