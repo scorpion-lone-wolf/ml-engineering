@@ -7,10 +7,10 @@
 - **Track:** Track 1 — Classical ML + Production ML/MLOps
 - **State:** LEARNING
 - **Current stage:** Stage 0 — Environment and Engineering Setup
-- **Current topic:** Python package/import structure, then configuration/environment variables
+- **Current topic:** Configuration vs. environment variables vs. secrets
 - **Last mastered topic:** Stage 0 environment isolation, dependency declaration, direct/transitive dependencies, locking, and exact environment synchronization
 - **Unresolved core prerequisite gaps:** Probability/statistics is near-zero by self-report; this is expected and will be taught from first principles contextually rather than blocking Stage 0
-- **Needs review:** Keep the terminology precise: dependency intent = broad requirements in `pyproject.toml`; resolution = exact graph in lockfile; sync = applying that resolution to an environment
+- **Needs review:** Python packaging mental model: `.venv` = runtime environment; `src/` = ordinary source-code layout directory; `ml_stage0/` = importable package; `pyproject.toml` = project/build/package configuration; editable install registers the local project for development
 - **Last updated:** 2026-09-16
 
 ## Learner Baseline
@@ -68,7 +68,7 @@ If a supposedly "basic" linear-algebra/calculus concept is shaky when needed, te
 
 | Stage | Learning Status | Conceptual | Math/Stats | Coding | Applied Reasoning | Notes |
 |---|---|---:|---:|---:|---:|---|
-| 0 — Environment/Engineering Setup | LEARNING | Environment isolation understood | N/A | Conda environment creation/activation + interpreter verification demonstrated | Correctly explained dependency isolation and Git exclusion | Dependency declaration/locking is next |
+| 0 — Environment/Engineering Setup | LEARNING | Environment/dependency basics solid; package-layout concepts need reinforcement | N/A | Conda env, lock workflow, src-layout package and runnable script demonstrated | Understands notebook → reusable code motivation; packaging details retained for review | Next: configuration/env vars/secrets |
 | 1 — ML Python Ecosystem | NOT STARTED | — | — | — | — | |
 | 2 — SQL/Data Handling | NOT STARTED | — | — | — | — | |
 | 3 — Contextual Math/Probability/Stats Bridge | NOT STARTED | — | — | — | — | Integration checkpoint, not standalone math course |
@@ -156,15 +156,30 @@ For important topics, keep compact retention notes:
 
 ---
 
+
+
+### Python Project Structure and Local Package Basics
+- **Problem it solves:** reusable ML logic should not be duplicated across notebooks, training scripts, inference code, and tests.
+- **Core intuition:** keep reusable Python logic in modules/packages; keep runnable workflows in scripts; notebooks remain useful for exploration.
+- **Key concepts:** `.venv/` is the Python runtime environment; `src/` is an ordinary source-layout directory, not a keyword; `ml_stage0/` is the actual importable package; `cleaning.py` is a module; `clean_age` is a function.
+- **Why `pyproject.toml`:** it describes the Python project and tells packaging/build tools what the project is, which build backend to use, and—in this exercise—where package source lives.
+- **Why editable install:** `python -m pip install -e .` means “using this Python, install the project in the current directory in editable/development mode”; it makes the local package importable while continuing to use the working source tree.
+- **Common failure mode:** confusing the environment (`.venv`) with the source layout (`src`), or assuming `src` is a reserved Python directory. Another failure mode is copying preprocessing code into multiple notebooks/services and allowing the copies to drift.
+- **Implementation pattern:** `src/ml_stage0/features/cleaning.py` provides reusable logic; `scripts/demo_cleaning.py` imports and executes it.
+- **Engineering implication:** one shared preprocessing implementation reduces inconsistent training/inference behavior and makes later testing easier.
+- **Evidence/project where used:** `ML/exercises/stage_00_project_structure/`; repository code verified on 2026-09-16. Concept is implemented, but packaging details remain scheduled for reinforcement rather than marked fully mastered.
+
+---
+
 ## Exact Continuation Point
 
 ### Next Teaching Step
 
-Introduce uv as a resolver/locking tool without letting it compete with the existing Conda-managed environment. Teach the difference between uv's full project mode (`uv.lock` + uv-managed `.venv`) and its pip-compatible compile/sync mode. For the current Conda workflow, use `uv pip compile pyproject.toml -o requirements.lock` and install/sync explicitly against the Conda interpreter.
+Teach **configuration vs. environment variables vs. secrets** from first principles. Start with concrete examples and explain where each value belongs before introducing any configuration library or file format.
 
 ### Practice Before/With Next Lesson
 
-Install uv as a standalone tool, verify `uv --version`, generate an exact lock from the existing `pyproject.toml`, inspect the resolved file, then recreate/sync dependencies into the Conda environment using an explicit interpreter path.
+Extend the Stage 0 project with one non-secret application configuration value and one environment-provided value, without hardcoding secrets. Packaging/import concepts remain in the review queue and should be reinforced when the project next uses them rather than blocking forward progress.
 
 ---
 
@@ -212,3 +227,14 @@ Install uv as a standalone tool, verify `uv --version`, generate an exact lock f
 - Learner correctly identified duplicated preprocessing logic as a maintenance and consistency risk.
 - Important nuance: notebooks are not inherently bad; the risk is keeping critical reusable/production logic only in notebooks or duplicating it across notebooks.
 - Implementation evidence for the project-structure exercise (directory tree + script output) is still pending, so the milestone is not complete.
+
+
+### 2026-09-16 — Project-structure implementation verified in repository
+
+- Verified `ML/exercises/stage_00_project_structure/pyproject.toml`.
+- Verified reusable implementation at `src/ml_stage0/features/cleaning.py`.
+- Verified package markers at `src/ml_stage0/__init__.py` and `src/ml_stage0/features/__init__.py`.
+- Verified runnable entry point at `scripts/demo_cleaning.py`.
+- Earlier terminal evidence showed successful editable installation and expected output.
+- Learner requested that packaging/project-structure details remain as reference notes because the practical workflow worked but the packaging mental model is not yet fully intuitive.
+- Decision: do not falsely mark packaging internals mastered; retain them in the review queue and move to the next Stage 0 topic, configuration/environment variables/secrets.
