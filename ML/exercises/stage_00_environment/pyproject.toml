@@ -1,0 +1,9 @@
+[project]
+name = "stage-00-environment"
+version = "0.1.0"
+description = "Stage 0 environment and dependency management exercise"
+requires-python = ">=3.11"
+
+dependencies = [
+    "numpy>=2.0,<3",
+]
