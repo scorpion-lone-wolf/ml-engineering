@@ -129,11 +129,9 @@ Use:
 
 ## Review Queue
 
-No scheduled review items yet.
-
 | Topic | Reason | Review Trigger/Date | Status |
 |---|---|---|---|
-| — | — | — | — |
+| Python packaging / src-layout / editable install | Practical workflow works, but the mental model is not yet intuitive | Revisit when the next project/package import is created or before Stage 0 completion gate | OPEN |
 
 ---
 
