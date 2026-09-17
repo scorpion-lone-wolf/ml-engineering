@@ -17,11 +17,19 @@ logger = logging.getLogger(__name__)
 logger.info("ML_STAGE0_LOG_LEVEL: %s", log_level)
 logger.info("ML_STAGE0_BATCH_SIZE: %s ", batch_size)
 
-ages = [25, -2, 32, 40, -1]
+ages = [-25, -2, -32, -40, -1]
 
 logger.debug("Raw ages before cleaning: %s", ages)
 
 cleaned_ages = [clean_age(age) for age in ages]
+invalid_count = sum(x is None for x in cleaned_ages)
+
+if invalid_count > 0:
+    logger.warning("Invalid age count: %s", invalid_count)
+
+if len(ages) == invalid_count:
+    logger.error("All ages are invalid")
+
 
 logger.debug("Cleaned ages: %s", cleaned_ages)
 
