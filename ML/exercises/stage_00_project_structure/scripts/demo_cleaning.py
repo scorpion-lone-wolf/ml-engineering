@@ -14,15 +14,15 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-logger.info(f"ML_STAGE0_LOG_LEVEL: {log_level}")
-logger.info(f"ML_STAGE0_BATCH_SIZE: {batch_size}")
+logger.info("ML_STAGE0_LOG_LEVEL: %s", log_level)
+logger.info("ML_STAGE0_BATCH_SIZE: %s ", batch_size)
 
 ages = [25, -2, 32, 40, -1]
 
-logger.debug(f"Raw ages before cleaning: {ages}")
+logger.debug("Raw ages before cleaning: %s", ages)
 
 cleaned_ages = [clean_age(age) for age in ages]
 
-logger.debug(f"Cleaned ages: {cleaned_ages}")
+logger.debug("Cleaned ages: %s", cleaned_ages)
 
 print(cleaned_ages)
