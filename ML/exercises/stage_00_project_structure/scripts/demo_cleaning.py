@@ -24,11 +24,11 @@ logger.debug("Raw ages before cleaning: %s", ages)
 cleaned_ages = [clean_age(age) for age in ages]
 invalid_count = sum(x is None for x in cleaned_ages)
 
-if invalid_count > 0:
-    logger.warning("Invalid age count: %s", invalid_count)
 
-if len(ages) == invalid_count:
+if ages and len(ages) == invalid_count:
     logger.error("All ages are invalid")
+elif invalid_count > 0:
+    logger.warning("Invalid age count: %s", invalid_count)
 
 
 logger.debug("Cleaned ages: %s", cleaned_ages)
