@@ -29,9 +29,15 @@ def test_get_batch_size_raises_value_error_for_non_integer(monkeypatch):
         get_batch_size()
 
 
-def test_get_batch_size_raises_value_error_for_negative_integer(monkeypatch):
+@pytest.mark.parametrize(
+    "invalid_batch_size",
+    ["-64", "-1", "0"],
+)
+def test_get_batch_size_raises_value_error_for_non_positive_integer(
+    monkeypatch, invalid_batch_size
+):
     # Arrange
-    monkeypatch.setenv("ML_STAGE0_BATCH_SIZE", "-64")
+    monkeypatch.setenv("ML_STAGE0_BATCH_SIZE", invalid_batch_size)
     # Act & Assert
     with pytest.raises(ValueError):
         get_batch_size()
