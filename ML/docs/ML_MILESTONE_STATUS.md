@@ -9,7 +9,7 @@
 - **Current implementation milestone:** Environment/dependency workflow + reusable src-layout package/script + configuration/logging/unit tests demonstrated
 - **Current project:** Stage 0 reusable professional ML project template
 - **Last verified completed deliverable:** Stage 0 configuration, logging, and pytest checkpoint implemented and verified
-- **Exact next work step:** Practice debugging fundamentals on an intentionally broken Stage 0 example, then complete remaining Stage 0 engineering/reproducibility/README checkpoints
+- **Exact next work step:** Complete the Git/GitHub + `.gitignore` checkpoint, then basic Linux/CLI, packaging review, clean-code/reproducibility review, and README/setup workflow
 - **Last updated:** 2026-09-19
 
 ---
@@ -70,11 +70,11 @@ Evidence can include code, tests, experiment reports, design docs, benchmark rep
 
 ## Active Work
 
-Stage 0 environment/dependency, project-structure, configuration, logging, and core unit-testing exercises are implemented and verified. Current work has moved to debugging fundamentals; packaging internals remain scheduled for reinforcement before the Stage 0 completion gate.
+Stage 0 environment/dependency, project-structure, configuration, logging, and core unit-testing exercises are implemented and verified. Debugging fundamentals have been completed as a learning/reasoning checkpoint without a new code artifact. Current work has moved to the Git/GitHub + `.gitignore` checkpoint; packaging internals remain scheduled for reinforcement before the Stage 0 completion gate.
 
 ### Exact Next Engineering / Practice Step
 
-Practice the debugging workflow on one intentionally broken Stage 0 example. Then complete the remaining Git/Linux checkpoint, packaging review, clean-code/reproducibility review, and README/setup workflow before the Stage 0 reusable-template gate.
+Inspect and verify the Stage 0 Git workflow and `.gitignore`, including environment, cache, secret, and generated-file exclusions. Then continue basic Linux/CLI, packaging review, clean-code/reproducibility review, and README/setup workflow before the Stage 0 reusable-template gate.
 
 ---
 
@@ -149,3 +149,11 @@ Do not mark `COMPLETE` until all are evidenced:
 - Verified `tests/test_cleaning.py` for positive, negative, and zero-boundary cleaning behavior.
 - Verified `tests/test_config.py` for missing environment default, valid environment override, non-integer error, and parameterized non-positive errors including the zero boundary.
 - Stage 0 remains LEARNING; next engineering evidence is the debugging-fundamentals exercise.
+
+
+### 2026-09-19 — Debugging fundamentals learning checkpoint completed
+
+- Demonstrated the debugging reasoning loop through concrete examples: expected vs. actual, reproduction, isolation, state inspection, hypothesis formation, hypothesis testing, and verification.
+- Demonstrated awareness of boundary-condition bugs, symptom vs. root cause, and the operational risk of silently falling back from invalid explicit configuration.
+- This checkpoint produced learning evidence only; no new repository implementation artifact was created, so the evidence registry remains unchanged.
+- Stage 0 remains LEARNING; next engineering checkpoint is Git/GitHub workflow and `.gitignore`.
