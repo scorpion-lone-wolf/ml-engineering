@@ -21,7 +21,7 @@ def test_get_batch_size_returns_env_value(monkeypatch):
     assert batch_size == 64
 
 
-def test_get_batch_size_returns_value_error_for_non_integer(monkeypatch):
+def test_get_batch_size_raises_value_error_for_non_integer(monkeypatch):
     # Arrange
     monkeypatch.setenv("ML_STAGE0_BATCH_SIZE", "abc")
     # Act & Assert
@@ -29,7 +29,7 @@ def test_get_batch_size_returns_value_error_for_non_integer(monkeypatch):
         get_batch_size()
 
 
-def test_get_batch_size_returns_value_error_for_non_positive_integer(monkeypatch):
+def test_get_batch_size_raises_value_error_for_non_positive_integer(monkeypatch):
     # Arrange
     monkeypatch.setenv("ML_STAGE0_BATCH_SIZE", "-64")
     # Act & Assert
