@@ -9,22 +9,22 @@
 - **Track 1 state:** ACTIVE
 - **Track 2 state:** LOCKED
 - **Current Track 1 stage:** Stage 0 — Environment and Engineering Setup
-- **Current sub-stage/topic:** Debugging fundamentals
-- **Last verified completed item:** Stage 0 configuration, logging, and unit-testing fundamentals implemented and verified
+- **Current sub-stage/topic:** Git/GitHub workflow and `.gitignore` checkpoint
+- **Last verified completed item:** Stage 0 debugging fundamentals learning checkpoint completed; configuration/logging/testing remain the latest verified implementation evidence
 - **Blocking prerequisite gap:** None blocking Stage 0. Probability/statistics baseline is near-zero and will be taught contextually in later stages as designed.
 - **Initialized:** 2026-09-14
 
 ## Exact Global Next Action
 
-Continue **Track 1 Stage 0** with debugging fundamentals. Do not begin Deep Learning.
+Continue **Track 1 Stage 0** with the Git/GitHub workflow and `.gitignore` checkpoint. Do not begin Deep Learning.
 
 ## Exact Next Teaching Step
 
-Teach debugging from first principles using a concrete broken Stage 0 example: reproduce the problem, isolate it, inspect state, form a hypothesis, test the hypothesis, and verify the fix.
+Review the Git/GitHub workflow from working tree → staging → commit → remote, then verify `.gitignore` handling for environments, caches, secrets, and generated files in the Stage 0 project.
 
 ## Exact Next Practice / Engineering Step
 
-Practice the debugging workflow on an intentionally broken example, then continue the remaining Stage 0 Git/Linux checkpoint, packaging review, reproducibility/clean-code review, and README/setup workflow before the Stage 0 completion gate.
+Complete the Git/GitHub + `.gitignore` checkpoint, then continue the basic Linux/CLI checkpoint, packaging review, clean-code/reproducibility review, and README/setup workflow before the Stage 0 completion gate.
 
 ---
 
@@ -84,3 +84,12 @@ All must be true before changing Track 2 to `ACTIVE`:
 - Added pytest as a development dependency and verified unit tests for cleaning behavior, boundary cases, environment-driven configuration, expected exceptions, monkeypatch isolation, and parameterized non-positive values.
 - Testing nuance retained: a failed assertion proves actual behavior differs from the test expectation; the defect can be in application code, test expectation, or test setup.
 - Stage 0 remains ACTIVE. Exact next topic: debugging fundamentals.
+
+
+### 2026-09-19 — Debugging fundamentals learning checkpoint completed
+
+- Learner practiced the debugging loop: define expected vs. actual behavior, reproduce, isolate, inspect relevant state, form a hypothesis, test the hypothesis, make a minimal fix, and verify.
+- Learner correctly distinguished a hypothesis from an inspection technique after correction and applied the process to arithmetic and Stage 0 configuration examples.
+- Reinforced that the crash/error location is not always the root-cause location, and that silent fallback can be more dangerous than a clear failure for invalid explicit configuration.
+- No new implementation artifact was created for this checkpoint, so no implementation evidence was fabricated.
+- Stage 0 remains ACTIVE. Exact next topic: Git/GitHub workflow and `.gitignore` checkpoint.
