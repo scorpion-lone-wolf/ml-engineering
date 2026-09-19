@@ -9,22 +9,22 @@
 - **Track 1 state:** ACTIVE
 - **Track 2 state:** LOCKED
 - **Current Track 1 stage:** Stage 0 — Environment and Engineering Setup
-- **Current sub-stage/topic:** Configuration vs. environment variables vs. secrets
-- **Last verified completed item:** Stage 0 project structure/package implementation checkpoint (packaging concepts retained for review)
+- **Current sub-stage/topic:** Debugging fundamentals
+- **Last verified completed item:** Stage 0 configuration, logging, and unit-testing fundamentals implemented and verified
 - **Blocking prerequisite gap:** None blocking Stage 0. Probability/statistics baseline is near-zero and will be taught contextually in later stages as designed.
 - **Initialized:** 2026-09-14
 
 ## Exact Global Next Action
 
-Continue **Track 1 Stage 0** with configuration vs. environment variables vs. secrets. Do not begin Deep Learning.
+Continue **Track 1 Stage 0** with debugging fundamentals. Do not begin Deep Learning.
 
 ## Exact Next Teaching Step
 
-Teach from first principles which values belong in code/configuration, which come from the runtime environment, and which must be treated as secrets. Use concrete Stage 0 examples before introducing any helper library.
+Teach debugging from first principles using a concrete broken Stage 0 example: reproduce the problem, isolate it, inspect state, form a hypothesis, test the hypothesis, and verify the fix.
 
 ## Exact Next Practice / Engineering Step
 
-Add a small configuration/environment-variable example to the verified Stage 0 project, then continue with logging, testing, and README/setup workflow.
+Practice the debugging workflow on an intentionally broken example, then continue the remaining Stage 0 Git/Linux checkpoint, packaging review, reproducibility/clean-code review, and README/setup workflow before the Stage 0 completion gate.
 
 ---
 
@@ -75,3 +75,12 @@ All must be true before changing Track 2 to `ACTIVE`:
 - Reusable package/module code and runnable script are present and match the earlier successful terminal output.
 - Packaging/project-structure internals remain in the learner review queue; implementation is accepted without falsely marking conceptual mastery.
 - Exact next topic: configuration vs. environment variables vs. secrets.
+
+
+### 2026-09-19 — Configuration, logging, and testing checkpoint verified
+
+- Implemented environment-driven log level and validated batch-size configuration with defaults, type conversion, positive-value validation, and fail-fast errors.
+- Implemented Python logging with runtime log-level filtering, module logger usage, correct WARNING vs. ERROR branching, and avoidance of logging secrets.
+- Added pytest as a development dependency and verified unit tests for cleaning behavior, boundary cases, environment-driven configuration, expected exceptions, monkeypatch isolation, and parameterized non-positive values.
+- Testing nuance retained: a failed assertion proves actual behavior differs from the test expectation; the defect can be in application code, test expectation, or test setup.
+- Stage 0 remains ACTIVE. Exact next topic: debugging fundamentals.
