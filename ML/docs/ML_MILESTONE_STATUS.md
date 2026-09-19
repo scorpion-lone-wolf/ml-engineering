@@ -6,11 +6,11 @@
 
 - **Track state:** ACTIVE
 - **Current stage:** Stage 0 — Environment and Engineering Setup
-- **Current implementation milestone:** Environment/dependency workflow + reusable src-layout package/script demonstrated
+- **Current implementation milestone:** Environment/dependency workflow + reusable src-layout package/script + configuration/logging/unit tests demonstrated
 - **Current project:** Stage 0 reusable professional ML project template
-- **Last verified completed deliverable:** Stage 0 project-structure/package exercise implemented and verified (conceptual packaging details retained for review)
-- **Exact next work step:** Add configuration/environment-variable/secrets foundations to the Stage 0 project, then continue with logging and tests
-- **Last updated:** 2026-09-16
+- **Last verified completed deliverable:** Stage 0 configuration, logging, and pytest checkpoint implemented and verified
+- **Exact next work step:** Practice debugging fundamentals on an intentionally broken Stage 0 example, then complete remaining Stage 0 engineering/reproducibility/README checkpoints
+- **Last updated:** 2026-09-19
 
 ---
 
@@ -62,6 +62,7 @@ Add evidence instead of writing "done" without proof.
 |---|---|---|---|---|---|
 | ML-EVID-001 | Stage 0 | Environment/dependency exercise | `ML/exercises/stage_00_environment/` | Conda environment workflow, dependency declaration/locking/sync practice | YES |
 | ML-EVID-002 | Stage 0 | Project structure/package exercise | `ML/exercises/stage_00_project_structure/` | Reusable src-layout package, package imports, runnable script, project metadata | YES |
+| ML-EVID-003 | Stage 0 | Configuration/logging/testing exercise | `ML/exercises/stage_00_project_structure/` | Environment-driven validated config, runtime logging behavior, pytest unit tests, monkeypatch isolation, expected exceptions, and parameterized boundaries | YES |
 
 Evidence can include code, tests, experiment reports, design docs, benchmark reports, deployment manifests, dashboards, postmortems, project retrospectives, and mastery-review notes.
 
@@ -69,11 +70,11 @@ Evidence can include code, tests, experiment reports, design docs, benchmark rep
 
 ## Active Work
 
-Stage 0 environment/dependency and project-structure exercises are implemented and verified. Current work has moved to configuration vs. environment variables vs. secrets; packaging internals remain scheduled for reinforcement before the Stage 0 completion gate.
+Stage 0 environment/dependency, project-structure, configuration, logging, and core unit-testing exercises are implemented and verified. Current work has moved to debugging fundamentals; packaging internals remain scheduled for reinforcement before the Stage 0 completion gate.
 
 ### Exact Next Engineering / Practice Step
 
-Extend the Stage 0 project with a small configuration example that clearly separates code defaults/configuration from environment-provided values and secrets. After that, add logging and a first unit test before completing the Stage 0 reusable-template gate.
+Practice the debugging workflow on one intentionally broken Stage 0 example. Then complete the remaining Git/Linux checkpoint, packaging review, clean-code/reproducibility review, and README/setup workflow before the Stage 0 reusable-template gate.
 
 ---
 
@@ -138,3 +139,13 @@ Do not mark `COMPLETE` until all are evidenced:
 - Implementation evidence is accepted.
 - Packaging internals are intentionally **not** marked fully mastered; they remain a review item because the learner can use the workflow but does not yet find the packaging model intuitive.
 - Next engineering topic: configuration vs. environment variables vs. secrets.
+
+
+### 2026-09-19 — Configuration, logging, and unit-testing checkpoint completed
+
+- Verified `src/ml_stage0/config.py` with environment-provided log level and batch-size configuration, default behavior, integer conversion, and positive-value validation.
+- Verified `scripts/demo_cleaning.py` logging setup, DEBUG/INFO filtering, invalid-age WARNING behavior, all-invalid ERROR behavior, and empty-input-safe conditional logic.
+- Verified `pytest` development dependency in `pyproject.toml`.
+- Verified `tests/test_cleaning.py` for positive, negative, and zero-boundary cleaning behavior.
+- Verified `tests/test_config.py` for missing environment default, valid environment override, non-integer error, and parameterized non-positive errors including the zero boundary.
+- Stage 0 remains LEARNING; next engineering evidence is the debugging-fundamentals exercise.
