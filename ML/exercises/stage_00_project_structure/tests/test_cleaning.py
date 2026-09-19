@@ -23,7 +23,7 @@ def test_clean_age_returns_none_for_negative_age():
     assert cleaned_age is None
 
 
-def test_clean_age_dont_remove_zero_age():
+def test_clean_age_keeps_zero():
     # Arrange
     age = 0
 
