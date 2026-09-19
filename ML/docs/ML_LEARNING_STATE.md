@@ -7,8 +7,8 @@
 - **Track:** Track 1 — Classical ML + Production ML/MLOps
 - **State:** LEARNING
 - **Current stage:** Stage 0 — Environment and Engineering Setup
-- **Current topic:** Debugging fundamentals
-- **Last mastered topic:** Stage 0 configuration/environment variables/secrets, logging fundamentals, and core unit-testing fundamentals
+- **Current topic:** Git/GitHub workflow and `.gitignore` checkpoint
+- **Last mastered topic:** Stage 0 debugging fundamentals
 - **Unresolved core prerequisite gaps:** Probability/statistics is near-zero by self-report; this is expected and will be taught from first principles contextually rather than blocking Stage 0
 - **Needs review:** Python packaging mental model: `.venv` = runtime environment; `src/` = ordinary source-code layout directory; `ml_stage0/` = importable package; `pyproject.toml` = project/build/package configuration; editable install registers the local project for development
 - **Last updated:** 2026-09-19
@@ -68,7 +68,7 @@ If a supposedly "basic" linear-algebra/calculus concept is shaky when needed, te
 
 | Stage | Learning Status | Conceptual | Math/Stats | Coding | Applied Reasoning | Notes |
 |---|---|---:|---:|---:|---:|---|
-| 0 — Environment/Engineering Setup | LEARNING | Environment/dependency, configuration, logging, and testing basics demonstrated; package-layout concepts need reinforcement | N/A | Conda env, lock workflow, src-layout package/script, validated env config, logging, and pytest tests demonstrated | Understands fail-fast configuration, log severity/filtering, test boundaries, monkeypatch isolation, expected exceptions, and parameterization | Next: debugging fundamentals |
+| 0 — Environment/Engineering Setup | LEARNING | Environment/dependency, configuration, logging, testing, and debugging basics demonstrated; package-layout concepts need reinforcement | N/A | Conda env, lock workflow, src-layout package/script, validated env config, logging, and pytest tests demonstrated | Uses expected-vs-actual, reproduce/isolate/inspect/hypothesize/verify debugging flow; understands silent-fallback risk | Next: Git/GitHub + `.gitignore` checkpoint |
 | 1 — ML Python Ecosystem | NOT STARTED | — | — | — | — | |
 | 2 — SQL/Data Handling | NOT STARTED | — | — | — | — | |
 | 3 — Contextual Math/Probability/Stats Bridge | NOT STARTED | — | — | — | — | Integration checkpoint, not standalone math course |
@@ -184,15 +184,25 @@ For important topics, keep compact retention notes:
 - **Evidence/project where used:** `ML/exercises/stage_00_project_structure/`; repository code verified through 2026-09-19.
 
 
+### Debugging Fundamentals
+- **Problem it solves:** unexpected program behavior needs a repeatable way to locate the actual cause rather than changing code by guesswork.
+- **Core intuition:** start with precise expected vs. actual behavior, reproduce the issue, isolate the smallest failing area, inspect only relevant state, form one hypothesis, test it, make the smallest justified change, and verify with tests or repeated execution.
+- **Key concepts:** crash vs. wrong output vs. environment-dependent behavior; symptom vs. root cause; hypothesis vs. inspection; intermediate-state inspection; clear exceptions as debugging aids; silent fallback as a production risk.
+- **Common failure modes:** changing code before reproducing the bug; confusing an inspection method with a hypothesis; assuming the line that crashes is always the root cause; hiding invalid configuration by silently falling back.
+- **Implementation pattern:** use tests/logging/temporary inspection to gather evidence, then verify the minimal fix with the relevant test suite.
+- **Engineering implication:** disciplined debugging reduces search space, avoids accidental fixes, and makes ML/data pipeline failures easier to trace back to preprocessing, configuration, or environment causes.
+- **Evidence/project where used:** Stage 0 debugging exercises based on `clean_age()`, arithmetic examples, and `get_batch_size()`; conceptual checkpoint completed 2026-09-19 without fabricating a new code artifact.
+
+
 ## Exact Continuation Point
 
 ### Next Teaching Step
 
-Teach **debugging fundamentals** from first principles using a concrete broken Stage 0 example. Use the loop: reproduce → isolate → inspect state → form a hypothesis → test the hypothesis → verify the fix.
+Teach/review the **Git/GitHub workflow and `.gitignore` checkpoint**: working tree → staging → commit → remote, commit boundaries, branch/PR mental model, and why environments, caches, secrets, and generated files should not be committed.
 
 ### Practice Before/With Next Lesson
 
-Debug one intentionally broken example in the Stage 0 project. After that, continue the Git/Linux checkpoint, packaging mental-model review, clean-code/reproducibility review, and README/setup workflow before the Stage 0 completion gate.
+Inspect the Stage 0 repository status and `.gitignore`, verify that environment/caches/secrets/generated artifacts are excluded appropriately, and connect the local Git states to the already-used push workflow. Then continue the basic Linux/CLI checkpoint.
 
 ---
 
@@ -262,3 +272,13 @@ Debug one intentionally broken example in the Stage 0 project. After that, conti
 - Correction retained for debugging review: failed assertions indicate a mismatch between actual and expected behavior, not automatically a defect in application code.
 - Packaging/src-layout/editable-install mental model remains in the review queue before the Stage 0 completion gate.
 - Exact next topic: debugging fundamentals.
+
+
+### 2026-09-19 — Debugging fundamentals checkpoint
+
+- Learner correctly identified expected vs. actual behavior in multiple examples and improved from suggesting inspection directly to stating an explicit causal hypothesis first.
+- Practiced distinguishing reproduction (show the behavior consistently) from inspection (observe the state that can confirm or reject a hypothesis).
+- Applied the workflow to boundary validation and invalid environment configuration; recognized the relevant `try/except` block as the isolated area when invalid input was silently defaulted.
+- Reinforced that a clear fail-fast error is often safer than silently accepting an invalid explicit production configuration.
+- No new code artifact was created for this topic; learning evidence is conceptual/applied reasoning only.
+- Exact next topic: Git/GitHub workflow and `.gitignore` checkpoint.
