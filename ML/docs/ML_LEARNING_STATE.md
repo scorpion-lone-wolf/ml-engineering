@@ -7,11 +7,11 @@
 - **Track:** Track 1 — Classical ML + Production ML/MLOps
 - **State:** LEARNING
 - **Current stage:** Stage 0 — Environment and Engineering Setup
-- **Current topic:** Configuration vs. environment variables vs. secrets
-- **Last mastered topic:** Stage 0 environment isolation, dependency declaration, direct/transitive dependencies, locking, and exact environment synchronization
+- **Current topic:** Debugging fundamentals
+- **Last mastered topic:** Stage 0 configuration/environment variables/secrets, logging fundamentals, and core unit-testing fundamentals
 - **Unresolved core prerequisite gaps:** Probability/statistics is near-zero by self-report; this is expected and will be taught from first principles contextually rather than blocking Stage 0
 - **Needs review:** Python packaging mental model: `.venv` = runtime environment; `src/` = ordinary source-code layout directory; `ml_stage0/` = importable package; `pyproject.toml` = project/build/package configuration; editable install registers the local project for development
-- **Last updated:** 2026-09-16
+- **Last updated:** 2026-09-19
 
 ## Learner Baseline
 
@@ -68,7 +68,7 @@ If a supposedly "basic" linear-algebra/calculus concept is shaky when needed, te
 
 | Stage | Learning Status | Conceptual | Math/Stats | Coding | Applied Reasoning | Notes |
 |---|---|---:|---:|---:|---:|---|
-| 0 — Environment/Engineering Setup | LEARNING | Environment/dependency basics solid; package-layout concepts need reinforcement | N/A | Conda env, lock workflow, src-layout package and runnable script demonstrated | Understands notebook → reusable code motivation; packaging details retained for review | Next: configuration/env vars/secrets |
+| 0 — Environment/Engineering Setup | LEARNING | Environment/dependency, configuration, logging, and testing basics demonstrated; package-layout concepts need reinforcement | N/A | Conda env, lock workflow, src-layout package/script, validated env config, logging, and pytest tests demonstrated | Understands fail-fast configuration, log severity/filtering, test boundaries, monkeypatch isolation, expected exceptions, and parameterization | Next: debugging fundamentals |
 | 1 — ML Python Ecosystem | NOT STARTED | — | — | — | — | |
 | 2 — SQL/Data Handling | NOT STARTED | — | — | — | — | |
 | 3 — Contextual Math/Probability/Stats Bridge | NOT STARTED | — | — | — | — | Integration checkpoint, not standalone math course |
@@ -113,7 +113,12 @@ None recorded yet. Add entries only when an actual gap is demonstrated.
 
 ## Misconception Log — Append Only
 
-No misconceptions recorded yet.
+### 2026-09-19 — Interpreting a failing assertion
+- What I believed: A failed assertion such as `assert get_batch_size() == 64` means the function is not working as expected.
+- Correct model: A failed assertion only proves that actual behavior differs from the test expectation; the application code, the test expectation, or the test setup may be wrong.
+- How it was tested/repaired: Earlier deliberate failure changed the expected value from 25 to 30 while leaving correct application code unchanged; pytest correctly failed the bad test.
+- Recheck date/topic: Recheck during Stage 0 debugging fundamentals.
+
 
 Use:
 
@@ -169,15 +174,25 @@ For important topics, keep compact retention notes:
 
 ---
 
+### Configuration, Logging, and Core Unit Testing
+- **Problem it solves:** external runtime values need safe validation, running applications need observable behavior, and important code behavior needs automated regression checks.
+- **Core intuition:** treat environment values as untrusted strings at the configuration boundary; convert and validate early; use logs for operational events and `print` for intended program output; tests encode expected behavior and boundaries.
+- **Key concepts:** code vs. configuration vs. secrets; environment-variable defaults; type/domain validation; fail-fast errors; DEBUG/INFO/WARNING/ERROR/CRITICAL; log filtering; unit tests; Arrange–Act–Assert; pytest discovery; fixtures; `monkeypatch`; `pytest.raises`; parameterization.
+- **Common failure modes:** silently accepting invalid configuration; logging secrets; treating `print` as logging; emitting WARNING and ERROR for the same mutually-exclusive condition; assuming every failed test proves production code is wrong.
+- **Implementation pattern:** `src/ml_stage0/config.py`, logging in `scripts/demo_cleaning.py`, tests under `tests/test_cleaning.py` and `tests/test_config.py`.
+- **Engineering implication:** configuration errors fail near startup, operational behavior is observable, and regressions in cleaning/configuration behavior can be caught automatically.
+- **Evidence/project where used:** `ML/exercises/stage_00_project_structure/`; repository code verified through 2026-09-19.
+
+
 ## Exact Continuation Point
 
 ### Next Teaching Step
 
-Teach **configuration vs. environment variables vs. secrets** from first principles. Start with concrete examples and explain where each value belongs before introducing any configuration library or file format.
+Teach **debugging fundamentals** from first principles using a concrete broken Stage 0 example. Use the loop: reproduce → isolate → inspect state → form a hypothesis → test the hypothesis → verify the fix.
 
 ### Practice Before/With Next Lesson
 
-Extend the Stage 0 project with one non-secret application configuration value and one environment-provided value, without hardcoding secrets. Packaging/import concepts remain in the review queue and should be reinforced when the project next uses them rather than blocking forward progress.
+Debug one intentionally broken example in the Stage 0 project. After that, continue the Git/Linux checkpoint, packaging mental-model review, clean-code/reproducibility review, and README/setup workflow before the Stage 0 completion gate.
 
 ---
 
@@ -236,3 +251,14 @@ Extend the Stage 0 project with one non-secret application configuration value a
 - Earlier terminal evidence showed successful editable installation and expected output.
 - Learner requested that packaging/project-structure details remain as reference notes because the practical workflow worked but the packaging mental model is not yet fully intuitive.
 - Decision: do not falsely mark packaging internals mastered; retain them in the review queue and move to the next Stage 0 topic, configuration/environment variables/secrets.
+
+
+### 2026-09-19 — Configuration, logging, and testing fundamentals checkpoint
+
+- Configuration concepts demonstrated: code vs. configuration vs. secrets, environment-provided values, defaults, string-to-int conversion, positive-value domain validation, and fail-fast errors.
+- Logging concepts demonstrated: severity levels, threshold filtering, `logging.getLogger(__name__)`, parameterized log messages, print-vs-log distinction, secret-safety, and mutually-exclusive WARNING/ERROR conditions.
+- Testing concepts demonstrated with pytest: discovery, Arrange–Act–Assert, happy path, negative/boundary cases, `monkeypatch` environment isolation, `pytest.raises`, and parameterized invalid inputs.
+- Learner correctly explained why zero is a meaningful boundary, why tests must control environment state, and why parameterization reduces duplicated test code.
+- Correction retained for debugging review: failed assertions indicate a mismatch between actual and expected behavior, not automatically a defect in application code.
+- Packaging/src-layout/editable-install mental model remains in the review queue before the Stage 0 completion gate.
+- Exact next topic: debugging fundamentals.
