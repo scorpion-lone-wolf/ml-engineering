@@ -10,3 +10,25 @@ def test_clean_age_returns_valid_age():
 
     # Assert
     assert cleaned_age == 25
+
+
+def test_clean_age_returns_none_for_negative_age():
+    # Arrange
+    age = -25
+
+    # Act
+    cleaned_age = clean_age(age)
+
+    # Assert
+    assert cleaned_age is None
+
+
+def test_clean_age_dont_remove_zero_age():
+    # Arrange
+    age = 0
+
+    # Act
+    cleaned_age = clean_age(age)
+
+    # Assert
+    assert cleaned_age == 0
