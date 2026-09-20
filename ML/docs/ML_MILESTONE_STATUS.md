@@ -9,7 +9,7 @@
 - **Current implementation milestone:** Environment/dependency workflow + reusable src-layout package/script + configuration/logging/unit tests demonstrated
 - **Current project:** Stage 0 reusable professional ML project template
 - **Last verified completed deliverable:** Stage 0 configuration, logging, and pytest checkpoint implemented and verified
-- **Exact next work step:** Complete the Python packaging mental-model review, then clean-code/reproducibility review and README/setup workflow
+- **Exact next work step:** Complete clean-code fundamentals, then reproducibility, README/setup workflow, and the final Stage 0 reusable-template/mastery gate
 - **Last updated:** 2026-09-20
 
 ---
@@ -70,11 +70,11 @@ Evidence can include code, tests, experiment reports, design docs, benchmark rep
 
 ## Active Work
 
-Stage 0 environment/dependency, project-structure, configuration, logging, and core unit-testing exercises are implemented and verified. Debugging fundamentals and Git/GitHub + `.gitignore` fundamentals have been completed as learning/workflow checkpoints. The basic Linux/CLI conceptual checkpoint is complete. Current work has moved to the Python packaging mental-model review before the Stage 0 completion gate.
+Stage 0 environment/dependency, project-structure, configuration, logging, and core unit-testing exercises are implemented and verified. Debugging fundamentals and Git/GitHub + `.gitignore` fundamentals have been completed as learning/workflow checkpoints. The basic Linux/CLI and Python packaging mental-model checkpoints are complete. Current work has moved to clean-code fundamentals before reproducibility, README/setup, and the Stage 0 completion gate.
 
 ### Exact Next Engineering / Practice Step
 
-Complete the packaging mental-model review using the existing src-layout project, then clean-code/reproducibility and README/setup workflow before the Stage 0 reusable-template gate.
+Complete clean-code fundamentals using the existing Stage 0 project, then reproducibility, README/setup workflow, and the final Stage 0 reusable-template/mastery gate.
 
 ---
 
@@ -173,3 +173,11 @@ Do not mark `COMPLETE` until all are evidenced:
 - Learner demonstrated the required reasoning for navigation, file copy/move behavior, output overwrite/append, and stdout-to-stdin piping.
 - No new implementation artifact was created, so the evidence registry remains unchanged.
 - Stage 0 remains LEARNING; next checkpoint is the Python packaging mental-model review.
+
+
+### 2026-09-20 — Python packaging mental-model review completed
+
+- Learner demonstrated the conceptual distinction between environment, source-layout directory, importable package, module, project/build metadata, and editable installation.
+- Existing src-layout implementation remains verified from ML-EVID-002; no new implementation artifact was required for this review.
+- Packaging review item is closed.
+- Stage 0 remains LEARNING; next checkpoint is clean-code fundamentals, followed by reproducibility, README/setup workflow, and the final Stage 0 gate.
