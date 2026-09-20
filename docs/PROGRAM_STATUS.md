@@ -9,22 +9,22 @@
 - **Track 1 state:** ACTIVE
 - **Track 2 state:** LOCKED
 - **Current Track 1 stage:** Stage 0 — Environment and Engineering Setup
-- **Current sub-stage/topic:** Basic Linux/CLI checkpoint
-- **Last verified completed item:** Stage 0 Git/GitHub workflow and `.gitignore` learning checkpoint completed; practical ignore checks reported successful
+- **Current sub-stage/topic:** Python packaging mental-model review
+- **Last verified completed item:** Stage 0 basic Linux/CLI conceptual checkpoint completed
 - **Blocking prerequisite gap:** None blocking Stage 0. Probability/statistics baseline is near-zero and will be taught contextually in later stages as designed.
 - **Initialized:** 2026-09-14
 
 ## Exact Global Next Action
 
-Continue **Track 1 Stage 0** with the basic Linux/CLI checkpoint. Do not begin Deep Learning.
+Continue **Track 1 Stage 0** with the Python packaging mental-model review. Do not begin Deep Learning.
 
 ## Exact Next Teaching Step
 
-Review the basic Linux/CLI commands needed for ML engineering: navigation, file operations, inspection, environment variables, pipes, and redirection, using the Stage 0 project as context.
+Reinforce the Python packaging model around `.venv/`, `src/`, `ml_stage0/`, `pyproject.toml`, import search paths, and editable installation using the Stage 0 project.
 
 ## Exact Next Practice / Engineering Step
 
-Complete the basic Linux/CLI checkpoint, then revisit the packaging mental model, clean-code/reproducibility review, and README/setup workflow before the Stage 0 completion gate.
+Complete the packaging mental-model review, then continue clean-code/reproducibility review and README/setup workflow before the Stage 0 completion gate.
 
 ---
 
@@ -103,3 +103,12 @@ All must be true before changing Track 2 to `ACTIVE`:
 - Repository root `.gitignore` already contains Stage 0-relevant exclusions including `.venv/`, `.env`, `__pycache__/`, `.pytest_cache/`, coverage/build artifacts, and generated Python files.
 - Learner reported the practical `git status` / `git check-ignore -v` verification succeeded; command output was not independently captured in chat.
 - Stage 0 remains ACTIVE. Exact next topic: basic Linux/CLI checkpoint.
+
+
+### 2026-09-20 — Basic Linux/CLI conceptual checkpoint completed
+
+- Learner correctly explained parent-directory navigation with `cd ..`, copy vs. move semantics, overwrite vs. append redirection, and stdout-to-stdin piping.
+- Covered `pwd`, `cd`, `ls`, `mkdir`, `rm`, `cp`, `mv`, `cat`, `less`, `which`, environment variables, stdin/stdout/stderr, pipes, and output redirection.
+- Corrected terminology: `|` is a pipe, not pip; it connects stdout from the left command to stdin of the right command.
+- No new repository artifact was created for this conceptual checkpoint.
+- Stage 0 remains ACTIVE. Exact next topic: Python packaging mental-model review.
