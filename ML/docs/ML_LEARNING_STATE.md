@@ -7,11 +7,11 @@
 - **Track:** Track 1 — Classical ML + Production ML/MLOps
 - **State:** LEARNING
 - **Current stage:** Stage 0 — Environment and Engineering Setup
-- **Current topic:** Git/GitHub workflow and `.gitignore` checkpoint
-- **Last mastered topic:** Stage 0 debugging fundamentals
+- **Current topic:** Basic Linux/CLI checkpoint
+- **Last mastered topic:** Stage 0 Git/GitHub workflow and `.gitignore` fundamentals
 - **Unresolved core prerequisite gaps:** Probability/statistics is near-zero by self-report; this is expected and will be taught from first principles contextually rather than blocking Stage 0
 - **Needs review:** Python packaging mental model: `.venv` = runtime environment; `src/` = ordinary source-code layout directory; `ml_stage0/` = importable package; `pyproject.toml` = project/build/package configuration; editable install registers the local project for development
-- **Last updated:** 2026-09-19
+- **Last updated:** 2026-09-20
 
 ## Learner Baseline
 
@@ -68,7 +68,7 @@ If a supposedly "basic" linear-algebra/calculus concept is shaky when needed, te
 
 | Stage | Learning Status | Conceptual | Math/Stats | Coding | Applied Reasoning | Notes |
 |---|---|---:|---:|---:|---:|---|
-| 0 — Environment/Engineering Setup | LEARNING | Environment/dependency, configuration, logging, testing, and debugging basics demonstrated; package-layout concepts need reinforcement | N/A | Conda env, lock workflow, src-layout package/script, validated env config, logging, and pytest tests demonstrated | Uses expected-vs-actual, reproduce/isolate/inspect/hypothesize/verify debugging flow; understands silent-fallback risk | Next: Git/GitHub + `.gitignore` checkpoint |
+| 0 — Environment/Engineering Setup | LEARNING | Environment/dependency, configuration, logging, testing, debugging, and Git basics demonstrated; package-layout concepts need reinforcement | N/A | Conda env, lock workflow, src-layout package/script, validated env config, logging, pytest tests, and Git/ignore workflow demonstrated | Understands Git state transitions, commit boundaries, ignored-vs-tracked files, and secret-leak response | Next: basic Linux/CLI checkpoint |
 | 1 — ML Python Ecosystem | NOT STARTED | — | — | — | — | |
 | 2 — SQL/Data Handling | NOT STARTED | — | — | — | — | |
 | 3 — Contextual Math/Probability/Stats Bridge | NOT STARTED | — | — | — | — | Integration checkpoint, not standalone math course |
@@ -194,15 +194,25 @@ For important topics, keep compact retention notes:
 - **Evidence/project where used:** Stage 0 debugging exercises based on `clean_age()`, arithmetic examples, and `get_batch_size()`; conceptual checkpoint completed 2026-09-19 without fabricating a new code artifact.
 
 
+### Git/GitHub Workflow and `.gitignore`
+- **Problem it solves:** source changes need controlled local history, intentional commit boundaries, safe collaboration, and protection from accidentally tracking generated/local/sensitive files.
+- **Core intuition:** edits live in the working tree; `git add` stages a selected snapshot in the index; `git commit` records staged content locally; `git push` publishes commits to a remote such as GitHub.
+- **Key concepts:** working tree vs. staging/index vs. local repository vs. remote; tracked vs. untracked; focused commits; branch/PR mental model; `.gitignore` patterns; already-tracked-file caveat; secret rotation after exposure.
+- **Common failure modes:** blindly staging everything; assuming `git commit` sends changes to GitHub; assuming `.gitignore` erases already-tracked history; treating a committed secret as safe after merely deleting the file.
+- **Implementation pattern:** inspect with `git status`; stage intentional changes with `git add`; commit one coherent change; push to remote; use `git check-ignore -v` when diagnosing ignore behavior.
+- **Engineering implication:** clean repository history and correct ignore rules improve reproducibility, reviewability, and security.
+- **Evidence/project where used:** current repository root `.gitignore` plus ongoing Stage 0 commit/push workflow; learner reported `git status` and ignore checks succeeded on 2026-09-20.
+
+
 ## Exact Continuation Point
 
 ### Next Teaching Step
 
-Teach/review the **Git/GitHub workflow and `.gitignore` checkpoint**: working tree → staging → commit → remote, commit boundaries, branch/PR mental model, and why environments, caches, secrets, and generated files should not be committed.
+Teach/review the **basic Linux/CLI checkpoint** in the context of the Stage 0 project: `pwd`, `cd`, `ls`, `mkdir`, `rm`, `cp`, `mv`, `cat`, `less`, `which`, environment variables, pipes, and redirection.
 
 ### Practice Before/With Next Lesson
 
-Inspect the Stage 0 repository status and `.gitignore`, verify that environment/caches/secrets/generated artifacts are excluded appropriately, and connect the local Git states to the already-used push workflow. Then continue the basic Linux/CLI checkpoint.
+Use the commands on the Stage 0 project to navigate, inspect files, find the active Python executable, and practice simple pipes/redirection. Then revisit the packaging mental model before the Stage 0 completion gate.
 
 ---
 
@@ -282,3 +292,12 @@ Inspect the Stage 0 repository status and `.gitignore`, verify that environment/
 - Reinforced that a clear fail-fast error is often safer than silently accepting an invalid explicit production configuration.
 - No new code artifact was created for this topic; learning evidence is conceptual/applied reasoning only.
 - Exact next topic: Git/GitHub workflow and `.gitignore` checkpoint.
+
+
+### 2026-09-20 — Git/GitHub and `.gitignore` checkpoint
+
+- Learner correctly identified working-tree/unstaged state before `git add` and staging/index state after `git add` but before `git commit`.
+- Learner correctly explained that `.gitignore` does not undo already-tracked history and that an already-pushed secret should be considered exposed and rotated/revoked.
+- Root `.gitignore` was inspected and already covers the important Stage 0 local/generated/sensitive paths.
+- Learner reported successful practical verification with `git status` and `git check-ignore -v`; raw output was not pasted, so this is recorded as learner-reported practical evidence rather than independently captured terminal evidence.
+- Exact next topic: basic Linux/CLI checkpoint.
