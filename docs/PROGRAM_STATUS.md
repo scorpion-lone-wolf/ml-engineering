@@ -9,22 +9,22 @@
 - **Track 1 state:** ACTIVE
 - **Track 2 state:** LOCKED
 - **Current Track 1 stage:** Stage 0 — Environment and Engineering Setup
-- **Current sub-stage/topic:** Python packaging mental-model review
-- **Last verified completed item:** Stage 0 basic Linux/CLI conceptual checkpoint completed
+- **Current sub-stage/topic:** Clean-code fundamentals
+- **Last verified completed item:** Stage 0 Python packaging mental-model review completed
 - **Blocking prerequisite gap:** None blocking Stage 0. Probability/statistics baseline is near-zero and will be taught contextually in later stages as designed.
 - **Initialized:** 2026-09-14
 
 ## Exact Global Next Action
 
-Continue **Track 1 Stage 0** with the Python packaging mental-model review. Do not begin Deep Learning.
+Continue **Track 1 Stage 0** with clean-code fundamentals. Do not begin Deep Learning.
 
 ## Exact Next Teaching Step
 
-Reinforce the Python packaging model around `.venv/`, `src/`, `ml_stage0/`, `pyproject.toml`, import search paths, and editable installation using the Stage 0 project.
+Teach clean-code fundamentals in the Stage 0 project: focused functions, clear naming, avoiding duplication, useful type hints, and separation of configuration from application logic.
 
 ## Exact Next Practice / Engineering Step
 
-Complete the packaging mental-model review, then continue clean-code/reproducibility review and README/setup workflow before the Stage 0 completion gate.
+Complete clean-code fundamentals, then reproducibility, README/setup workflow, and the final Stage 0 reusable-project/mastery gate.
 
 ---
 
@@ -112,3 +112,14 @@ All must be true before changing Track 2 to `ACTIVE`:
 - Corrected terminology: `|` is a pipe, not pip; it connects stdout from the left command to stdin of the right command.
 - No new repository artifact was created for this conceptual checkpoint.
 - Stage 0 remains ACTIVE. Exact next topic: Python packaging mental-model review.
+
+
+### 2026-09-20 — Python packaging mental-model review completed
+
+- Learner correctly distinguished `.venv/` as the Python environment from `src/` as the source-layout directory and `ml_stage0/` as the importable package.
+- Learner correctly identified `config.py` as a module and explained why a src-layout package may not be importable until the environment is configured through installation.
+- Learner correctly explained `python -m pip install -e .`: use pip from the selected Python, install the current project in editable/development mode, read project/build metadata from `pyproject.toml`, and make the development source importable.
+- Important refinement retained: editable mode is still an installation; the exact mechanism is build-backend dependent and should not be memorized simply as “a symlink.”
+- Ordinary Python source edits are reflected without reinstalling after an editable install; packaging metadata or compiled-extension changes can require reinstall/rebuild.
+- Packaging/src-layout/editable-install review item is now closed.
+- Stage 0 remains ACTIVE. Exact next topic: clean-code fundamentals.
