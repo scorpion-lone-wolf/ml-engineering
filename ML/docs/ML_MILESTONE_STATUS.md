@@ -9,7 +9,7 @@
 - **Current implementation milestone:** Environment/dependency workflow + reusable src-layout package/script + configuration/logging/unit tests demonstrated
 - **Current project:** Stage 0 reusable professional ML project template
 - **Last verified completed deliverable:** Stage 0 configuration, logging, and pytest checkpoint implemented and verified
-- **Exact next work step:** Complete the basic Linux/CLI checkpoint, then packaging review, clean-code/reproducibility review, and README/setup workflow
+- **Exact next work step:** Complete the Python packaging mental-model review, then clean-code/reproducibility review and README/setup workflow
 - **Last updated:** 2026-09-20
 
 ---
@@ -70,11 +70,11 @@ Evidence can include code, tests, experiment reports, design docs, benchmark rep
 
 ## Active Work
 
-Stage 0 environment/dependency, project-structure, configuration, logging, and core unit-testing exercises are implemented and verified. Debugging fundamentals and Git/GitHub + `.gitignore` fundamentals have been completed as learning/workflow checkpoints. Current work has moved to the basic Linux/CLI checkpoint; packaging internals remain scheduled for reinforcement before the Stage 0 completion gate.
+Stage 0 environment/dependency, project-structure, configuration, logging, and core unit-testing exercises are implemented and verified. Debugging fundamentals and Git/GitHub + `.gitignore` fundamentals have been completed as learning/workflow checkpoints. The basic Linux/CLI conceptual checkpoint is complete. Current work has moved to the Python packaging mental-model review before the Stage 0 completion gate.
 
 ### Exact Next Engineering / Practice Step
 
-Complete the basic Linux/CLI checkpoint using the Stage 0 project, then revisit packaging, clean-code/reproducibility, and README/setup workflow before the Stage 0 reusable-template gate.
+Complete the packaging mental-model review using the existing src-layout project, then clean-code/reproducibility and README/setup workflow before the Stage 0 reusable-template gate.
 
 ---
 
@@ -166,3 +166,10 @@ Do not mark `COMPLETE` until all are evidenced:
 - Root `.gitignore` was independently inspected and contains the required Stage 0 exclusions for local environments, local secret files, Python/test caches, coverage, and build artifacts.
 - Learner reported successful local `git status` and `git check-ignore -v` checks; raw terminal output was not captured, so this is not added as a separate independently verified implementation evidence ID.
 - Stage 0 remains LEARNING; next checkpoint is basic Linux/CLI.
+
+
+### 2026-09-20 — Basic Linux/CLI conceptual checkpoint completed
+
+- Learner demonstrated the required reasoning for navigation, file copy/move behavior, output overwrite/append, and stdout-to-stdin piping.
+- No new implementation artifact was created, so the evidence registry remains unchanged.
+- Stage 0 remains LEARNING; next checkpoint is the Python packaging mental-model review.
