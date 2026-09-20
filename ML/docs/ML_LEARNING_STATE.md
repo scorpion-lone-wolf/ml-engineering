@@ -7,8 +7,8 @@
 - **Track:** Track 1 — Classical ML + Production ML/MLOps
 - **State:** LEARNING
 - **Current stage:** Stage 0 — Environment and Engineering Setup
-- **Current topic:** Basic Linux/CLI checkpoint
-- **Last mastered topic:** Stage 0 Git/GitHub workflow and `.gitignore` fundamentals
+- **Current topic:** Python packaging mental-model review
+- **Last mastered topic:** Stage 0 basic Linux/CLI fundamentals
 - **Unresolved core prerequisite gaps:** Probability/statistics is near-zero by self-report; this is expected and will be taught from first principles contextually rather than blocking Stage 0
 - **Needs review:** Python packaging mental model: `.venv` = runtime environment; `src/` = ordinary source-code layout directory; `ml_stage0/` = importable package; `pyproject.toml` = project/build/package configuration; editable install registers the local project for development
 - **Last updated:** 2026-09-20
@@ -68,7 +68,7 @@ If a supposedly "basic" linear-algebra/calculus concept is shaky when needed, te
 
 | Stage | Learning Status | Conceptual | Math/Stats | Coding | Applied Reasoning | Notes |
 |---|---|---:|---:|---:|---:|---|
-| 0 — Environment/Engineering Setup | LEARNING | Environment/dependency, configuration, logging, testing, debugging, and Git basics demonstrated; package-layout concepts need reinforcement | N/A | Conda env, lock workflow, src-layout package/script, validated env config, logging, pytest tests, and Git/ignore workflow demonstrated | Understands Git state transitions, commit boundaries, ignored-vs-tracked files, and secret-leak response | Next: basic Linux/CLI checkpoint |
+| 0 — Environment/Engineering Setup | LEARNING | Environment/dependency, configuration, logging, testing, debugging, Git, and Linux/CLI basics demonstrated; package-layout concepts need reinforcement | N/A | Conda env, lock workflow, src-layout package/script, validated env config, logging, pytest tests, and Git/ignore workflow demonstrated | Understands core CLI navigation/file operations, environment variables, pipes/redirection, and Git state transitions | Next: packaging mental-model review |
 | 1 — ML Python Ecosystem | NOT STARTED | — | — | — | — | |
 | 2 — SQL/Data Handling | NOT STARTED | — | — | — | — | |
 | 3 — Contextual Math/Probability/Stats Bridge | NOT STARTED | — | — | — | — | Integration checkpoint, not standalone math course |
@@ -208,11 +208,11 @@ For important topics, keep compact retention notes:
 
 ### Next Teaching Step
 
-Teach/review the **basic Linux/CLI checkpoint** in the context of the Stage 0 project: `pwd`, `cd`, `ls`, `mkdir`, `rm`, `cp`, `mv`, `cat`, `less`, `which`, environment variables, pipes, and redirection.
+Reinforce the **Python packaging mental model** using the Stage 0 project: `.venv/` vs. `src/` vs. the `ml_stage0` import package, `pyproject.toml`, Python's import search path, and what editable installation changes.
 
 ### Practice Before/With Next Lesson
 
-Use the commands on the Stage 0 project to navigate, inspect files, find the active Python executable, and practice simple pipes/redirection. Then revisit the packaging mental model before the Stage 0 completion gate.
+Explain and predict import behavior before and after `python -m pip install -e .`, then close the packaging review only after the learner can distinguish environment, source layout, import package, project metadata, and editable installation.
 
 ---
 
@@ -301,3 +301,11 @@ Use the commands on the Stage 0 project to navigate, inspect files, find the act
 - Root `.gitignore` was inspected and already covers the important Stage 0 local/generated/sensitive paths.
 - Learner reported successful practical verification with `git status` and `git check-ignore -v`; raw output was not pasted, so this is recorded as learner-reported practical evidence rather than independently captured terminal evidence.
 - Exact next topic: basic Linux/CLI checkpoint.
+
+
+### 2026-09-20 — Basic Linux/CLI checkpoint
+
+- Learner correctly reasoned about `cd ..`, copy vs. move, overwrite vs. append redirection, and how a pipe connects stdout from one command to stdin of another.
+- Core shell concepts covered: working directory, relative paths, file operations, executable lookup, environment variables, standard streams, pipes, and redirection.
+- No new code artifact was created; this is recorded as conceptual/applied reasoning evidence.
+- Exact next topic: Python packaging mental-model review.
