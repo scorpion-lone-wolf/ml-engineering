@@ -9,22 +9,22 @@
 - **Track 1 state:** ACTIVE
 - **Track 2 state:** LOCKED
 - **Current Track 1 stage:** Stage 0 — Environment and Engineering Setup
-- **Current sub-stage/topic:** Git/GitHub workflow and `.gitignore` checkpoint
-- **Last verified completed item:** Stage 0 debugging fundamentals learning checkpoint completed; configuration/logging/testing remain the latest verified implementation evidence
+- **Current sub-stage/topic:** Basic Linux/CLI checkpoint
+- **Last verified completed item:** Stage 0 Git/GitHub workflow and `.gitignore` learning checkpoint completed; practical ignore checks reported successful
 - **Blocking prerequisite gap:** None blocking Stage 0. Probability/statistics baseline is near-zero and will be taught contextually in later stages as designed.
 - **Initialized:** 2026-09-14
 
 ## Exact Global Next Action
 
-Continue **Track 1 Stage 0** with the Git/GitHub workflow and `.gitignore` checkpoint. Do not begin Deep Learning.
+Continue **Track 1 Stage 0** with the basic Linux/CLI checkpoint. Do not begin Deep Learning.
 
 ## Exact Next Teaching Step
 
-Review the Git/GitHub workflow from working tree → staging → commit → remote, then verify `.gitignore` handling for environments, caches, secrets, and generated files in the Stage 0 project.
+Review the basic Linux/CLI commands needed for ML engineering: navigation, file operations, inspection, environment variables, pipes, and redirection, using the Stage 0 project as context.
 
 ## Exact Next Practice / Engineering Step
 
-Complete the Git/GitHub + `.gitignore` checkpoint, then continue the basic Linux/CLI checkpoint, packaging review, clean-code/reproducibility review, and README/setup workflow before the Stage 0 completion gate.
+Complete the basic Linux/CLI checkpoint, then revisit the packaging mental model, clean-code/reproducibility review, and README/setup workflow before the Stage 0 completion gate.
 
 ---
 
@@ -93,3 +93,13 @@ All must be true before changing Track 2 to `ACTIVE`:
 - Reinforced that the crash/error location is not always the root-cause location, and that silent fallback can be more dangerous than a clear failure for invalid explicit configuration.
 - No new implementation artifact was created for this checkpoint, so no implementation evidence was fabricated.
 - Stage 0 remains ACTIVE. Exact next topic: Git/GitHub workflow and `.gitignore` checkpoint.
+
+
+### 2026-09-20 — Git/GitHub and `.gitignore` checkpoint completed
+
+- Learner correctly explained working tree/unstaged state, staging/index after `git add`, local commits, and remote publication via `git push`.
+- Learner correctly explained that `.gitignore` applies to intentionally untracked files and does not retroactively remove already-tracked files from history.
+- Learner correctly identified that an already-committed/pushed secret must be treated as exposed and rotated/revoked; history cleanup may also be required.
+- Repository root `.gitignore` already contains Stage 0-relevant exclusions including `.venv/`, `.env`, `__pycache__/`, `.pytest_cache/`, coverage/build artifacts, and generated Python files.
+- Learner reported the practical `git status` / `git check-ignore -v` verification succeeded; command output was not independently captured in chat.
+- Stage 0 remains ACTIVE. Exact next topic: basic Linux/CLI checkpoint.
