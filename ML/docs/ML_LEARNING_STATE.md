@@ -7,10 +7,10 @@
 - **Track:** Track 1 — Classical ML + Production ML/MLOps
 - **State:** LEARNING
 - **Current stage:** Stage 0 — Environment and Engineering Setup
-- **Current topic:** Python packaging mental-model review
-- **Last mastered topic:** Stage 0 basic Linux/CLI fundamentals
+- **Current topic:** Clean-code fundamentals
+- **Last mastered topic:** Stage 0 Python packaging / src-layout / editable-install mental model
 - **Unresolved core prerequisite gaps:** Probability/statistics is near-zero by self-report; this is expected and will be taught from first principles contextually rather than blocking Stage 0
-- **Needs review:** Python packaging mental model: `.venv` = runtime environment; `src/` = ordinary source-code layout directory; `ml_stage0/` = importable package; `pyproject.toml` = project/build/package configuration; editable install registers the local project for development
+- **Needs review:** None currently blocking Stage 0
 - **Last updated:** 2026-09-20
 
 ## Learner Baseline
@@ -68,7 +68,7 @@ If a supposedly "basic" linear-algebra/calculus concept is shaky when needed, te
 
 | Stage | Learning Status | Conceptual | Math/Stats | Coding | Applied Reasoning | Notes |
 |---|---|---:|---:|---:|---:|---|
-| 0 — Environment/Engineering Setup | LEARNING | Environment/dependency, configuration, logging, testing, debugging, Git, and Linux/CLI basics demonstrated; package-layout concepts need reinforcement | N/A | Conda env, lock workflow, src-layout package/script, validated env config, logging, pytest tests, and Git/ignore workflow demonstrated | Understands core CLI navigation/file operations, environment variables, pipes/redirection, and Git state transitions | Next: packaging mental-model review |
+| 0 — Environment/Engineering Setup | LEARNING | Environment/dependency, configuration, logging, testing, debugging, Git, Linux/CLI, and packaging basics demonstrated | N/A | Conda env, lock workflow, src-layout package/script, validated env config, logging, pytest tests, and Git/ignore workflow demonstrated | Understands CLI/Git workflow plus environment vs. src-layout vs. import package vs. editable install | Next: clean-code fundamentals |
 | 1 — ML Python Ecosystem | NOT STARTED | — | — | — | — | |
 | 2 — SQL/Data Handling | NOT STARTED | — | — | — | — | |
 | 3 — Contextual Math/Probability/Stats Bridge | NOT STARTED | — | — | — | — | Integration checkpoint, not standalone math course |
@@ -136,7 +136,7 @@ Use:
 
 | Topic | Reason | Review Trigger/Date | Status |
 |---|---|---|---|
-| Python packaging / src-layout / editable install | Practical workflow works, but the mental model is not yet intuitive | Revisit when the next project/package import is created or before Stage 0 completion gate | OPEN |
+| Python packaging / src-layout / editable install | Practical workflow and mental model now demonstrated | Rechecked 2026-09-20 | CLOSED |
 
 ---
 
@@ -208,11 +208,11 @@ For important topics, keep compact retention notes:
 
 ### Next Teaching Step
 
-Reinforce the **Python packaging mental model** using the Stage 0 project: `.venv/` vs. `src/` vs. the `ml_stage0` import package, `pyproject.toml`, Python's import search path, and what editable installation changes.
+Teach **clean-code fundamentals** using the existing Stage 0 project: focused functions, clear names, avoiding duplication, useful type hints, and separation of configuration from application logic.
 
 ### Practice Before/With Next Lesson
 
-Explain and predict import behavior before and after `python -m pip install -e .`, then close the packaging review only after the learner can distinguish environment, source layout, import package, project metadata, and editable installation.
+Review the existing Stage 0 code for one or two concrete clean-code improvements, then continue to the reproducibility checkpoint.
 
 ---
 
@@ -309,3 +309,13 @@ Explain and predict import behavior before and after `python -m pip install -e .
 - Core shell concepts covered: working directory, relative paths, file operations, executable lookup, environment variables, standard streams, pipes, and redirection.
 - No new code artifact was created; this is recorded as conceptual/applied reasoning evidence.
 - Exact next topic: Python packaging mental-model review.
+
+
+### 2026-09-20 — Python packaging mental-model checkpoint
+
+- Learner correctly separated `.venv/` (environment/runtime + installed packages), `src/` (source-layout directory), `ml_stage0/` (importable package), and `config.py` (module).
+- Learner correctly explained why `import ml_stage0` can fail before installation in a src-layout project because Python does not automatically search arbitrary nested source directories.
+- Learner correctly explained `python -m pip install -e .` as an editable installation of the current project using pip associated with the selected Python interpreter.
+- Refinement retained: editable install is still an installation; its concrete mechanism varies by backend and should not be reduced to “it just creates a symlink.”
+- Learner correctly explained why ordinary source edits are immediately reflected after editable installation.
+- Packaging review queue item closed. Exact next topic: clean-code fundamentals.
