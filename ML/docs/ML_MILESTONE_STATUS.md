@@ -6,10 +6,10 @@
 
 - **Track state:** ACTIVE
 - **Current stage:** Stage 0 — Environment and Engineering Setup
-- **Current implementation milestone:** Environment/dependency workflow + reusable src-layout package/script + configuration/logging/unit tests demonstrated
+- **Current implementation milestone:** Environment/dependency workflow + reusable src-layout package/script + configuration/logging/unit tests + clean-code refactor demonstrated
 - **Current project:** Stage 0 reusable professional ML project template
-- **Last verified completed deliverable:** Stage 0 configuration, logging, and pytest checkpoint implemented and verified
-- **Exact next work step:** Complete clean-code fundamentals, then reproducibility, README/setup workflow, and the final Stage 0 reusable-template/mastery gate
+- **Last verified completed deliverable:** Stage 0 clean-code refactor implemented and verified in repository
+- **Exact next work step:** Complete the reproducibility checkpoint, then README/setup workflow and the final Stage 0 reusable-template/mastery gate
 - **Last updated:** 2026-09-20
 
 ---
@@ -63,6 +63,7 @@ Add evidence instead of writing "done" without proof.
 | ML-EVID-001 | Stage 0 | Environment/dependency exercise | `ML/exercises/stage_00_environment/` | Conda environment workflow, dependency declaration/locking/sync practice | YES |
 | ML-EVID-002 | Stage 0 | Project structure/package exercise | `ML/exercises/stage_00_project_structure/` | Reusable src-layout package, package imports, runnable script, project metadata | YES |
 | ML-EVID-003 | Stage 0 | Configuration/logging/testing exercise | `ML/exercises/stage_00_project_structure/` | Environment-driven validated config, runtime logging behavior, pytest unit tests, monkeypatch isolation, expected exceptions, and parameterized boundaries | YES |
+| ML-EVID-004 | Stage 0 | Clean-code refactor | `ML/exercises/stage_00_project_structure/` / commit `3f8999af2dce00c8e55e42311aa00ff2f20b2070` | Explicit script entry point and preserved exception cause; clean-code structure applied without intentional behavior change | YES |
 
 Evidence can include code, tests, experiment reports, design docs, benchmark reports, deployment manifests, dashboards, postmortems, project retrospectives, and mastery-review notes.
 
@@ -70,11 +71,11 @@ Evidence can include code, tests, experiment reports, design docs, benchmark rep
 
 ## Active Work
 
-Stage 0 environment/dependency, project-structure, configuration, logging, and core unit-testing exercises are implemented and verified. Debugging fundamentals and Git/GitHub + `.gitignore` fundamentals have been completed as learning/workflow checkpoints. The basic Linux/CLI and Python packaging mental-model checkpoints are complete. Current work has moved to clean-code fundamentals before reproducibility, README/setup, and the Stage 0 completion gate.
+Stage 0 environment/dependency, project-structure, configuration, logging, and core unit-testing exercises are implemented and verified. Debugging fundamentals and Git/GitHub + `.gitignore` fundamentals have been completed as learning/workflow checkpoints. The basic Linux/CLI, Python packaging, and clean-code checkpoints are complete. Current work has moved to reproducibility before README/setup and the Stage 0 completion gate.
 
 ### Exact Next Engineering / Practice Step
 
-Complete clean-code fundamentals using the existing Stage 0 project, then reproducibility, README/setup workflow, and the final Stage 0 reusable-template/mastery gate.
+Complete the reproducibility checkpoint using the existing Stage 0 project, then README/setup workflow and the final Stage 0 reusable-template/mastery gate.
 
 ---
 
@@ -181,3 +182,13 @@ Do not mark `COMPLETE` until all are evidenced:
 - Existing src-layout implementation remains verified from ML-EVID-002; no new implementation artifact was required for this review.
 - Packaging review item is closed.
 - Stage 0 remains LEARNING; next checkpoint is clean-code fundamentals, followed by reproducibility, README/setup workflow, and the final Stage 0 gate.
+
+
+### 2026-09-21 — Clean-code refactor completed
+
+- Verified repository commit `3f8999af2dce00c8e55e42311aa00ff2f20b2070`.
+- `config.py` now chains the original `ValueError` when exposing a clearer invalid-batch-size message.
+- `demo_cleaning.py` now encapsulates executable workflow in `main() -> None` and uses the standard direct-execution guard.
+- Code review found no blocking issue for the clean-code checkpoint. The comprehension variable `x` could be renamed for readability later, but it is not a correctness or checkpoint blocker.
+- Repository implementation is verified; local pytest execution was not independently captured in this review.
+- Stage 0 remains LEARNING; next checkpoint is reproducibility.

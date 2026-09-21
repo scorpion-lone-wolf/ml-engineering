@@ -9,22 +9,22 @@
 - **Track 1 state:** ACTIVE
 - **Track 2 state:** LOCKED
 - **Current Track 1 stage:** Stage 0 — Environment and Engineering Setup
-- **Current sub-stage/topic:** Clean-code fundamentals
-- **Last verified completed item:** Stage 0 Python packaging mental-model review completed
+- **Current sub-stage/topic:** Reproducibility checkpoint
+- **Last verified completed item:** Stage 0 clean-code refactor verified in repository
 - **Blocking prerequisite gap:** None blocking Stage 0. Probability/statistics baseline is near-zero and will be taught contextually in later stages as designed.
 - **Initialized:** 2026-09-14
 
 ## Exact Global Next Action
 
-Continue **Track 1 Stage 0** with clean-code fundamentals. Do not begin Deep Learning.
+Continue **Track 1 Stage 0** with the reproducibility checkpoint. Do not begin Deep Learning.
 
 ## Exact Next Teaching Step
 
-Teach clean-code fundamentals in the Stage 0 project: focused functions, clear naming, avoiding duplication, useful type hints, and separation of configuration from application logic.
+Teach reproducibility from first principles: identify the code, dependencies, configuration, inputs, and execution steps required for another run to reproduce the same behavior.
 
 ## Exact Next Practice / Engineering Step
 
-Complete clean-code fundamentals, then reproducibility, README/setup workflow, and the final Stage 0 reusable-project/mastery gate.
+Complete the reproducibility checkpoint, then README/setup workflow and the final Stage 0 reusable-project/mastery gate.
 
 ---
 
@@ -123,3 +123,13 @@ All must be true before changing Track 2 to `ACTIVE`:
 - Ordinary Python source edits are reflected without reinstalling after an editable install; packaging metadata or compiled-extension changes can require reinstall/rebuild.
 - Packaging/src-layout/editable-install review item is now closed.
 - Stage 0 remains ACTIVE. Exact next topic: clean-code fundamentals.
+
+
+### 2026-09-21 — Clean-code checkpoint completed
+
+- Verified pushed commit `3f8999af2dce00c8e55e42311aa00ff2f20b2070` in the repository.
+- `src/ml_stage0/config.py` now preserves the original integer-conversion exception as the cause of the clearer configuration error using `raise ... from exc`.
+- `scripts/demo_cleaning.py` now has an explicit `main() -> None` application entry point guarded by `if __name__ == "__main__":`.
+- Learner demonstrated clean-code reasoning around focused responsibilities, accurate naming, avoiding duplicated preprocessing logic, mutation awareness, useful type hints, and avoiding premature abstraction.
+- Repository contents were independently verified; local test execution was not independently observed in this checkpoint.
+- Stage 0 remains ACTIVE. Exact next topic: reproducibility checkpoint.
