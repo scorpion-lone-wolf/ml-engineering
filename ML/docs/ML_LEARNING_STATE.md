@@ -7,8 +7,8 @@
 - **Track:** Track 1 — Classical ML + Production ML/MLOps
 - **State:** LEARNING
 - **Current stage:** Stage 0 — Environment and Engineering Setup
-- **Current topic:** Clean-code fundamentals
-- **Last mastered topic:** Stage 0 Python packaging / src-layout / editable-install mental model
+- **Current topic:** Reproducibility checkpoint
+- **Last mastered topic:** Stage 0 clean-code fundamentals
 - **Unresolved core prerequisite gaps:** Probability/statistics is near-zero by self-report; this is expected and will be taught from first principles contextually rather than blocking Stage 0
 - **Needs review:** None currently blocking Stage 0
 - **Last updated:** 2026-09-20
@@ -45,6 +45,15 @@ If a supposedly "basic" linear-algebra/calculus concept is shaky when needed, te
 
 ---
 
+## Teaching Interaction Contract
+
+- From this point onward, teach each section step by step without assuming unstated intermediate understanding.
+- For each important conclusion, show the observable facts or inputs, the reasoning that connects them, and the resulting conclusion in simple language.
+- Prefer jointly deriving the solution through small questions and examples before presenting the finished answer when the topic is instructional.
+- Do not skip from a problem statement directly to a solution when the missing intermediate reasoning is part of what should be learned.
+- When private/internal reasoning cannot be exposed, provide a concise user-facing rationale or derivation that is sufficient to understand why the step is valid.
+
+
 ## Diagnostic Status
 
 | Area | Status | Evidence / Notes |
@@ -68,7 +77,7 @@ If a supposedly "basic" linear-algebra/calculus concept is shaky when needed, te
 
 | Stage | Learning Status | Conceptual | Math/Stats | Coding | Applied Reasoning | Notes |
 |---|---|---:|---:|---:|---:|---|
-| 0 — Environment/Engineering Setup | LEARNING | Environment/dependency, configuration, logging, testing, debugging, Git, Linux/CLI, and packaging basics demonstrated | N/A | Conda env, lock workflow, src-layout package/script, validated env config, logging, pytest tests, and Git/ignore workflow demonstrated | Understands CLI/Git workflow plus environment vs. src-layout vs. import package vs. editable install | Next: clean-code fundamentals |
+| 0 — Environment/Engineering Setup | LEARNING | Environment/dependency, configuration, logging, testing, debugging, Git, Linux/CLI, packaging, and clean-code basics demonstrated | N/A | Conda env, lock workflow, src-layout package/script, validated env config, logging, pytest tests, Git/ignore workflow, and clean-code refactor demonstrated | Understands focused responsibilities, accurate naming, shared preprocessing, type-hint intent, mutation awareness, and explicit application entry points | Next: reproducibility checkpoint |
 | 1 — ML Python Ecosystem | NOT STARTED | — | — | — | — | |
 | 2 — SQL/Data Handling | NOT STARTED | — | — | — | — | |
 | 3 — Contextual Math/Probability/Stats Bridge | NOT STARTED | — | — | — | — | Integration checkpoint, not standalone math course |
@@ -204,15 +213,25 @@ For important topics, keep compact retention notes:
 - **Evidence/project where used:** current repository root `.gitignore` plus ongoing Stage 0 commit/push workflow; learner reported `git status` and ignore checks succeeded on 2026-09-20.
 
 
+### Clean-Code Fundamentals
+- **Problem it solves:** code can work correctly but still be difficult to understand, test, modify, and debug if responsibilities and intent are mixed together.
+- **Core intuition:** prefer focused responsibilities, names that describe actual behavior, shared implementations for rules that must stay consistent, useful type hints, and simple structure over unnecessary abstraction.
+- **Key concepts:** responsibility separation; cleaning vs. validation terminology; mutation and side effects; duplicated preprocessing and training-serving skew; type hints as developer/tooling contracts rather than runtime enforcement; explicit `main()` entry points.
+- **Common failure modes:** functions mixing data logic, terminal output, and file I/O; vague names such as `process_*`; duplicated training/prediction preprocessing; unused exception variables; executing workflows at import time; premature abstraction.
+- **Implementation pattern:** keep reusable data/config logic in package modules and orchestration in an explicit script entry point; preserve exception causes when wrapping errors.
+- **Engineering implication:** clearer boundaries reduce regression risk and help keep training and inference behavior aligned.
+- **Evidence/project where used:** repository commit `3f8999af2dce00c8e55e42311aa00ff2f20b2070`; verified `config.py` exception chaining and `demo_cleaning.py` `main()` refactor on 2026-09-21.
+
+
 ## Exact Continuation Point
 
 ### Next Teaching Step
 
-Teach **clean-code fundamentals** using the existing Stage 0 project: focused functions, clear names, avoiding duplication, useful type hints, and separation of configuration from application logic.
+Teach the **reproducibility checkpoint** from first principles: define what must be fixed or recorded so another person or machine can reproduce a run—code version, Python/dependencies, configuration, inputs, and exact execution steps.
 
 ### Practice Before/With Next Lesson
 
-Review the existing Stage 0 code for one or two concrete clean-code improvements, then continue to the reproducibility checkpoint.
+Build the reproducibility model step by step using the current Stage 0 project, then identify what the repository already captures and what the README/setup workflow still needs to document.
 
 ---
 
@@ -319,3 +338,14 @@ Review the existing Stage 0 code for one or two concrete clean-code improvements
 - Refinement retained: editable install is still an installation; its concrete mechanism varies by backend and should not be reduced to “it just creates a symlink.”
 - Learner correctly explained why ordinary source edits are immediately reflected after editable installation.
 - Packaging review queue item closed. Exact next topic: clean-code fundamentals.
+
+
+### 2026-09-21 — Clean-code fundamentals checkpoint
+
+- Learner correctly separated cleaning logic, terminal output, and file-writing responsibilities in a mixed-responsibility example.
+- Learner correctly preferred a shared `clean_age` implementation over duplicated training/prediction preprocessing and understood the risk of inconsistent preprocessing behavior.
+- Learner correctly interpreted `list[str]` as a type contract for readers/tooling while recognizing Python does not enforce it automatically at runtime.
+- Learner understood why `clean_users` is more accurate than `validate_users` when the function actually transforms invalid values.
+- Verified pushed refactor: exception chaining in `config.py` and explicit `main()` entry point in `demo_cleaning.py`.
+- Teaching preference recorded: derive future material step by step, make intermediate rationale explicit, and avoid assumed jumps.
+- Exact next topic: reproducibility checkpoint.
