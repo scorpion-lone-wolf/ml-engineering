@@ -19,7 +19,7 @@ def get_batch_size() -> int:
     try:
         batch_size = int(raw_value)
     except ValueError as exc:
-        raise ValueError(f"ML_STAGE0_BATCH_SIZE={raw_value} is not an integer")
+        raise ValueError(f"ML_STAGE0_BATCH_SIZE={raw_value} is not an integer") from exc
     if batch_size <= 0:
         raise ValueError(f"ML_STAGE0_BATCH_SIZE={raw_value} is not positive")
 
