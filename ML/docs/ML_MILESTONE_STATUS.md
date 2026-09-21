@@ -10,7 +10,7 @@
 - **Current project:** Stage 0 reusable professional ML project template
 - **Last verified completed deliverable:** Stage 0 clean-code refactor implemented and verified in repository
 - **Exact next work step:** Complete the reproducibility checkpoint, then README/setup workflow and the final Stage 0 reusable-template/mastery gate
-- **Last updated:** 2026-09-20
+- **Last updated:** 2026-09-21
 
 ---
 
@@ -63,7 +63,7 @@ Add evidence instead of writing "done" without proof.
 | ML-EVID-001 | Stage 0 | Environment/dependency exercise | `ML/exercises/stage_00_environment/` | Conda environment workflow, dependency declaration/locking/sync practice | YES |
 | ML-EVID-002 | Stage 0 | Project structure/package exercise | `ML/exercises/stage_00_project_structure/` | Reusable src-layout package, package imports, runnable script, project metadata | YES |
 | ML-EVID-003 | Stage 0 | Configuration/logging/testing exercise | `ML/exercises/stage_00_project_structure/` | Environment-driven validated config, runtime logging behavior, pytest unit tests, monkeypatch isolation, expected exceptions, and parameterized boundaries | YES |
-| ML-EVID-004 | Stage 0 | Clean-code refactor | `ML/exercises/stage_00_project_structure/` / commit `3f8999af2dce00c8e55e42311aa00ff2f20b2070` | Explicit script entry point and preserved exception cause; clean-code structure applied without intentional behavior change | YES |
+| ML-EVID-004 | Stage 0 | Clean-code refactor | `ML/exercises/stage_00_project_structure/` / commits `3f8999af2dce00c8e55e42311aa00ff2f20b2070`, `82b7e33dd4e8ffa34892c448c5102bcf2473a958` | Explicit script entry point, preserved exception cause, clearer comprehension naming, 9/9 passing tests, and expected script behavior after refactor | YES |
 
 Evidence can include code, tests, experiment reports, design docs, benchmark reports, deployment manifests, dashboards, postmortems, project retrospectives, and mastery-review notes.
 
@@ -189,6 +189,15 @@ Do not mark `COMPLETE` until all are evidenced:
 - Verified repository commit `3f8999af2dce00c8e55e42311aa00ff2f20b2070`.
 - `config.py` now chains the original `ValueError` when exposing a clearer invalid-batch-size message.
 - `demo_cleaning.py` now encapsulates executable workflow in `main() -> None` and uses the standard direct-execution guard.
-- Code review found no blocking issue for the clean-code checkpoint. The comprehension variable `x` could be renamed for readability later, but it is not a correctness or checkpoint blocker.
-- Repository implementation is verified; local pytest execution was not independently captured in this review.
+- Follow-up commit `82b7e33dd4e8ffa34892c448c5102bcf2473a958` replaced the generic comprehension variable `x` with `cleaned_age` for readability.
+- Learner-provided terminal evidence showed 9/9 tests passing after the refactor and expected script execution.
 - Stage 0 remains LEARNING; next checkpoint is reproducibility.
+
+
+### 2026-09-21 — Clean-code runtime evidence completed
+
+- Verified the follow-up readability change on `master`.
+- Learner provided pytest output showing all 9 tests passed after the clean-code refactor.
+- Learner provided application output showing expected logging and cleaned results.
+- ML-EVID-004 now includes both repository implementation and runtime verification.
+- Clean-code checkpoint is fully complete; Stage 0 continues with reproducibility.
