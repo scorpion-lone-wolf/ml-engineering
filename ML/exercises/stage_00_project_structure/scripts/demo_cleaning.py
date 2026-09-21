@@ -21,7 +21,7 @@ def main() -> None:
     logger.debug("Raw ages before cleaning: %s", ages)
 
     cleaned_ages = [clean_age(age) for age in ages]
-    invalid_count = sum(x is None for x in cleaned_ages)
+    invalid_count = sum(cleaned_age is None for cleaned_age in cleaned_ages)
 
     if ages and len(ages) == invalid_count:
         logger.error("All ages are invalid")
