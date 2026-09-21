@@ -10,7 +10,7 @@
 - **Track 2 state:** LOCKED
 - **Current Track 1 stage:** Stage 0 — Environment and Engineering Setup
 - **Current sub-stage/topic:** Reproducibility checkpoint
-- **Last verified completed item:** Stage 0 clean-code refactor verified in repository
+- **Last verified completed item:** Stage 0 clean-code refactor verified in repository with 9/9 passing tests and expected script execution
 - **Blocking prerequisite gap:** None blocking Stage 0. Probability/statistics baseline is near-zero and will be taught contextually in later stages as designed.
 - **Initialized:** 2026-09-14
 
@@ -133,3 +133,12 @@ All must be true before changing Track 2 to `ACTIVE`:
 - Learner demonstrated clean-code reasoning around focused responsibilities, accurate naming, avoiding duplicated preprocessing logic, mutation awareness, useful type hints, and avoiding premature abstraction.
 - Repository contents were independently verified; local test execution was not independently observed in this checkpoint.
 - Stage 0 remains ACTIVE. Exact next topic: reproducibility checkpoint.
+
+
+### 2026-09-21 — Clean-code runtime verification completed
+
+- Verified the follow-up cleanup commit on `master`: the invalid-count comprehension now uses the clearer `cleaned_age` variable name.
+- Learner provided terminal evidence showing all 9 pytest cases passed after the refactor.
+- Learner also provided runtime output showing INFO configuration logs, the expected all-invalid ERROR log, and the resulting cleaned list of `None` values.
+- Clean-code checkpoint is fully complete with repository and runtime evidence.
+- Exact next topic remains: reproducibility checkpoint.
