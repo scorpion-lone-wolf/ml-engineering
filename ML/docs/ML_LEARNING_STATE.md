@@ -11,7 +11,7 @@
 - **Last mastered topic:** Stage 0 clean-code fundamentals
 - **Unresolved core prerequisite gaps:** Probability/statistics is near-zero by self-report; this is expected and will be taught from first principles contextually rather than blocking Stage 0
 - **Needs review:** None currently blocking Stage 0
-- **Last updated:** 2026-09-20
+- **Last updated:** 2026-09-21
 
 ## Learner Baseline
 
@@ -348,4 +348,13 @@ Build the reproducibility model step by step using the current Stage 0 project, 
 - Learner understood why `clean_users` is more accurate than `validate_users` when the function actually transforms invalid values.
 - Verified pushed refactor: exception chaining in `config.py` and explicit `main()` entry point in `demo_cleaning.py`.
 - Teaching preference recorded: derive future material step by step, make intermediate rationale explicit, and avoid assumed jumps.
+- Exact next topic: reproducibility checkpoint.
+
+
+### 2026-09-21 — Clean-code runtime verification
+
+- Follow-up repository review confirmed the readability cleanup from `x` to `cleaned_age` in the invalid-count comprehension.
+- Learner-provided terminal evidence showed 9/9 pytest cases passing after the clean-code refactor.
+- Learner-provided script output confirmed the application still executes successfully with the expected configuration logs, all-invalid error log, and cleaned result.
+- This closes the clean-code checkpoint with both conceptual understanding and runtime verification.
 - Exact next topic: reproducibility checkpoint.
