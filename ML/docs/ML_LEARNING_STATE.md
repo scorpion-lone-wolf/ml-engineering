@@ -10,7 +10,7 @@
 - **Current topic:** Reproducibility checkpoint
 - **Last mastered topic:** Stage 0 dependency locking/sync within the reproducibility checkpoint
 - **Unresolved core prerequisite gaps:** Probability/statistics is near-zero by self-report; this is expected and will be taught from first principles contextually rather than blocking Stage 0
-- **Needs review:** Reproducibility cleanup before Stage 0 completion: restore `requires-python` as a compatibility declaration, document the exact tested Python runtime separately, add `.env.example`, and complete/verify setup instructions
+- **Needs review:** Reproducibility completion before Stage 0 closes: document the exact tested Python 3.14.7 runtime separately, add `.env.example`, refresh setup/output documentation, and complete a clean recreation verification
 - **Last updated:** 2026-09-22
 
 ## Learner Baseline
@@ -227,11 +227,11 @@ For important topics, keep compact retention notes:
 
 ### Next Teaching Step
 
-Continue the **reproducibility checkpoint** by correcting the runtime-specification split: keep `pyproject.toml` for project compatibility, document Python 3.14.7 as the exact tested environment, then add the configuration example and complete the clean setup/run procedure.
+Continue the **reproducibility checkpoint** by documenting Python 3.14.7 as the exact tested environment, then add the configuration example and complete the clean setup/run procedure.
 
 ### Practice Before/With Next Lesson
 
-Correct the Python runtime declaration, add `.env.example`, update the README/setup/output instructions, perform a clean recreation check, then run the final Stage 0 audit including the explicit IDE-workflow requirement.
+Add `.env.example`, update the README/setup/output instructions with Python 3.14.7 as the tested runtime, perform a clean recreation check, then run the final Stage 0 audit including the explicit IDE-workflow requirement.
 
 ---
 
@@ -371,3 +371,10 @@ Correct the Python runtime declaration, add `.env.example`, update the README/se
 - Correction still required: `requires-python ==3.14.7` conflates supported-project compatibility with the exact tested development runtime. Restore the compatibility declaration and document Python 3.14.7 separately in the setup workflow.
 - `.env.example` is not yet committed, so configuration reproducibility is still incomplete.
 - Exact continuation: runtime-specification correction → configuration example → README/setup refresh → clean recreation verification → final Stage 0 audit including IDE workflow.
+
+
+### 2026-09-22 — Compatibility/runtime distinction corrected in repository
+
+- Verified `requires-python = ">=3.11"` has been restored in the Stage 0 project's `pyproject.toml`.
+- Learner has demonstrated the distinction between supported project compatibility and the exact runtime used for a reproducible environment.
+- Remaining reproducibility work is documentation/configuration plus clean recreation verification, not dependency locking.
