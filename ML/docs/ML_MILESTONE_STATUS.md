@@ -6,11 +6,11 @@
 
 - **Track state:** ACTIVE
 - **Current stage:** Stage 0 — Environment and Engineering Setup
-- **Current implementation milestone:** Environment/dependency workflow + reusable src-layout package/script + configuration/logging/unit tests + clean-code refactor demonstrated
+- **Current implementation milestone:** Environment/dependency workflow + reusable src-layout package/script + configuration/logging/unit tests + clean-code refactor + reproducibility dependency locking/sync demonstrated
 - **Current project:** Stage 0 reusable professional ML project template
-- **Last verified completed deliverable:** Stage 0 clean-code refactor implemented and verified in repository
-- **Exact next work step:** Complete the reproducibility checkpoint, then README/setup workflow and the final Stage 0 reusable-template/mastery gate
-- **Last updated:** 2026-09-21
+- **Last verified completed deliverable:** Stage 0 reproducibility dependency-lock/sync sub-checkpoint implemented and verified
+- **Exact next work step:** Finish runtime/configuration/README reproducibility, perform a clean recreation check, then complete the final Stage 0 audit/mastery gate including the explicit IDE-workflow check
+- **Last updated:** 2026-09-22
 
 ---
 
@@ -64,6 +64,7 @@ Add evidence instead of writing "done" without proof.
 | ML-EVID-002 | Stage 0 | Project structure/package exercise | `ML/exercises/stage_00_project_structure/` | Reusable src-layout package, package imports, runnable script, project metadata | YES |
 | ML-EVID-003 | Stage 0 | Configuration/logging/testing exercise | `ML/exercises/stage_00_project_structure/` | Environment-driven validated config, runtime logging behavior, pytest unit tests, monkeypatch isolation, expected exceptions, and parameterized boundaries | YES |
 | ML-EVID-004 | Stage 0 | Clean-code refactor | `ML/exercises/stage_00_project_structure/` / commits `3f8999af2dce00c8e55e42311aa00ff2f20b2070`, `82b7e33dd4e8ffa34892c448c5102bcf2473a958` | Explicit script entry point, preserved exception cause, clearer comprehension naming, 9/9 passing tests, and expected script behavior after refactor | YES |
+| ML-EVID-005 | Stage 0 | Reproducibility dependency lock/sync | `ML/exercises/stage_00_project_structure/requirements.lock` / commit `60b6ab5c24f0913ffbe5a5812ccdad38b38de2da` | Exact direct/transitive dependency resolution, dry-run inspection, exact sync, editable project reinstall, 9/9 passing tests, and expected demo execution | YES |
 
 Evidence can include code, tests, experiment reports, design docs, benchmark reports, deployment manifests, dashboards, postmortems, project retrospectives, and mastery-review notes.
 
@@ -71,11 +72,11 @@ Evidence can include code, tests, experiment reports, design docs, benchmark rep
 
 ## Active Work
 
-Stage 0 environment/dependency, project-structure, configuration, logging, and core unit-testing exercises are implemented and verified. Debugging fundamentals and Git/GitHub + `.gitignore` fundamentals have been completed as learning/workflow checkpoints. The basic Linux/CLI, Python packaging, and clean-code checkpoints are complete. Current work has moved to reproducibility before README/setup and the Stage 0 completion gate.
+Stage 0 environment/dependency, project-structure, configuration, logging, and core unit-testing exercises are implemented and verified. Debugging fundamentals and Git/GitHub + `.gitignore` fundamentals have been completed as learning/workflow checkpoints. The basic Linux/CLI, Python packaging, and clean-code checkpoints are complete. Within reproducibility, the dependency lock/sync sub-checkpoint is verified. Runtime specification, configuration example, README/setup accuracy, and clean recreation verification remain before the Stage 0 completion gate.
 
 ### Exact Next Engineering / Practice Step
 
-Complete the reproducibility checkpoint using the existing Stage 0 project, then README/setup workflow and the final Stage 0 reusable-template/mastery gate.
+Finish reproducibility using the existing Stage 0 project: correct the Python compatibility/runtime split, add `.env.example`, refresh README/setup/output instructions, verify a clean recreation, then perform the final Stage 0 audit/mastery gate including IDE workflow.
 
 ---
 
@@ -201,3 +202,14 @@ Do not mark `COMPLETE` until all are evidenced:
 - Learner provided application output showing expected logging and cleaned results.
 - ML-EVID-004 now includes both repository implementation and runtime verification.
 - Clean-code checkpoint is fully complete; Stage 0 continues with reproducibility.
+
+
+### 2026-09-22 — Reproducibility dependency lock/sync verified
+
+- Verified committed `requirements.lock` containing exact pytest and transitive dependency versions.
+- Learner demonstrated `uv pip sync requirements.lock --dry-run`, predicted removal of the editable local project, then performed exact sync and observed that removal.
+- Learner reinstalled the current source checkout using `uv pip install -e .`.
+- Learner-provided runtime evidence showed Python 3.14.7, pytest 9.1.1, all 9 tests passing, and expected demo output after recreation.
+- This completes the dependency-lock/sync portion of reproducibility, not the entire reproducibility checkpoint.
+- Open items: restore project compatibility semantics in `requires-python`, document exact tested Python separately, commit a safe configuration example, refresh stale README/setup/output instructions, and perform a clean recreation check.
+- Final Stage 0 audit must also explicitly verify IDE workflow before the stage is marked complete.
