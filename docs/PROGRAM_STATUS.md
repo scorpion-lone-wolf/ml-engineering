@@ -20,11 +20,11 @@ Continue **Track 1 Stage 0** with the reproducibility checkpoint. Do not begin D
 
 ## Exact Next Teaching Step
 
-Continue reproducibility by separating project compatibility from the exact tested runtime, documenting configuration safely, and completing the setup/run instructions needed for a clean recreation.
+Continue reproducibility by documenting the exact tested Python 3.14.7 runtime separately from the restored `>=3.11` compatibility declaration, adding a safe configuration example, and completing the setup/run instructions needed for a clean recreation.
 
 ## Exact Next Practice / Engineering Step
 
-Finish the reproducibility checkpoint: restore the intended Python compatibility declaration, document Python 3.14.7 as the tested environment, add a committed configuration example, update stale README/setup/output instructions, and verify a clean recreation. Then run the final Stage 0 audit/mastery gate, including the remaining explicit IDE-workflow check.
+Finish the reproducibility checkpoint: document Python 3.14.7 as the tested environment, add a committed `.env.example`, update stale README/setup/output instructions, and verify a clean recreation. Then run the final Stage 0 audit/mastery gate, including the remaining explicit IDE-workflow check.
 
 ---
 
@@ -154,3 +154,11 @@ All must be true before changing Track 2 to `ACTIVE`:
 - Open correction: that commit also changed `requires-python` from the compatibility range `>=3.11` to `==3.14.7`. The exact tested runtime should be documented separately from project compatibility, so this must be corrected before the reproducibility checkpoint closes.
 - `.env.example` is not yet present in the pushed repository; configuration documentation therefore remains open.
 - Stage 0 remains ACTIVE. Exact next work: finish runtime/configuration/README reproducibility, verify clean recreation, then perform the final Stage 0 audit including IDE workflow.
+
+
+### 2026-09-22 — Python compatibility declaration corrected
+
+- Verified commit `50bb70d42a72859eae5e143d77ebc6156eadca5c` restoring `requires-python = ">=3.11"` in the Stage 0 project.
+- This correctly separates project compatibility from the exact tested development runtime (Python 3.14.7), which still needs to be documented in the reproducible setup instructions.
+- The committed dependency lock remains intact.
+- `.env.example` and the README/setup refresh are not yet present, so the reproducibility checkpoint remains open.
