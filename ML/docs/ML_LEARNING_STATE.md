@@ -8,10 +8,10 @@
 - **State:** LEARNING
 - **Current stage:** Stage 0 — Environment and Engineering Setup
 - **Current topic:** Reproducibility checkpoint
-- **Last mastered topic:** Stage 0 clean-code fundamentals
+- **Last mastered topic:** Stage 0 dependency locking/sync within the reproducibility checkpoint
 - **Unresolved core prerequisite gaps:** Probability/statistics is near-zero by self-report; this is expected and will be taught from first principles contextually rather than blocking Stage 0
-- **Needs review:** None currently blocking Stage 0
-- **Last updated:** 2026-09-21
+- **Needs review:** Reproducibility cleanup before Stage 0 completion: restore `requires-python` as a compatibility declaration, document the exact tested Python runtime separately, add `.env.example`, and complete/verify setup instructions
+- **Last updated:** 2026-09-22
 
 ## Learner Baseline
 
@@ -227,11 +227,11 @@ For important topics, keep compact retention notes:
 
 ### Next Teaching Step
 
-Teach the **reproducibility checkpoint** from first principles: define what must be fixed or recorded so another person or machine can reproduce a run—code version, Python/dependencies, configuration, inputs, and exact execution steps.
+Continue the **reproducibility checkpoint** by correcting the runtime-specification split: keep `pyproject.toml` for project compatibility, document Python 3.14.7 as the exact tested environment, then add the configuration example and complete the clean setup/run procedure.
 
 ### Practice Before/With Next Lesson
 
-Build the reproducibility model step by step using the current Stage 0 project, then identify what the repository already captures and what the README/setup workflow still needs to document.
+Correct the Python runtime declaration, add `.env.example`, update the README/setup/output instructions, perform a clean recreation check, then run the final Stage 0 audit including the explicit IDE-workflow requirement.
 
 ---
 
@@ -358,3 +358,16 @@ Build the reproducibility model step by step using the current Stage 0 project, 
 - Learner-provided script output confirmed the application still executes successfully with the expected configuration logs, all-invalid error log, and cleaned result.
 - This closes the clean-code checkpoint with both conceptual understanding and runtime verification.
 - Exact next topic: reproducibility checkpoint.
+
+
+### 2026-09-22 — Reproducibility dependency-lock/sync checkpoint
+
+- Learner correctly reasoned that reproducibility requires more than matching final output: relevant execution conditions must be identifiable/recreated.
+- Learner identified code version, Python runtime, dependency versions, configuration, inputs/data, and execution procedure as distinct reproducibility components.
+- Learner correctly distinguished dependency intent from exact resolution and explained why transitive dependencies must also be locked.
+- Generated `requirements.lock` from `pyproject.toml` with the dev extra; inspected the direct pytest dependency and its exact transitive dependencies.
+- Correctly predicted and verified that `uv pip sync requirements.lock` would remove the editable `ml-stage0` package because the external lock does not contain the local project.
+- Reinstalled the local checkout with `uv pip install -e .`; learner-provided evidence showed 9/9 tests passing and expected demo execution afterward.
+- Correction still required: `requires-python ==3.14.7` conflates supported-project compatibility with the exact tested development runtime. Restore the compatibility declaration and document Python 3.14.7 separately in the setup workflow.
+- `.env.example` is not yet committed, so configuration reproducibility is still incomplete.
+- Exact continuation: runtime-specification correction → configuration example → README/setup refresh → clean recreation verification → final Stage 0 audit including IDE workflow.
