@@ -2,7 +2,7 @@
 name = "ml-stage0"
 version = "0.1.0"
 description = "Stage 0 ML engineering project structure exercise"
-requires-python = ">=3.11"
+requires-python = "==3.14.7"
 dependencies = []
 
 [project.optional-dependencies]
