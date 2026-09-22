@@ -9,7 +9,7 @@
 - **Current implementation milestone:** Environment/dependency workflow + reusable src-layout package/script + configuration/logging/unit tests + clean-code refactor + reproducibility dependency locking/sync demonstrated
 - **Current project:** Stage 0 reusable professional ML project template
 - **Last verified completed deliverable:** Stage 0 reproducibility dependency-lock/sync sub-checkpoint implemented and verified
-- **Exact next work step:** Finish runtime/configuration/README reproducibility, perform a clean recreation check, then complete the final Stage 0 audit/mastery gate including the explicit IDE-workflow check
+- **Exact next work step:** Finish reproducibility documentation/configuration (`.env.example`, tested Python 3.14.7, README/setup/output), perform a clean recreation check, then complete the final Stage 0 audit/mastery gate including the explicit IDE-workflow check
 - **Last updated:** 2026-09-22
 
 ---
@@ -72,11 +72,11 @@ Evidence can include code, tests, experiment reports, design docs, benchmark rep
 
 ## Active Work
 
-Stage 0 environment/dependency, project-structure, configuration, logging, and core unit-testing exercises are implemented and verified. Debugging fundamentals and Git/GitHub + `.gitignore` fundamentals have been completed as learning/workflow checkpoints. The basic Linux/CLI, Python packaging, and clean-code checkpoints are complete. Within reproducibility, the dependency lock/sync sub-checkpoint is verified. Runtime specification, configuration example, README/setup accuracy, and clean recreation verification remain before the Stage 0 completion gate.
+Stage 0 environment/dependency, project-structure, configuration, logging, and core unit-testing exercises are implemented and verified. Debugging fundamentals and Git/GitHub + `.gitignore` fundamentals have been completed as learning/workflow checkpoints. The basic Linux/CLI, Python packaging, and clean-code checkpoints are complete. Within reproducibility, the dependency lock/sync sub-checkpoint is verified. Exact tested-runtime documentation, configuration example, README/setup accuracy, and clean recreation verification remain before the Stage 0 completion gate.
 
 ### Exact Next Engineering / Practice Step
 
-Finish reproducibility using the existing Stage 0 project: correct the Python compatibility/runtime split, add `.env.example`, refresh README/setup/output instructions, verify a clean recreation, then perform the final Stage 0 audit/mastery gate including IDE workflow.
+Finish reproducibility using the existing Stage 0 project: document Python 3.14.7 as the tested runtime, add `.env.example`, refresh README/setup/output instructions, verify a clean recreation, then perform the final Stage 0 audit/mastery gate including IDE workflow.
 
 ---
 
@@ -213,3 +213,11 @@ Do not mark `COMPLETE` until all are evidenced:
 - This completes the dependency-lock/sync portion of reproducibility, not the entire reproducibility checkpoint.
 - Open items: restore project compatibility semantics in `requires-python`, document exact tested Python separately, commit a safe configuration example, refresh stale README/setup/output instructions, and perform a clean recreation check.
 - Final Stage 0 audit must also explicitly verify IDE workflow before the stage is marked complete.
+
+
+### 2026-09-22 — Python compatibility fix verified
+
+- Verified commit `50bb70d42a72859eae5e143d77ebc6156eadca5c` restoring the Stage 0 project's compatibility declaration to `requires-python = ">=3.11"`.
+- The exact tested runtime remains Python 3.14.7 and should be documented in setup instructions rather than encoded as the only supported project version.
+- Dependency locking/sync evidence remains valid and unchanged.
+- Reproducibility is still in progress pending configuration/setup documentation and clean recreation verification.
