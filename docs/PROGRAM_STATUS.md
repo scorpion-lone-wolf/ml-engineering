@@ -10,7 +10,7 @@
 - **Track 2 state:** LOCKED
 - **Current Track 1 stage:** Stage 0 — Environment and Engineering Setup
 - **Current sub-stage/topic:** Reproducibility checkpoint
-- **Last verified completed item:** Stage 0 clean-code refactor verified in repository with 9/9 passing tests and expected script execution
+- **Last verified completed item:** Stage 0 reproducibility dependency-lock/sync sub-checkpoint verified with committed `requirements.lock`, editable reinstall, 9/9 passing tests, and expected script execution
 - **Blocking prerequisite gap:** None blocking Stage 0. Probability/statistics baseline is near-zero and will be taught contextually in later stages as designed.
 - **Initialized:** 2026-09-14
 
@@ -20,11 +20,11 @@ Continue **Track 1 Stage 0** with the reproducibility checkpoint. Do not begin D
 
 ## Exact Next Teaching Step
 
-Teach reproducibility from first principles: identify the code, dependencies, configuration, inputs, and execution steps required for another run to reproduce the same behavior.
+Continue reproducibility by separating project compatibility from the exact tested runtime, documenting configuration safely, and completing the setup/run instructions needed for a clean recreation.
 
 ## Exact Next Practice / Engineering Step
 
-Complete the reproducibility checkpoint, then README/setup workflow and the final Stage 0 reusable-project/mastery gate.
+Finish the reproducibility checkpoint: restore the intended Python compatibility declaration, document Python 3.14.7 as the tested environment, add a committed configuration example, update stale README/setup/output instructions, and verify a clean recreation. Then run the final Stage 0 audit/mastery gate, including the remaining explicit IDE-workflow check.
 
 ---
 
@@ -142,3 +142,15 @@ All must be true before changing Track 2 to `ACTIVE`:
 - Learner also provided runtime output showing INFO configuration logs, the expected all-invalid ERROR log, and the resulting cleaned list of `None` values.
 - Clean-code checkpoint is fully complete with repository and runtime evidence.
 - Exact next topic remains: reproducibility checkpoint.
+
+
+### 2026-09-22 — Reproducibility dependency layer verified
+
+- Learner derived the reproducibility model across code version, runtime, dependencies, configuration, inputs, and execution procedure.
+- Generated and committed `ML/exercises/stage_00_project_structure/requirements.lock` using uv's pip-compatible compile workflow; the lock records pytest plus its transitive dependencies at exact resolved versions.
+- Demonstrated `uv pip sync requirements.lock --dry-run`, correctly predicted that the editable local project would be removed because it is not part of the external dependency lock, then performed the actual sync.
+- Reinstalled the current source checkout with `uv pip install -e .`; learner-provided runtime evidence then showed 9/9 pytest cases passing and the demo script producing the expected current output.
+- Repository commit `60b6ab5c24f0913ffbe5a5812ccdad38b38de2da` is verified for the lockfile addition.
+- Open correction: that commit also changed `requires-python` from the compatibility range `>=3.11` to `==3.14.7`. The exact tested runtime should be documented separately from project compatibility, so this must be corrected before the reproducibility checkpoint closes.
+- `.env.example` is not yet present in the pushed repository; configuration documentation therefore remains open.
+- Stage 0 remains ACTIVE. Exact next work: finish runtime/configuration/README reproducibility, verify clean recreation, then perform the final Stage 0 audit including IDE workflow.
