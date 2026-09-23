@@ -5,11 +5,11 @@
 ## Current Snapshot
 
 - **Track state:** ACTIVE
-- **Current stage:** Stage 0 — Environment and Engineering Setup
-- **Current implementation milestone:** Stage 0 reusable project template with environment/dependency workflow, src-layout package, configuration/logging/tests, clean-code refactor, and reproducibility workflow demonstrated
-- **Current project:** Stage 0 reusable professional ML project template
-- **Last verified completed deliverable:** Stage 0 IDE workflow checkpoint completed with project-local interpreter verification and successful 9-test run
-- **Exact next work step:** Run the final Stage 0 reusable-template/mastery audit against every Stage 0 curriculum requirement
+- **Current stage:** Stage 1 — ML Python Ecosystem Checkpoint
+- **Current implementation milestone:** Stage 0 reusable professional ML project template completed; Stage 1 scientific-Python checkpoint starting
+- **Current project:** Stage 1 ML Python ecosystem checkpoint exercises
+- **Last verified completed deliverable:** Stage 0 reusable professional ML project template and mastery gate completed
+- **Exact next work step:** Begin Stage 1 with a gap-focused NumPy/Pandas/visualization diagnostic and create only the exercises needed for uncovered ML-specific Python gaps
 - **Last updated:** 2026-09-23
 
 ---
@@ -18,7 +18,7 @@
 
 | Stage | Status | Required Evidence / Deliverable | Evidence Location |
 |---|---|---|---|
-| 0 — Environment and Engineering Setup | LEARNING | Reusable professional ML project template; environment/reproducibility/testing workflow demonstrated | `ML/exercises/stage_00_environment/`; `ML/exercises/stage_00_project_structure/` |
+| 0 — Environment and Engineering Setup | COMPLETE | Reusable professional ML project template; environment/reproducibility/testing workflow demonstrated | `ML/exercises/stage_00_environment/`; `ML/exercises/stage_00_project_structure/` |
 | 1 — ML Python Ecosystem Checkpoint | NOT STARTED | Gap-focused scientific-Python/data tasks; messy-data mini work | — |
 | 2 — SQL and Data Handling | NOT STARTED | Correct ML-oriented SQL tasks including point-in-time/leakage reasoning | — |
 | 3 — Contextual Math/Probability/Stats Bridge | NOT STARTED | Integration checkpoint demonstrating prerequisites needed for upcoming algorithms | — |
@@ -73,11 +73,11 @@ Evidence can include code, tests, experiment reports, design docs, benchmark rep
 
 ## Active Work
 
-Stage 0 environment/dependency, project-structure, configuration, logging, and core unit-testing exercises are implemented and verified. Debugging fundamentals and Git/GitHub + `.gitignore` fundamentals have been completed as learning/workflow checkpoints. The basic Linux/CLI, Python packaging, and clean-code checkpoints are complete. Reproducibility and the explicit IDE workflow checkpoint are complete for Stage 0 scope. The only remaining work is the final Stage 0 curriculum/reusable-template audit and any gap it surfaces.
+Stage 0 environment/dependency, project-structure, configuration, logging, and core unit-testing exercises are implemented and verified. Debugging fundamentals and Git/GitHub + `.gitignore` fundamentals have been completed as learning/workflow checkpoints. The basic Linux/CLI, Python packaging, and clean-code checkpoints are complete. Stage 0 is complete after the final curriculum/reusable-template audit and notebook-vs-production-code mastery check. Active work has moved to Stage 1 — ML Python Ecosystem Checkpoint.
 
 ### Exact Next Engineering / Practice Step
 
-Perform the final Stage 0 audit/mastery gate against the curriculum and repository evidence.
+Begin Stage 1 with a focused scientific-Python diagnostic, then implement only the gap-focused exercises required by the Stage 1 gate.
 
 ---
 
@@ -241,3 +241,12 @@ Do not mark `COMPLETE` until all are evidenced:
 - Learner then reported all 9 pytest cases passing.
 - IDE workflow requirement is complete for Stage 0 scope.
 - Remaining work: final Stage 0 curriculum and reusable professional project-template audit/mastery gate.
+
+
+### 2026-09-23 — Stage 0 completion gate passed
+
+- Final audit confirmed coverage of Python environment setup, virtual environments, Jupyter/scripts, IDE workflow, package management, Git/GitHub, Linux/CLI, project structure, dependency files, configuration/environment variables, logging, debugging, testing, clean code, reproducibility, and notebook-vs-production-code workflow.
+- Deliverable is complete: reusable professional Stage 0 ML project template with src-layout package, tests, configuration, logging, exact dependency lock, safe configuration template, reproducible setup documentation, and successful learner-reported clean recreation.
+- Final notebook-vs-production-code understanding check passed.
+- Stage 0 status changed to COMPLETE.
+- Active milestone moves to Stage 1 — ML Python Ecosystem Checkpoint.
