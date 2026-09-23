@@ -132,12 +132,116 @@ The same preprocessing code may eventually be used by:
 
 Keeping the logic in one reusable module reduces training-serving skew and maintenance bugs.
 
+
+## Reproducible local setup
+
+The project declares:
+
+```toml
+requires-python = ">=3.11"
+```
+
+This is the project's supported Python compatibility range.
+
+The Stage 0 reproducibility workflow documented and tested during this exercise uses:
+
+```text
+Python 3.14.7
+```
+
+The exact tested runtime is documented separately because a project's supported Python range and the specific runtime used to reproduce one development environment are different concepts.
+
+### 1. Create the local Python environment
+
+From the project directory:
+
+```bash
+conda create --prefix ./.venv python=3.14.7
+conda activate ./.venv
+```
+
+Verify the selected interpreter:
+
+```bash
+python --version
+```
+
+Expected tested version:
+
+```text
+Python 3.14.7
+```
+
+### 2. Synchronize the locked external dependencies
+
+```bash
+uv pip sync requirements.lock
+```
+
+`requirements.lock` records the exact resolved external dependency versions, including transitive dependencies.
+
+### 3. Install this project in editable mode
+
+```bash
+uv pip install -e .
+```
+
+The dependency synchronization step handles the locked external packages separately from the local project source. Installing the project in editable mode makes `src/ml_stage0/` importable while continuing to use the local source files during development.
+
+### 4. Configuration
+
+The repository contains:
+
+```text
+.env.example
+```
+
+with the supported example configuration:
+
+```dotenv
+ML_STAGE0_LOG_LEVEL=INFO
+ML_STAGE0_BATCH_SIZE=32
+```
+
+The real `.env` file is ignored by Git and should not be used to commit local or secret values.
+
+This project currently reads configuration using `os.getenv`. It does not automatically load `.env` or `.env.example` files.
+
+To provide values through the shell:
+
+```bash
+export ML_STAGE0_LOG_LEVEL=INFO
+export ML_STAGE0_BATCH_SIZE=32
+```
+
+If these variables are not supplied, the current application code uses its configured defaults.
+
+### 5. Run the tests
+
+```bash
+python -m pytest -v
+```
+
+The verified Stage 0 project currently contains 9 tests.
+
+### 6. Run the demo application
+
+```bash
+python scripts/demo_cleaning.py
+```
+
+With the current committed demo input, the cleaned result is:
+
+```text
+[None, None, None, None, None]
+```
+
 ## Exercise result
 
 `demo_cleaning.py` imports `clean_age` from the package and produces:
 
 ```text
-[25, None, 32, 40, None]
+[None, None, None, None, None]
 ```
 
 This proves the script can use the reusable package code rather than duplicating it.
