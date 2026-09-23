@@ -8,23 +8,23 @@
 - **Active track:** Track 1 — Classical ML + Production ML/MLOps
 - **Track 1 state:** ACTIVE
 - **Track 2 state:** LOCKED
-- **Current Track 1 stage:** Stage 0 — Environment and Engineering Setup
-- **Current sub-stage/topic:** Final Stage 0 audit/mastery gate
-- **Last verified completed item:** Stage 0 IDE workflow checkpoint completed with project-local Python 3.14.7 interpreter and successful 9-test run in the VS Code workflow
+- **Current Track 1 stage:** Stage 1 — ML Python Ecosystem Checkpoint
+- **Current sub-stage/topic:** Stage 1 scientific-Python gap check
+- **Last verified completed item:** Stage 0 — Environment and Engineering Setup completed, including the reusable professional project-template deliverable and final notebook-vs-production-code mastery check
 - **Blocking prerequisite gap:** None blocking Stage 0. Probability/statistics baseline is near-zero and will be taught contextually in later stages as designed.
 - **Initialized:** 2026-09-14
 
 ## Exact Global Next Action
 
-Continue **Track 1 Stage 0** with the final Stage 0 audit/mastery gate. Do not begin Stage 1 until the Stage 0 curriculum and reusable-template evidence are fully audited.
+Begin **Track 1 Stage 1 — ML Python Ecosystem Checkpoint**. Deep Learning remains locked.
 
 ## Exact Next Teaching Step
 
-Run the final Stage 0 audit against the curriculum and repository evidence, close any remaining gap, and only then mark Stage 0 complete.
+Run a focused Stage 1 gap check for ML-specific Python: NumPy arrays/shapes/broadcasting/vectorization, Pandas data manipulation, visualization, and numerical/data debugging. Compress anything already demonstrated.
 
 ## Exact Next Practice / Engineering Step
 
-Audit every Stage 0 curriculum requirement and the reusable professional project-template deliverable against repository and demonstrated learning evidence.
+Start Stage 1 with a short diagnostic on NumPy/Pandas/visualization fundamentals, then teach only the gaps needed for ML work.
 
 ---
 
@@ -180,3 +180,12 @@ All must be true before changing Track 2 to `ACTIVE`:
 - Initial pytest failure correctly exposed that pytest was not installed in that local environment; dependency synchronization fixed the environment rather than masking the issue.
 - Learner then reported the IDE workflow completed successfully with all 9 pytest cases passing.
 - IDE workflow checkpoint is complete. Exact next work: final Stage 0 curriculum/reusable-template audit and mastery gate.
+
+
+### 2026-09-23 — Stage 0 completed
+
+- Final Stage 0 audit found all required curriculum items covered with repository and learning evidence.
+- Learner correctly explained why reusable preprocessing such as `clean_age` should live in shared modules rather than be duplicated across notebooks/training/testing/inference, explicitly identifying drift/inconsistency risk.
+- Learner correctly described Jupyter notebooks as appropriate for exploration, prototyping, and quick proofs of concept, with stable reusable logic moved into Python modules for production/reuse.
+- The reusable Stage 0 project template includes a src-layout package, configuration, logging, tests, dependency metadata, exact dependency lock, safe configuration template, documented reproducible setup, and verified IDE workflow.
+- Stage 0 is COMPLETE. Exact next stage: Stage 1 — ML Python Ecosystem Checkpoint.
