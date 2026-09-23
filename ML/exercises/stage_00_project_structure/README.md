@@ -16,16 +16,22 @@ The goal is to avoid duplicated logic such as preprocessing code being copied in
 
 ```text
 stage_00_project_structure/
+├── .env.example
 ├── README.md
 ├── pyproject.toml
+├── requirements.lock
 ├── scripts/
 │   └── demo_cleaning.py
-└── src/
-    └── ml_stage0/
-        ├── __init__.py
-        └── features/
-            ├── __init__.py
-            └── cleaning.py
+├── src/
+│   └── ml_stage0/
+│       ├── __init__.py
+│       ├── config.py
+│       └── features/
+│           ├── __init__.py
+│           └── cleaning.py
+└── tests/
+    ├── test_cleaning.py
+    └── test_config.py
 ```
 
 ### What each part means
