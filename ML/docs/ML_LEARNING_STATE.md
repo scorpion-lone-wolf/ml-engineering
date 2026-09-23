@@ -7,11 +7,11 @@
 - **Track:** Track 1 — Classical ML + Production ML/MLOps
 - **State:** LEARNING
 - **Current stage:** Stage 0 — Environment and Engineering Setup
-- **Current topic:** Reproducibility checkpoint
-- **Last mastered topic:** Stage 0 dependency locking/sync within the reproducibility checkpoint
+- **Current topic:** IDE workflow checkpoint
+- **Last mastered topic:** Stage 0 reproducibility
 - **Unresolved core prerequisite gaps:** Probability/statistics is near-zero by self-report; this is expected and will be taught from first principles contextually rather than blocking Stage 0
-- **Needs review:** Reproducibility completion before Stage 0 closes: document the exact tested Python 3.14.7 runtime separately, add `.env.example`, refresh setup/output documentation, and complete a clean recreation verification
-- **Last updated:** 2026-09-22
+- **Needs review:** None currently blocking Stage 0; explicit IDE workflow evidence and final Stage 0 audit remain
+- **Last updated:** 2026-09-23
 
 ## Learner Baseline
 
@@ -227,11 +227,11 @@ For important topics, keep compact retention notes:
 
 ### Next Teaching Step
 
-Continue the **reproducibility checkpoint** by documenting Python 3.14.7 as the exact tested environment, then add the configuration example and complete the clean setup/run procedure.
+Teach the **IDE workflow checkpoint**: distinguish project root, selected interpreter, integrated terminal environment, editor/run configuration, and debugger behavior.
 
 ### Practice Before/With Next Lesson
 
-Add `.env.example`, update the README/setup/output instructions with Python 3.14.7 as the tested runtime, perform a clean recreation check, then run the final Stage 0 audit including the explicit IDE-workflow requirement.
+Complete a short IDE workflow exercise, then run the final Stage 0 audit/mastery gate.
 
 ---
 
@@ -378,3 +378,12 @@ Add `.env.example`, update the README/setup/output instructions with Python 3.14
 - Verified `requires-python = ">=3.11"` has been restored in the Stage 0 project's `pyproject.toml`.
 - Learner has demonstrated the distinction between supported project compatibility and the exact runtime used for a reproducible environment.
 - Remaining reproducibility work is documentation/configuration plus clean recreation verification, not dependency locking.
+
+
+### 2026-09-23 — Reproducibility checkpoint completed
+
+- Learner demonstrated the distinction between project compatibility and an exact tested runtime.
+- Learner understood that exact dependency locking covers direct and transitive packages but does not by itself reproduce code, runtime, configuration, inputs, or execution procedure.
+- Repository now contains `requirements.lock`, a safe committed `.env.example`, and README instructions documenting the tested Python 3.14.7 environment and verified setup sequence.
+- Learner reported that a fresh-clone recreation using the documented steps succeeded.
+- Reproducibility checkpoint is mastered for Stage 0 scope. Exact continuation: IDE workflow checkpoint → final Stage 0 audit/mastery gate.
