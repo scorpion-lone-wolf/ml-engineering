@@ -9,22 +9,22 @@
 - **Track 1 state:** ACTIVE
 - **Track 2 state:** LOCKED
 - **Current Track 1 stage:** Stage 0 — Environment and Engineering Setup
-- **Current sub-stage/topic:** IDE workflow checkpoint
-- **Last verified completed item:** Stage 0 reproducibility checkpoint completed with committed lock/config/setup documentation and learner-reported successful fresh-clone recreation
+- **Current sub-stage/topic:** Final Stage 0 audit/mastery gate
+- **Last verified completed item:** Stage 0 IDE workflow checkpoint completed with project-local Python 3.14.7 interpreter and successful 9-test run in the VS Code workflow
 - **Blocking prerequisite gap:** None blocking Stage 0. Probability/statistics baseline is near-zero and will be taught contextually in later stages as designed.
 - **Initialized:** 2026-09-14
 
 ## Exact Global Next Action
 
-Continue **Track 1 Stage 0** with the IDE workflow checkpoint, then the final Stage 0 audit/mastery gate. Do not begin Deep Learning.
+Continue **Track 1 Stage 0** with the final Stage 0 audit/mastery gate. Do not begin Stage 1 until the Stage 0 curriculum and reusable-template evidence are fully audited.
 
 ## Exact Next Teaching Step
 
-Teach the remaining explicit IDE workflow requirement: project root, interpreter selection, integrated terminal, run/debug flow, and how IDE configuration relates to the active project environment.
+Run the final Stage 0 audit against the curriculum and repository evidence, close any remaining gap, and only then mark Stage 0 complete.
 
 ## Exact Next Practice / Engineering Step
 
-Complete the IDE workflow checkpoint, then run the final Stage 0 reusable-template/mastery audit against the Stage 0 curriculum.
+Audit every Stage 0 curriculum requirement and the reusable professional project-template deliverable against repository and demonstrated learning evidence.
 
 ---
 
@@ -171,3 +171,12 @@ All must be true before changing Track 2 to `ACTIVE`:
 - Learner reported successful clean recreation from a fresh clone using the documented workflow.
 - Runtime recreation evidence is learner-reported rather than independently captured terminal output in this checkpoint.
 - Reproducibility checkpoint is closed. Exact next topic: the remaining explicit IDE workflow checkpoint, followed by the final Stage 0 audit/mastery gate.
+
+
+### 2026-09-23 — IDE workflow checkpoint completed
+
+- Learner uses VS Code for the Stage 0 project.
+- Integrated terminal was activated with the project-local Conda environment at `.venv`; `which python` resolved to the project-local interpreter and `python --version` reported Python 3.14.7.
+- Initial pytest failure correctly exposed that pytest was not installed in that local environment; dependency synchronization fixed the environment rather than masking the issue.
+- Learner then reported the IDE workflow completed successfully with all 9 pytest cases passing.
+- IDE workflow checkpoint is complete. Exact next work: final Stage 0 curriculum/reusable-template audit and mastery gate.
