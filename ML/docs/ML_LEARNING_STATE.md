@@ -6,11 +6,11 @@
 
 - **Track:** Track 1 — Classical ML + Production ML/MLOps
 - **State:** LEARNING
-- **Current stage:** Stage 0 — Environment and Engineering Setup
-- **Current topic:** Final Stage 0 audit/mastery gate
-- **Last mastered topic:** Stage 0 IDE workflow
+- **Current stage:** Stage 1 — ML Python Ecosystem Checkpoint
+- **Current topic:** Scientific-Python gap check
+- **Last mastered topic:** Stage 0 — Environment and Engineering Setup
 - **Unresolved core prerequisite gaps:** Probability/statistics is near-zero by self-report; this is expected and will be taught from first principles contextually rather than blocking Stage 0
-- **Needs review:** None currently identified before the final Stage 0 audit; audit may surface any missing curriculum evidence
+- **Needs review:** None carried forward from Stage 0
 - **Last updated:** 2026-09-23
 
 ## Learner Baseline
@@ -227,11 +227,11 @@ For important topics, keep compact retention notes:
 
 ### Next Teaching Step
 
-Run the **final Stage 0 audit/mastery gate** against the Stage 0 curriculum and repository evidence.
+Begin the **Stage 1 ML Python Ecosystem Checkpoint** with a focused diagnostic of NumPy arrays/shapes/broadcasting/vectorization, Pandas data manipulation, visualization, and numerical/data debugging.
 
 ### Practice Before/With Next Lesson
 
-Audit every Stage 0 requirement, identify any uncovered item, and close only those gaps before marking Stage 0 complete.
+Run a short Stage 1 diagnostic and compress already-known material; teach only demonstrated gaps before moving into the Stage 1 mini-work.
 
 ---
 
@@ -396,3 +396,12 @@ Audit every Stage 0 requirement, identify any uncovered item, and close only tho
 - A missing pytest package initially caused `No module named pytest`, correctly highlighting the difference between selecting the right interpreter and having the right dependencies installed.
 - After dependency synchronization, learner reported all 9 tests passing in the project workflow.
 - Exact continuation: final Stage 0 audit/mastery gate.
+
+
+### 2026-09-23 — Stage 0 mastery gate passed
+
+- Final understanding check closed the explicit Jupyter-vs-script/notebook-vs-production-code requirement.
+- Learner explained that shared preprocessing belongs in reusable modules to avoid duplicated implementations drifting between training, testing, and inference.
+- Learner explained that notebooks are useful for exploration, prototyping, and quick POCs, while stable reusable logic should move into Python modules.
+- Stage 0 has no remaining learning gap and is marked mastered for curriculum scope.
+- Exact continuation: Stage 1 scientific-Python gap check, beginning with NumPy/Pandas/visualization fundamentals and compressing already-known material.
