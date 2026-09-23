@@ -9,22 +9,22 @@
 - **Track 1 state:** ACTIVE
 - **Track 2 state:** LOCKED
 - **Current Track 1 stage:** Stage 0 — Environment and Engineering Setup
-- **Current sub-stage/topic:** Reproducibility checkpoint
-- **Last verified completed item:** Stage 0 reproducibility dependency-lock/sync sub-checkpoint verified with committed `requirements.lock`, editable reinstall, 9/9 passing tests, and expected script execution
+- **Current sub-stage/topic:** IDE workflow checkpoint
+- **Last verified completed item:** Stage 0 reproducibility checkpoint completed with committed lock/config/setup documentation and learner-reported successful fresh-clone recreation
 - **Blocking prerequisite gap:** None blocking Stage 0. Probability/statistics baseline is near-zero and will be taught contextually in later stages as designed.
 - **Initialized:** 2026-09-14
 
 ## Exact Global Next Action
 
-Continue **Track 1 Stage 0** with the reproducibility checkpoint. Do not begin Deep Learning.
+Continue **Track 1 Stage 0** with the IDE workflow checkpoint, then the final Stage 0 audit/mastery gate. Do not begin Deep Learning.
 
 ## Exact Next Teaching Step
 
-Continue reproducibility by documenting the exact tested Python 3.14.7 runtime separately from the restored `>=3.11` compatibility declaration, adding a safe configuration example, and completing the setup/run instructions needed for a clean recreation.
+Teach the remaining explicit IDE workflow requirement: project root, interpreter selection, integrated terminal, run/debug flow, and how IDE configuration relates to the active project environment.
 
 ## Exact Next Practice / Engineering Step
 
-Finish the reproducibility checkpoint: document Python 3.14.7 as the tested environment, add a committed `.env.example`, update stale README/setup/output instructions, and verify a clean recreation. Then run the final Stage 0 audit/mastery gate, including the remaining explicit IDE-workflow check.
+Complete the IDE workflow checkpoint, then run the final Stage 0 reusable-template/mastery audit against the Stage 0 curriculum.
 
 ---
 
@@ -162,3 +162,12 @@ All must be true before changing Track 2 to `ACTIVE`:
 - This correctly separates project compatibility from the exact tested development runtime (Python 3.14.7), which still needs to be documented in the reproducible setup instructions.
 - The committed dependency lock remains intact.
 - `.env.example` and the README/setup refresh are not yet present, so the reproducibility checkpoint remains open.
+
+
+### 2026-09-23 — Reproducibility checkpoint completed
+
+- Verified repository artifacts now include the committed exact dependency lock, corrected project compatibility declaration, committed `.env.example`, and README setup instructions documenting Python 3.14.7 as the tested runtime.
+- README now documents the actual Conda → locked dependency sync → editable install → configuration → tests → application workflow and the current expected demo output.
+- Learner reported successful clean recreation from a fresh clone using the documented workflow.
+- Runtime recreation evidence is learner-reported rather than independently captured terminal output in this checkpoint.
+- Reproducibility checkpoint is closed. Exact next topic: the remaining explicit IDE workflow checkpoint, followed by the final Stage 0 audit/mastery gate.
