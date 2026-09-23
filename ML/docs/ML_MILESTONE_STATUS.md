@@ -6,11 +6,11 @@
 
 - **Track state:** ACTIVE
 - **Current stage:** Stage 0 — Environment and Engineering Setup
-- **Current implementation milestone:** Environment/dependency workflow + reusable src-layout package/script + configuration/logging/unit tests + clean-code refactor + reproducibility dependency locking/sync demonstrated
+- **Current implementation milestone:** Stage 0 reusable project template with environment/dependency workflow, src-layout package, configuration/logging/tests, clean-code refactor, and reproducibility workflow demonstrated
 - **Current project:** Stage 0 reusable professional ML project template
-- **Last verified completed deliverable:** Stage 0 reproducibility dependency-lock/sync sub-checkpoint implemented and verified
-- **Exact next work step:** Finish reproducibility documentation/configuration (`.env.example`, tested Python 3.14.7, README/setup/output), perform a clean recreation check, then complete the final Stage 0 audit/mastery gate including the explicit IDE-workflow check
-- **Last updated:** 2026-09-22
+- **Last verified completed deliverable:** Stage 0 reproducibility checkpoint completed with repository artifacts and learner-reported successful clean recreation
+- **Exact next work step:** Complete the explicit IDE workflow checkpoint, then run the final Stage 0 reusable-template/mastery audit
+- **Last updated:** 2026-09-23
 
 ---
 
@@ -65,6 +65,7 @@ Add evidence instead of writing "done" without proof.
 | ML-EVID-003 | Stage 0 | Configuration/logging/testing exercise | `ML/exercises/stage_00_project_structure/` | Environment-driven validated config, runtime logging behavior, pytest unit tests, monkeypatch isolation, expected exceptions, and parameterized boundaries | YES |
 | ML-EVID-004 | Stage 0 | Clean-code refactor | `ML/exercises/stage_00_project_structure/` / commits `3f8999af2dce00c8e55e42311aa00ff2f20b2070`, `82b7e33dd4e8ffa34892c448c5102bcf2473a958` | Explicit script entry point, preserved exception cause, clearer comprehension naming, 9/9 passing tests, and expected script behavior after refactor | YES |
 | ML-EVID-005 | Stage 0 | Reproducibility dependency lock/sync | `ML/exercises/stage_00_project_structure/requirements.lock` / commit `60b6ab5c24f0913ffbe5a5812ccdad38b38de2da` | Exact direct/transitive dependency resolution, dry-run inspection, exact sync, editable project reinstall, 9/9 passing tests, and expected demo execution | YES |
+| ML-EVID-006 | Stage 0 | Reproducible setup artifacts + clean recreation | `ML/exercises/stage_00_project_structure/.env.example`; `ML/exercises/stage_00_project_structure/README.md` / commits `483412b9cdb9dd7068ef669b7a910d57a51da6cb`, `1b6ce2a24f72265c5e1d6277b73ce61f68f874e1` | Safe config template, tested-runtime/setup documentation, corrected expected output, and learner-reported successful fresh-clone recreation | YES (repo artifacts verified; recreation learner-reported) |
 
 Evidence can include code, tests, experiment reports, design docs, benchmark reports, deployment manifests, dashboards, postmortems, project retrospectives, and mastery-review notes.
 
@@ -72,11 +73,11 @@ Evidence can include code, tests, experiment reports, design docs, benchmark rep
 
 ## Active Work
 
-Stage 0 environment/dependency, project-structure, configuration, logging, and core unit-testing exercises are implemented and verified. Debugging fundamentals and Git/GitHub + `.gitignore` fundamentals have been completed as learning/workflow checkpoints. The basic Linux/CLI, Python packaging, and clean-code checkpoints are complete. Within reproducibility, the dependency lock/sync sub-checkpoint is verified. Exact tested-runtime documentation, configuration example, README/setup accuracy, and clean recreation verification remain before the Stage 0 completion gate.
+Stage 0 environment/dependency, project-structure, configuration, logging, and core unit-testing exercises are implemented and verified. Debugging fundamentals and Git/GitHub + `.gitignore` fundamentals have been completed as learning/workflow checkpoints. The basic Linux/CLI, Python packaging, and clean-code checkpoints are complete. Reproducibility is complete for Stage 0 scope: lock/config/setup artifacts are committed and a fresh-clone recreation was learner-reported successful. The remaining explicit curriculum item is IDE workflow, followed by the final Stage 0 completion audit.
 
 ### Exact Next Engineering / Practice Step
 
-Finish reproducibility using the existing Stage 0 project: document Python 3.14.7 as the tested runtime, add `.env.example`, refresh README/setup/output instructions, verify a clean recreation, then perform the final Stage 0 audit/mastery gate including IDE workflow.
+Complete the IDE workflow checkpoint, then perform the final Stage 0 audit/mastery gate against the curriculum.
 
 ---
 
@@ -221,3 +222,13 @@ Do not mark `COMPLETE` until all are evidenced:
 - The exact tested runtime remains Python 3.14.7 and should be documented in setup instructions rather than encoded as the only supported project version.
 - Dependency locking/sync evidence remains valid and unchanged.
 - Reproducibility is still in progress pending configuration/setup documentation and clean recreation verification.
+
+
+### 2026-09-23 — Reproducibility checkpoint completed
+
+- Verified committed `.env.example` with environment-variable names matching the application configuration API.
+- Verified README update documenting Python 3.14.7 as the tested runtime while preserving `requires-python = ">=3.11"` as the project compatibility declaration.
+- Verified README setup flow for Conda environment creation, exact dependency synchronization, editable project installation, configuration, tests, and application execution.
+- Verified README expected output now matches the current committed demo input.
+- Learner reported the clean recreation workflow succeeds from a fresh clone.
+- Reproducibility milestone is complete for Stage 0 scope. Remaining work: IDE workflow checkpoint and final Stage 0 audit/mastery gate.
