@@ -7,10 +7,10 @@
 - **Track:** Track 1 — Classical ML + Production ML/MLOps
 - **State:** LEARNING
 - **Current stage:** Stage 0 — Environment and Engineering Setup
-- **Current topic:** IDE workflow checkpoint
-- **Last mastered topic:** Stage 0 reproducibility
+- **Current topic:** Final Stage 0 audit/mastery gate
+- **Last mastered topic:** Stage 0 IDE workflow
 - **Unresolved core prerequisite gaps:** Probability/statistics is near-zero by self-report; this is expected and will be taught from first principles contextually rather than blocking Stage 0
-- **Needs review:** None currently blocking Stage 0; explicit IDE workflow evidence and final Stage 0 audit remain
+- **Needs review:** None currently identified before the final Stage 0 audit; audit may surface any missing curriculum evidence
 - **Last updated:** 2026-09-23
 
 ## Learner Baseline
@@ -227,11 +227,11 @@ For important topics, keep compact retention notes:
 
 ### Next Teaching Step
 
-Teach the **IDE workflow checkpoint**: distinguish project root, selected interpreter, integrated terminal environment, editor/run configuration, and debugger behavior.
+Run the **final Stage 0 audit/mastery gate** against the Stage 0 curriculum and repository evidence.
 
 ### Practice Before/With Next Lesson
 
-Complete a short IDE workflow exercise, then run the final Stage 0 audit/mastery gate.
+Audit every Stage 0 requirement, identify any uncovered item, and close only those gaps before marking Stage 0 complete.
 
 ---
 
@@ -387,3 +387,12 @@ Complete a short IDE workflow exercise, then run the final Stage 0 audit/mastery
 - Repository now contains `requirements.lock`, a safe committed `.env.example`, and README instructions documenting the tested Python 3.14.7 environment and verified setup sequence.
 - Learner reported that a fresh-clone recreation using the documented steps succeeded.
 - Reproducibility checkpoint is mastered for Stage 0 scope. Exact continuation: IDE workflow checkpoint → final Stage 0 audit/mastery gate.
+
+
+### 2026-09-23 — IDE workflow checkpoint completed
+
+- Learner demonstrated the VS Code project workflow using the project-local `.venv` interpreter.
+- `which python` resolved inside the Stage 0 project's `.venv`; Python version was 3.14.7.
+- A missing pytest package initially caused `No module named pytest`, correctly highlighting the difference between selecting the right interpreter and having the right dependencies installed.
+- After dependency synchronization, learner reported all 9 tests passing in the project workflow.
+- Exact continuation: final Stage 0 audit/mastery gate.
