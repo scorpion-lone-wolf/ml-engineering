@@ -8,8 +8,8 @@
 - **Current stage:** Stage 0 — Environment and Engineering Setup
 - **Current implementation milestone:** Stage 0 reusable project template with environment/dependency workflow, src-layout package, configuration/logging/tests, clean-code refactor, and reproducibility workflow demonstrated
 - **Current project:** Stage 0 reusable professional ML project template
-- **Last verified completed deliverable:** Stage 0 reproducibility checkpoint completed with repository artifacts and learner-reported successful clean recreation
-- **Exact next work step:** Complete the explicit IDE workflow checkpoint, then run the final Stage 0 reusable-template/mastery audit
+- **Last verified completed deliverable:** Stage 0 IDE workflow checkpoint completed with project-local interpreter verification and successful 9-test run
+- **Exact next work step:** Run the final Stage 0 reusable-template/mastery audit against every Stage 0 curriculum requirement
 - **Last updated:** 2026-09-23
 
 ---
@@ -73,11 +73,11 @@ Evidence can include code, tests, experiment reports, design docs, benchmark rep
 
 ## Active Work
 
-Stage 0 environment/dependency, project-structure, configuration, logging, and core unit-testing exercises are implemented and verified. Debugging fundamentals and Git/GitHub + `.gitignore` fundamentals have been completed as learning/workflow checkpoints. The basic Linux/CLI, Python packaging, and clean-code checkpoints are complete. Reproducibility is complete for Stage 0 scope: lock/config/setup artifacts are committed and a fresh-clone recreation was learner-reported successful. The remaining explicit curriculum item is IDE workflow, followed by the final Stage 0 completion audit.
+Stage 0 environment/dependency, project-structure, configuration, logging, and core unit-testing exercises are implemented and verified. Debugging fundamentals and Git/GitHub + `.gitignore` fundamentals have been completed as learning/workflow checkpoints. The basic Linux/CLI, Python packaging, and clean-code checkpoints are complete. Reproducibility and the explicit IDE workflow checkpoint are complete for Stage 0 scope. The only remaining work is the final Stage 0 curriculum/reusable-template audit and any gap it surfaces.
 
 ### Exact Next Engineering / Practice Step
 
-Complete the IDE workflow checkpoint, then perform the final Stage 0 audit/mastery gate against the curriculum.
+Perform the final Stage 0 audit/mastery gate against the curriculum and repository evidence.
 
 ---
 
@@ -232,3 +232,12 @@ Do not mark `COMPLETE` until all are evidenced:
 - Verified README expected output now matches the current committed demo input.
 - Learner reported the clean recreation workflow succeeds from a fresh clone.
 - Reproducibility milestone is complete for Stage 0 scope. Remaining work: IDE workflow checkpoint and final Stage 0 audit/mastery gate.
+
+
+### 2026-09-23 — IDE workflow checkpoint completed
+
+- VS Code workflow uses the Stage 0 project's local Conda environment at `.venv` with Python 3.14.7.
+- Learner surfaced and corrected a missing-test-dependency state rather than confusing it with an interpreter-selection failure.
+- Learner then reported all 9 pytest cases passing.
+- IDE workflow requirement is complete for Stage 0 scope.
+- Remaining work: final Stage 0 curriculum and reusable professional project-template audit/mastery gate.
