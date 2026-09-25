@@ -47,6 +47,12 @@ If a supposedly "basic" linear-algebra/calculus concept is shaky when needed, te
 
 ## Teaching Interaction Contract
 
+- Stage 1 diagnostics must be treated as a strict competency assessment, not a soft checkpoint. Do not infer mastery from partially correct answers or familiarity with syntax alone.
+- For each Stage 1 area, assess conceptual understanding, shape/data reasoning, ability to predict behavior without running code, ability to debug mistakes, and practical use on data problems.
+- If the learner is weak, inconsistent, guessing, or relying on memorized API behavior, stop progression and teach that area thoroughly before moving on.
+- Do not compress a topic merely because the learner has seen it before; compress only after demonstrated understanding.
+- The target is strong ML-engineering fluency, so retain rigorous standards while keeping explanations step-by-step and understandable.
+
 - From this point onward, teach each section step by step without assuming unstated intermediate understanding.
 - For each important conclusion, show the observable facts or inputs, the reasoning that connects them, and the resulting conclusion in simple language.
 - Prefer jointly deriving the solution through small questions and examples before presenting the finished answer when the topic is instructional.
