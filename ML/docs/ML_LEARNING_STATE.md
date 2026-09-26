@@ -7,11 +7,11 @@
 - **Track:** Track 1 — Classical ML + Production ML/MLOps
 - **State:** LEARNING
 - **Current stage:** Stage 1 — ML Python Ecosystem Checkpoint
-- **Current topic:** Scientific-Python gap check
+- **Current topic:** NumPy diagnostic — indexing/slicing check remaining
 - **Last mastered topic:** Stage 0 — Environment and Engineering Setup
 - **Unresolved core prerequisite gaps:** Probability/statistics is near-zero by self-report; this is expected and will be taught from first principles contextually rather than blocking Stage 0
-- **Needs review:** None carried forward from Stage 0
-- **Last updated:** 2026-09-23
+- **Needs review:** NumPy indexing/slicing still needs an explicit Stage 1 diagnostic check before NumPy is closed
+- **Last updated:** 2026-09-26
 
 ## Learner Baseline
 
@@ -83,8 +83,8 @@ If a supposedly "basic" linear-algebra/calculus concept is shaky when needed, te
 
 | Stage | Learning Status | Conceptual | Math/Stats | Coding | Applied Reasoning | Notes |
 |---|---|---:|---:|---:|---:|---|
-| 0 — Environment/Engineering Setup | LEARNING | Environment/dependency, configuration, logging, testing, debugging, Git, Linux/CLI, packaging, and clean-code basics demonstrated | N/A | Conda env, lock workflow, src-layout package/script, validated env config, logging, pytest tests, Git/ignore workflow, and clean-code refactor demonstrated | Understands focused responsibilities, accurate naming, shared preprocessing, type-hint intent, mutation awareness, and explicit application entry points | Next: reproducibility checkpoint |
-| 1 — ML Python Ecosystem | NOT STARTED | — | — | — | — | |
+| 0 — Environment/Engineering Setup | MASTERED | Environment/dependency, configuration, logging, testing, debugging, Git, Linux/CLI, packaging, and clean-code basics demonstrated | N/A | Conda env, lock workflow, src-layout package/script, validated env config, logging, pytest tests, Git/ignore workflow, and clean-code refactor demonstrated | Understands focused responsibilities, accurate naming, shared preprocessing, type-hint intent, mutation awareness, and explicit application entry points | Next: reproducibility checkpoint |
+| 1 — ML Python Ecosystem | LEARNING | NumPy shapes/axes/broadcasting/vectorization/boolean masking demonstrated; indexing/slicing check remains before Pandas diagnostic | N/A | Diagnostic in progress | Applied NumPy reasoning improving with misconceptions corrected through counterexamples | |
 | 2 — SQL/Data Handling | NOT STARTED | — | — | — | — | |
 | 3 — Contextual Math/Probability/Stats Bridge | NOT STARTED | — | — | — | — | Integration checkpoint, not standalone math course |
 | 4 — EDA/Preprocessing | NOT STARTED | — | — | — | — | |
@@ -411,3 +411,12 @@ Run a short Stage 1 diagnostic and compress already-known material; teach only d
 - Learner explained that notebooks are useful for exploration, prototyping, and quick POCs, while stable reusable logic should move into Python modules.
 - Stage 0 has no remaining learning gap and is marked mastered for curriculum scope.
 - Exact continuation: Stage 1 scientific-Python gap check, beginning with NumPy/Pandas/visualization fundamentals and compressing already-known material.
+
+
+### 2026-09-26 — NumPy diagnostic progress
+
+- Shape, dimensionality, and basic axis aggregation were demonstrated correctly.
+- Broadcasting required correction: learner initially treated singleton dimensions as mismatches and also initially described 1D arrays as row vectors. After correction, learner successfully applied the proper right-to-left broadcasting rule, including singleton dimensions and multi-dimensional examples.
+- Boolean masking required correction: learner initially thought `x > 2` returned selected values rather than a boolean mask. After correction, learner correctly built and combined masks using `&` and used them for vectorized selection.
+- Vectorization is now understood at the required Stage 1 level: learner correctly distinguishes whole-array NumPy operations from explicit Python loops and can compose vectorized comparison/filter/transform operations.
+- Remaining NumPy diagnostic gap: explicit indexing/slicing check. Pandas has not started yet by learner request.
