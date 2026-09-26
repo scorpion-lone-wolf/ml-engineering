@@ -9,7 +9,7 @@
 - **Track 1 state:** ACTIVE
 - **Track 2 state:** LOCKED
 - **Current Track 1 stage:** Stage 1 — ML Python Ecosystem Checkpoint
-- **Current sub-stage/topic:** Stage 1 scientific-Python gap check
+- **Current sub-stage/topic:** Stage 1 NumPy diagnostic — indexing/slicing check remaining
 - **Last verified completed item:** Stage 0 — Environment and Engineering Setup completed, including the reusable professional project-template deliverable and final notebook-vs-production-code mastery check
 - **Blocking prerequisite gap:** None blocking Stage 0. Probability/statistics baseline is near-zero and will be taught contextually in later stages as designed.
 - **Initialized:** 2026-09-14
@@ -20,11 +20,11 @@ Begin **Track 1 Stage 1 — ML Python Ecosystem Checkpoint**. Deep Learning rema
 
 ## Exact Next Teaching Step
 
-Run a focused Stage 1 gap check for ML-specific Python: NumPy arrays/shapes/broadcasting/vectorization, Pandas data manipulation, visualization, and numerical/data debugging. Compress anything already demonstrated.
+Finish the remaining NumPy indexing/slicing diagnostic check, then begin the Pandas diagnostic. Do not reteach NumPy areas already demonstrated unless later evidence shows a gap.
 
 ## Exact Next Practice / Engineering Step
 
-Start Stage 1 with a short diagnostic on NumPy/Pandas/visualization fundamentals, then teach only the gaps needed for ML work.
+Next practice step: one short NumPy indexing/slicing check, then proceed to the Pandas diagnostic.
 
 ---
 
@@ -189,3 +189,12 @@ All must be true before changing Track 2 to `ACTIVE`:
 - Learner correctly described Jupyter notebooks as appropriate for exploration, prototyping, and quick proofs of concept, with stable reusable logic moved into Python modules for production/reuse.
 - The reusable Stage 0 project template includes a src-layout package, configuration, logging, tests, dependency metadata, exact dependency lock, safe configuration template, documented reproducible setup, and verified IDE workflow.
 - Stage 0 is COMPLETE. Exact next stage: Stage 1 — ML Python Ecosystem Checkpoint.
+
+
+### 2026-09-26 — Stage 1 NumPy diagnostic progress
+
+- Learner correctly demonstrated shape/ndim reasoning, axis-based aggregation, 1D-vs-2D array distinction, broadcasting compatibility, boolean masking, combined boolean conditions, and vectorized filtering/transformation.
+- Broadcasting initially exposed a singleton-dimension misconception; after correction, learner successfully reasoned through harder 3D broadcasting cases using right-to-left comparison and the dimension-equal-or-one rule.
+- Boolean masking initially exposed a gap between a comparison mask and the selected values; after correction, learner demonstrated correct mask construction and filtering with compound conditions.
+- Vectorization is now demonstrated conceptually and practically: learner correctly expressed even-number filtering and multiplication as `x[x % 2 == 0] * 10`, explained the boolean mask, selected values, and vectorized transformation, and predicted the final output.
+- NumPy diagnostic is not yet fully closed because indexing/slicing still needs one explicit check before moving to Pandas.
