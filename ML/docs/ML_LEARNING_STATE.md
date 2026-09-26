@@ -420,3 +420,17 @@ Run a short Stage 1 diagnostic and compress already-known material; teach only d
 - Boolean masking required correction: learner initially thought `x > 2` returned selected values rather than a boolean mask. After correction, learner correctly built and combined masks using `&` and used them for vectorized selection.
 - Vectorization is now understood at the required Stage 1 level: learner correctly distinguishes whole-array NumPy operations from explicit Python loops and can compose vectorized comparison/filter/transform operations.
 - Remaining NumPy diagnostic gap: explicit indexing/slicing check. Pandas has not started yet by learner request.
+
+### Remaining NumPy Diagnostic Checklist
+
+Before NumPy diagnostic is closed, explicitly assess:
+
+- Indexing
+- Slicing
+- Reshaping
+- Transpose
+- Dtype basics
+- Basic numerical operations
+- Final NumPy diagnostic check
+
+Do not begin Pandas until these NumPy items are explicitly assessed or intentionally compressed based on demonstrated competence.
