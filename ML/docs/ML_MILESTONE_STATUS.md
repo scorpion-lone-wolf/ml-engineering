@@ -6,11 +6,11 @@
 
 - **Track state:** ACTIVE
 - **Current stage:** Stage 1 — ML Python Ecosystem Checkpoint
-- **Current implementation milestone:** Stage 0 reusable professional ML project template completed; Stage 1 scientific-Python checkpoint starting
+- **Current implementation milestone:** Stage 1 scientific-Python diagnostic in progress; NumPy core reasoning mostly demonstrated
 - **Current project:** Stage 1 ML Python ecosystem checkpoint exercises
 - **Last verified completed deliverable:** Stage 0 reusable professional ML project template and mastery gate completed
-- **Exact next work step:** Begin Stage 1 with a gap-focused NumPy/Pandas/visualization diagnostic and create only the exercises needed for uncovered ML-specific Python gaps
-- **Last updated:** 2026-09-23
+- **Exact next work step:** Complete one NumPy indexing/slicing diagnostic check, then begin the Pandas diagnostic
+- **Last updated:** 2026-09-26
 
 ---
 
@@ -19,7 +19,7 @@
 | Stage | Status | Required Evidence / Deliverable | Evidence Location |
 |---|---|---|---|
 | 0 — Environment and Engineering Setup | COMPLETE | Reusable professional ML project template; environment/reproducibility/testing workflow demonstrated | `ML/exercises/stage_00_environment/`; `ML/exercises/stage_00_project_structure/` |
-| 1 — ML Python Ecosystem Checkpoint | NOT STARTED | Gap-focused scientific-Python/data tasks; messy-data mini work | — |
+| 1 — ML Python Ecosystem Checkpoint | LEARNING | Gap-focused scientific-Python/data tasks; messy-data mini work | — |
 | 2 — SQL and Data Handling | NOT STARTED | Correct ML-oriented SQL tasks including point-in-time/leakage reasoning | — |
 | 3 — Contextual Math/Probability/Stats Bridge | NOT STARTED | Integration checkpoint demonstrating prerequisites needed for upcoming algorithms | — |
 | 4 — EDA and Preprocessing | NOT STARTED | Data-quality report + leakage-safe preprocessing pipeline | — |
@@ -77,7 +77,7 @@ Stage 0 environment/dependency, project-structure, configuration, logging, and c
 
 ### Exact Next Engineering / Practice Step
 
-Begin Stage 1 with a focused scientific-Python diagnostic, then implement only the gap-focused exercises required by the Stage 1 gate.
+Finish the remaining NumPy indexing/slicing diagnostic check, then continue with the Pandas diagnostic; create exercises only for demonstrated gaps.
 
 ---
 
@@ -250,3 +250,11 @@ Do not mark `COMPLETE` until all are evidenced:
 - Final notebook-vs-production-code understanding check passed.
 - Stage 0 status changed to COMPLETE.
 - Active milestone moves to Stage 1 — ML Python Ecosystem Checkpoint.
+
+
+### 2026-09-26 — Stage 1 NumPy diagnostic progress
+
+- Learner demonstrated practical reasoning for shapes, dimensions, axes, broadcasting, boolean masking, compound masks, and vectorized transformations.
+- Misconceptions in singleton-dimension broadcasting and boolean-mask semantics were surfaced and corrected during the diagnostic rather than skipped.
+- No Stage 1 repository exercise artifact has been created yet; this is diagnostic evidence only.
+- NumPy diagnostic remains open for one explicit indexing/slicing check before the Pandas diagnostic begins.
