@@ -9,7 +9,7 @@
 - **Track 1 state:** ACTIVE
 - **Track 2 state:** LOCKED
 - **Current Track 1 stage:** Stage 1 — ML Python Ecosystem Checkpoint
-- **Current sub-stage/topic:** Stage 1 NumPy diagnostic — indexing/slicing check remaining
+- **Current sub-stage/topic:** Stage 1 Pandas diagnostic — merge validation completed; row-count validation next
 - **Last verified completed item:** Stage 0 — Environment and Engineering Setup completed, including the reusable professional project-template deliverable and final notebook-vs-production-code mastery check
 - **Blocking prerequisite gap:** None blocking Stage 0. Probability/statistics baseline is near-zero and will be taught contextually in later stages as designed.
 - **Initialized:** 2026-09-14
@@ -20,11 +20,11 @@ Begin **Track 1 Stage 1 — ML Python Ecosystem Checkpoint**. Deep Learning rema
 
 ## Exact Next Teaching Step
 
-Finish the remaining NumPy indexing/slicing diagnostic check, then begin the Pandas diagnostic. Do not reteach NumPy areas already demonstrated unless later evidence shows a gap.
+Continue the Pandas diagnostic with row-count validation, silent row loss/growth checks, then string/date operations, common Pandas debugging issues, and the final integrated Pandas diagnostic.
 
 ## Exact Next Practice / Engineering Step
 
-Next practice step: one short NumPy indexing/slicing check, then proceed to the Pandas diagnostic.
+Next practice step: validate row counts and table grain before/after merges, then continue the remaining Pandas diagnostic topics.
 
 ---
 
@@ -198,3 +198,11 @@ All must be true before changing Track 2 to `ACTIVE`:
 - Boolean masking initially exposed a gap between a comparison mask and the selected values; after correction, learner demonstrated correct mask construction and filtering with compound conditions.
 - Vectorization is now demonstrated conceptually and practically: learner correctly expressed even-number filtering and multiplication as `x[x % 2 == 0] * 10`, explained the boolean mask, selected values, and vectorized transformation, and predicted the final output.
 - NumPy diagnostic is not yet fully closed because indexing/slicing still needs one explicit check before moving to Pandas.
+
+
+### 2026-09-30 — NumPy diagnostic closed; Pandas merge validation reached
+
+- NumPy diagnostic was completed through the final integrated check: shapes/axes, broadcasting, masking, indexing/slicing, reshape, transpose, dtype basics, numerical operations, vectorization, and element-wise vs dot-product reasoning.
+- Pandas diagnostic progressed through Series vs DataFrame, loc/iloc, filtering, missing values, dtype conversion and dirty numeric parsing, derived columns, groupby/aggregations, sorting, uniqueness/counts, duplicates, merge/join types, join cardinality, table grain, row multiplication, and merge validation.
+- Merge-validation understanding demonstrated for one-to-one, one-to-many, many-to-one, and permissive many-to-many validation; learner correctly selected the strictest expected validation mode.
+- Exact next topic: row-count validation before/after merges, including silent row loss and unexpected row growth.
