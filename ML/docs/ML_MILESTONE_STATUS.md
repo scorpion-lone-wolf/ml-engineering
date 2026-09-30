@@ -6,11 +6,11 @@
 
 - **Track state:** ACTIVE
 - **Current stage:** Stage 1 — ML Python Ecosystem Checkpoint
-- **Current implementation milestone:** Stage 1 scientific-Python diagnostic in progress; NumPy core reasoning mostly demonstrated
+- **Current implementation milestone:** Stage 1 scientific-Python diagnostic in progress; NumPy complete and Pandas active through merge validation
 - **Current project:** Stage 1 ML Python ecosystem checkpoint exercises
 - **Last verified completed deliverable:** Stage 0 reusable professional ML project template and mastery gate completed
-- **Exact next work step:** Complete one NumPy indexing/slicing diagnostic check, then begin the Pandas diagnostic
-- **Last updated:** 2026-09-26
+- **Exact next work step:** Continue Pandas with row-count validation before/after merges; create exercises only for demonstrated gaps
+- **Last updated:** 2026-09-30
 
 ---
 
@@ -77,7 +77,7 @@ Stage 0 environment/dependency, project-structure, configuration, logging, and c
 
 ### Exact Next Engineering / Practice Step
 
-Finish the remaining NumPy indexing/slicing diagnostic check, then continue with the Pandas diagnostic; create exercises only for demonstrated gaps.
+Continue the Pandas diagnostic with row-count validation before/after merges, then the remaining Pandas topics; create exercises only for demonstrated gaps.
 
 ---
 
@@ -258,3 +258,11 @@ Do not mark `COMPLETE` until all are evidenced:
 - Misconceptions in singleton-dimension broadcasting and boolean-mask semantics were surfaced and corrected during the diagnostic rather than skipped.
 - No Stage 1 repository exercise artifact has been created yet; this is diagnostic evidence only.
 - NumPy diagnostic remains open for one explicit indexing/slicing check before the Pandas diagnostic begins.
+
+
+### 2026-09-30 — Pandas merge/cardinality checkpoint
+
+- NumPy diagnostic is closed with no additional Stage 1 code artifact required.
+- Pandas diagnostic has reached merge/join reasoning: join types, one-to-one/one-to-many/many-to-one/many-to-many cardinality, table grain, row multiplication, and validate= relationship checks.
+- No new repository implementation artifact is required yet because this remains diagnostic evidence rather than a coding deliverable.
+- Exact next work: row-count validation before/after merges, then remaining Pandas diagnostic topics and final integrated check.
