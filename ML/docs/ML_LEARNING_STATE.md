@@ -7,11 +7,11 @@
 - **Track:** Track 1 — Classical ML + Production ML/MLOps
 - **State:** LEARNING
 - **Current stage:** Stage 1 — ML Python Ecosystem Checkpoint
-- **Current topic:** NumPy diagnostic — indexing/slicing check remaining
+- **Current topic:** Pandas diagnostic — merge validation completed; row-count validation next
 - **Last mastered topic:** Stage 0 — Environment and Engineering Setup
 - **Unresolved core prerequisite gaps:** Probability/statistics is near-zero by self-report; this is expected and will be taught from first principles contextually rather than blocking Stage 0
-- **Needs review:** NumPy indexing/slicing still needs an explicit Stage 1 diagnostic check before NumPy is closed
-- **Last updated:** 2026-09-26
+- **Needs review:** Pandas row-count validation, string operations, datetime basics, common debugging issues, and final integrated diagnostic remain
+- **Last updated:** 2026-09-30
 
 ## Learner Baseline
 
@@ -65,7 +65,7 @@ If a supposedly "basic" linear-algebra/calculus concept is shaky when needed, te
 | Area | Status | Evidence / Notes |
 |---|---|---|
 | Core Python | ASSUMED SUFFICIENT | Do not reteach as a prerequisite course |
-| NumPy/Pandas/scientific Python | BASIC | Stage 1 checkpoint; fill gaps rather than reteach core Python |
+| NumPy/Pandas/scientific Python | NUMPY PASSED / PANDAS ACTIVE | NumPy diagnostic passed; Pandas diagnostic active through merge cardinality and validation |
 | SQL | BASIC | Simple queries only; Stage 2 will build ML-oriented SQL depth |
 | ML fundamentals | EARLY BEGINNER | Prior exposure to linear regression and basic classification |
 | Probability | NEAR-ZERO | Self-rated below 1/5; teach from first principles contextually |
@@ -434,3 +434,12 @@ Before NumPy diagnostic is closed, explicitly assess:
 - Final NumPy diagnostic check
 
 Do not begin Pandas until these NumPy items are explicitly assessed or intentionally compressed based on demonstrated competence.
+
+
+### 2026-09-30 — Pandas diagnostic progress through merge validation
+
+- NumPy diagnostic is complete for Stage 1 scope.
+- Pandas demonstrated/covered: Series vs DataFrame, loc/iloc slicing semantics, boolean filtering, missing-value handling, dtype conversion, dirty numeric coercion, derived/vectorized columns, groupby and aggregation, sorting, unique/nunique/value_counts, duplicate detection/removal, join types, merge cardinality, table grain, row multiplication, and merge validation.
+- Gaps surfaced and corrected during Pandas diagnostic included Series-vs-DataFrame return types, loc inclusive slicing, boolean-mask object type, nunique vs unique, duplicated() boolean output, and strict-vs-permissive merge validation.
+- Learner now correctly reasons that per-key merge row count equals left occurrences × right occurrences and can distinguish expected one-to-many repetition from unintended grain changes.
+- Exact continuation: row-count validation before/after merges, then strings, datetimes, common Pandas debugging issues, and final integrated Pandas diagnostic.
