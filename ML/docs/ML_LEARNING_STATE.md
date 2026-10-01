@@ -7,11 +7,11 @@
 - **Track:** Track 1 — Classical ML + Production ML/MLOps
 - **State:** LEARNING
 - **Current stage:** Stage 1 — ML Python Ecosystem Checkpoint
-- **Current topic:** Pandas diagnostic — merge validation completed; row-count validation next
+- **Current topic:** Matplotlib / visualization diagnostic
 - **Last mastered topic:** Stage 0 — Environment and Engineering Setup
 - **Unresolved core prerequisite gaps:** Probability/statistics is near-zero by self-report; this is expected and will be taught from first principles contextually rather than blocking Stage 0
-- **Needs review:** Pandas row-count validation, string operations, datetime basics, common debugging issues, and final integrated diagnostic remain
-- **Last updated:** 2026-09-30
+- **Needs review:** No core Pandas gap remains from Stage 1 diagnostic; continue with visualization
+- **Last updated:** 2026-10-01
 
 ## Learner Baseline
 
@@ -65,7 +65,7 @@ If a supposedly "basic" linear-algebra/calculus concept is shaky when needed, te
 | Area | Status | Evidence / Notes |
 |---|---|---|
 | Core Python | ASSUMED SUFFICIENT | Do not reteach as a prerequisite course |
-| NumPy/Pandas/scientific Python | NUMPY PASSED / PANDAS ACTIVE | NumPy diagnostic passed; Pandas diagnostic active through merge cardinality and validation |
+| NumPy/Pandas/scientific Python | NUMPY PASSED / PANDAS PASSED | Both NumPy and Pandas Stage 1 diagnostics passed; visualization next |
 | SQL | BASIC | Simple queries only; Stage 2 will build ML-oriented SQL depth |
 | ML fundamentals | EARLY BEGINNER | Prior exposure to linear regression and basic classification |
 | Probability | NEAR-ZERO | Self-rated below 1/5; teach from first principles contextually |
@@ -443,3 +443,11 @@ Do not begin Pandas until these NumPy items are explicitly assessed or intention
 - Gaps surfaced and corrected during Pandas diagnostic included Series-vs-DataFrame return types, loc inclusive slicing, boolean-mask object type, nunique vs unique, duplicated() boolean output, and strict-vs-permissive merge validation.
 - Learner now correctly reasons that per-key merge row count equals left occurrences × right occurrences and can distinguish expected one-to-many repetition from unintended grain changes.
 - Exact continuation: row-count validation before/after merges, then strings, datetimes, common Pandas debugging issues, and final integrated Pandas diagnostic.
+
+
+### 2026-10-01 — Pandas diagnostic passed
+
+- Final integrated Pandas check passed across cleaning, missing data, dtype coercion, datetime handling, filtering, groupby, duplicates, merge cardinality/validation, grain reasoning, and debugging.
+- Learner correctly diagnosed column-name and dtype issues using `df.columns`, dtype inspection, and `pd.to_numeric(..., errors="coerce")`.
+- Merge reasoning is solid: learner can distinguish expected row multiplication from data-quality problems and identify many-to-many relationships.
+- Exact continuation: Matplotlib / visualization diagnostic.
