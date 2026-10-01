@@ -9,7 +9,7 @@
 - **Track 1 state:** ACTIVE
 - **Track 2 state:** LOCKED
 - **Current Track 1 stage:** Stage 1 — ML Python Ecosystem Checkpoint
-- **Current sub-stage/topic:** Stage 1 Pandas diagnostic — merge validation completed; row-count validation next
+- **Current sub-stage/topic:** Stage 1 Matplotlib / visualization diagnostic
 - **Last verified completed item:** Stage 0 — Environment and Engineering Setup completed, including the reusable professional project-template deliverable and final notebook-vs-production-code mastery check
 - **Blocking prerequisite gap:** None blocking Stage 0. Probability/statistics baseline is near-zero and will be taught contextually in later stages as designed.
 - **Initialized:** 2026-09-14
@@ -20,11 +20,11 @@ Begin **Track 1 Stage 1 — ML Python Ecosystem Checkpoint**. Deep Learning rema
 
 ## Exact Next Teaching Step
 
-Continue the Pandas diagnostic with row-count validation, silent row loss/growth checks, then string/date operations, common Pandas debugging issues, and the final integrated Pandas diagnostic.
+Begin the Matplotlib / visualization diagnostic. Pandas diagnostic is complete.
 
 ## Exact Next Practice / Engineering Step
 
-Next practice step: validate row counts and table grain before/after merges, then continue the remaining Pandas diagnostic topics.
+Next practice step: begin Matplotlib / visualization diagnostic.
 
 ---
 
@@ -206,3 +206,11 @@ All must be true before changing Track 2 to `ACTIVE`:
 - Pandas diagnostic progressed through Series vs DataFrame, loc/iloc, filtering, missing values, dtype conversion and dirty numeric parsing, derived columns, groupby/aggregations, sorting, uniqueness/counts, duplicates, merge/join types, join cardinality, table grain, row multiplication, and merge validation.
 - Merge-validation understanding demonstrated for one-to-one, one-to-many, many-to-one, and permissive many-to-many validation; learner correctly selected the strictest expected validation mode.
 - Exact next topic: row-count validation before/after merges, including silent row loss and unexpected row growth.
+
+
+### 2026-10-01 — Pandas diagnostic completed
+
+- Final integrated Pandas diagnostic passed.
+- Demonstrated Series/DataFrame reasoning, loc/iloc, filtering, missing values, dtype conversion, string cleaning, datetime parsing/filtering, grouping/aggregation, duplicates, merge types, cardinality, validation, row-count/grain reasoning, and common debugging checks.
+- Minor precision retained: a merged row represents one matching pair at the resulting grain; repeated keys can create multiple rows per entity.
+- Exact next topic: Matplotlib / visualization diagnostic.
