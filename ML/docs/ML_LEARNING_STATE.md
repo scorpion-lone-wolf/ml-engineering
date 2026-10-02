@@ -7,11 +7,11 @@
 - **Track:** Track 1 — Classical ML + Production ML/MLOps
 - **State:** LEARNING
 - **Current stage:** Stage 1 — ML Python Ecosystem Checkpoint
-- **Current topic:** Matplotlib / visualization diagnostic
+- **Current topic:** SciPy where relevant
 - **Last mastered topic:** Stage 0 — Environment and Engineering Setup
 - **Unresolved core prerequisite gaps:** Probability/statistics is near-zero by self-report; this is expected and will be taught from first principles contextually rather than blocking Stage 0
-- **Needs review:** No core Pandas gap remains from Stage 1 diagnostic; continue with visualization
-- **Last updated:** 2026-10-01
+- **Needs review:** No core NumPy/Pandas/visualization gap remains from Stage 1 diagnostics; continue with SciPy where relevant
+- **Last updated:** 2026-10-02
 
 ## Learner Baseline
 
@@ -451,3 +451,11 @@ Do not begin Pandas until these NumPy items are explicitly assessed or intention
 - Learner correctly diagnosed column-name and dtype issues using `df.columns`, dtype inspection, and `pd.to_numeric(..., errors="coerce")`.
 - Merge reasoning is solid: learner can distinguish expected row multiplication from data-quality problems and identify many-to-many relationships.
 - Exact continuation: Matplotlib / visualization diagnostic.
+
+
+### 2026-10-02 — Visualization diagnostic passed
+
+- Learner correctly selects line plots for ordered/time progression, bar plots for categorical comparison, histograms for one-variable numeric distributions, and scatter plots for relationships between two numeric variables.
+- Learner correctly reasons about legends, labels, bins, positive/negative association, visual clutter, truncated bar axes, and the limitation that association does not prove causation.
+- Minor terminology/precision corrections were absorbed during the diagnostic.
+- Exact continuation: SciPy where relevant.
