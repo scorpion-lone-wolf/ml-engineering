@@ -9,7 +9,7 @@
 - **Track 1 state:** ACTIVE
 - **Track 2 state:** LOCKED
 - **Current Track 1 stage:** Stage 1 — ML Python Ecosystem Checkpoint
-- **Current sub-stage/topic:** Stage 1 Matplotlib / visualization diagnostic
+- **Current sub-stage/topic:** Stage 1 SciPy where relevant
 - **Last verified completed item:** Stage 0 — Environment and Engineering Setup completed, including the reusable professional project-template deliverable and final notebook-vs-production-code mastery check
 - **Blocking prerequisite gap:** None blocking Stage 0. Probability/statistics baseline is near-zero and will be taught contextually in later stages as designed.
 - **Initialized:** 2026-09-14
@@ -20,11 +20,11 @@ Begin **Track 1 Stage 1 — ML Python Ecosystem Checkpoint**. Deep Learning rema
 
 ## Exact Next Teaching Step
 
-Begin the Matplotlib / visualization diagnostic. Pandas diagnostic is complete.
+Begin the SciPy-where-relevant checkpoint. Visualization diagnostic is complete.
 
 ## Exact Next Practice / Engineering Step
 
-Next practice step: begin Matplotlib / visualization diagnostic.
+Next practice step: assess only the SciPy functionality needed for upcoming ML/data work; avoid a broad standalone SciPy course.
 
 ---
 
@@ -214,3 +214,11 @@ All must be true before changing Track 2 to `ACTIVE`:
 - Demonstrated Series/DataFrame reasoning, loc/iloc, filtering, missing values, dtype conversion, string cleaning, datetime parsing/filtering, grouping/aggregation, duplicates, merge types, cardinality, validation, row-count/grain reasoning, and common debugging checks.
 - Minor precision retained: a merged row represents one matching pair at the resulting grain; repeated keys can create multiple rows per entity.
 - Exact next topic: Matplotlib / visualization diagnostic.
+
+
+### 2026-10-02 — Visualization diagnostic completed
+
+- Matplotlib / visualization diagnostic passed.
+- Demonstrated line, bar, histogram, scatter, labels/titles, legends, plot selection, trend/distribution/relationship interpretation, misleading-axis awareness, clutter awareness, and association-vs-causation discipline.
+- Precision corrections retained: distinguish overall trend from linear/strictly increasing behavior; histogram y-axis is frequency per bin; bar height is any numeric metric, not only count; do not infer distribution family or causality from a chart alone.
+- Exact next topic: SciPy where relevant.
