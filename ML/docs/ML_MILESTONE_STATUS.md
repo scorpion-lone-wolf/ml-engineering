@@ -6,11 +6,11 @@
 
 - **Track state:** ACTIVE
 - **Current stage:** Stage 1 — ML Python Ecosystem Checkpoint
-- **Current implementation milestone:** Stage 1 scientific-Python diagnostic in progress; NumPy and Pandas diagnostics complete
+- **Current implementation milestone:** Stage 1 scientific-Python diagnostic in progress; NumPy, Pandas, and visualization diagnostics complete
 - **Current project:** Stage 1 ML Python ecosystem checkpoint exercises
 - **Last verified completed deliverable:** Stage 0 reusable professional ML project template and mastery gate completed
-- **Exact next work step:** Begin Matplotlib / visualization diagnostic; create exercises only for demonstrated gaps
-- **Last updated:** 2026-10-01
+- **Exact next work step:** Begin SciPy-where-relevant checkpoint; create exercises only for demonstrated gaps
+- **Last updated:** 2026-10-02
 
 ---
 
@@ -273,3 +273,9 @@ Do not mark `COMPLETE` until all are evidenced:
 - Pandas diagnostic passed through the final integrated reasoning check.
 - No new repository implementation artifact was required; evidence is diagnostic/learning evidence only.
 - Exact next work: Matplotlib / visualization diagnostic.
+
+
+### 2026-10-02 — Visualization diagnostic completed
+
+- Visualization diagnostic passed; no repository implementation artifact required for this diagnostic-only checkpoint.
+- Exact next work: SciPy where relevant.
