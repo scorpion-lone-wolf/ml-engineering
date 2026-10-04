@@ -11,7 +11,7 @@
 - **Last mastered topic:** Stage 0 — Environment and Engineering Setup
 - **Unresolved core prerequisite gaps:** Probability/statistics is near-zero by self-report; this is expected and will be taught from first principles contextually rather than blocking Stage 0
 - **Needs review:** No core NumPy/Pandas/visualization gap remains from Stage 1 diagnostics; continue with SciPy where relevant
-- **Last updated:** 2026-10-02
+- **Last updated:** 2026-10-04
 
 ## Learner Baseline
 
@@ -53,11 +53,15 @@ If a supposedly "basic" linear-algebra/calculus concept is shaky when needed, te
 - Do not compress a topic merely because the learner has seen it before; compress only after demonstrated understanding.
 - The target is strong ML-engineering fluency, so retain rigorous standards while keeping explanations step-by-step and understandable.
 
-- From this point onward, teach each section step by step without assuming unstated intermediate understanding.
-- For each important conclusion, show the observable facts or inputs, the reasoning that connects them, and the resulting conclusion in simple language.
-- Prefer jointly deriving the solution through small questions and examples before presenting the finished answer when the topic is instructional.
-- Do not skip from a problem statement directly to a solution when the missing intermediate reasoning is part of what should be learned.
-- When private/internal reasoning cannot be exposed, provide a concise user-facing rationale or derivation that is sufficient to understand why the step is valid.
+- **NON-NEGOTIABLE:** Teach every new or weak concept step by step. Never jump over an intermediate idea that is necessary to understand the next step.
+- Optimize for durable understanding, not topic completion speed. A topic is not complete because its API or definition was mentioned.
+- Use this instructional sequence unless the concept is already demonstrably mastered: **problem -> why it matters -> naive/simple approach -> limitation/failure -> core idea -> small concrete example -> implementation/code/formula -> output/prediction -> common confusion -> learner check -> ML/data/engineering relevance**.
+- Use simple, precise language. Introduce technical terminology, but explain it before relying on it.
+- Examples must be directly related to the mechanism being taught. Avoid vague analogies, arbitrary toy examples, or examples that add syntax without improving conceptual understanding.
+- Do not present top-level summaries as substitutes for teaching when the learner has zero or weak prior knowledge.
+- Prefer deriving the idea through small questions and observable examples before presenting the finished implementation.
+- Require demonstrated reasoning or application before marking a concept mastered; familiarity, recognition, or memorized syntax is insufficient.
+- When private/internal reasoning cannot be exposed, provide a user-facing derivation/rationale sufficient to understand why each step is valid.
 
 
 ## Diagnostic Status
@@ -467,3 +471,12 @@ Do not begin Pandas until these NumPy items are explicitly assessed or intention
 - Do not compress SciPy into top-level API survey material.
 - Preserve full teaching sequence: problem -> observation -> reasoning -> representation/algorithm -> concrete example -> code -> common confusion -> prediction/check -> ML relevance.
 - Teach one concept at a time and optimize for understanding, not topic completion speed.
+
+
+### 2026-10-04 — Non-negotiable teaching contract strengthened
+
+- ADR-002 makes understanding-first, step-by-step instruction a durable program-wide rule.
+- No unexplained jumps, no vague examples, and no top-level API survey in place of teaching when knowledge is weak or zero.
+- Examples must expose the actual mechanism and connect to the concept being learned.
+- Progression requires demonstrated understanding rather than topic exposure.
+- SciPy continuation: sparse matrices from first principles, including dense-storage cost, sparse representation, concrete hand-worked examples, code, inspection, and ML relevance.
