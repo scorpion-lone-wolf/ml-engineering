@@ -459,3 +459,11 @@ Do not begin Pandas until these NumPy items are explicitly assessed or intention
 - Learner correctly reasons about legends, labels, bins, positive/negative association, visual clutter, truncated bar axes, and the limitation that association does not prove causation.
 - Minor terminology/precision corrections were absorbed during the diagnostic.
 - Exact continuation: SciPy where relevant.
+
+
+### 2026-10-04 — SciPy teaching-mode note
+
+- Learner reports zero prior SciPy knowledge.
+- Do not compress SciPy into top-level API survey material.
+- Preserve full teaching sequence: problem -> observation -> reasoning -> representation/algorithm -> concrete example -> code -> common confusion -> prediction/check -> ML relevance.
+- Teach one concept at a time and optimize for understanding, not topic completion speed.
