@@ -30,6 +30,7 @@ Do **not** duplicate curriculum rules here. Curriculum requirements remain in th
 | ADR | Date | Decision | Status |
 |---|---|---|---|
 | ADR-001 | 2026-09-16 | Use Conda for local Python environment/interpreter management; teach pip fundamentals and introduce uv after packaging basics | Accepted |
+| ADR-002 | 2026-10-04 | Enforce step-by-step, understanding-first teaching with concrete relevant examples and no unexplained jumps | Accepted |
 
 ---
 
@@ -90,3 +91,44 @@ Local exercises may use Conda commands for environment creation/activation rathe
 
 ### Revisit Trigger
 Revisit if Conda materially complicates CI/CD, Docker, deployment, GPU/CUDA package resolution, or a later project benefits from standardizing on a different environment workflow.
+
+
+## ADR-002 — Non-Negotiable Understanding-First Teaching Contract
+
+- **Date:** 2026-10-04
+- **Status:** Accepted
+- **Applies to:** Both
+
+### Context
+The learner's goal is deep ML/DL engineering competence rather than fast topic completion. Explanations that stay at a vague or top-level survey level, jump over intermediate reasoning, or use examples that do not materially help understanding create false familiarity instead of durable understanding.
+
+### Decision
+All instructional work in this program must follow an understanding-first, step-by-step teaching contract. This is **non-negotiable** and applies across topics, stages, sessions, and future chats that resume from this repository.
+
+For every new or weak concept:
+1. Start from the concrete problem or question the concept solves.
+2. Explain why the problem matters and what a naive or simpler approach would do.
+3. Show what limitation, failure, inefficiency, or ambiguity motivates the new concept.
+4. Derive the core idea in simple language without skipping intermediate reasoning.
+5. Use a small, concrete example whose data and behavior directly illuminate the concept; do not use vague analogies or examples unrelated to the actual mechanism.
+6. Only then introduce syntax, APIs, formulas, or implementation details.
+7. Inspect or predict outputs and connect them back to the concept.
+8. Explicitly cover common confusions/failure modes.
+9. Require the learner to explain or apply the concept before marking it understood.
+10. Connect the concept to its real ML/data/engineering use when relevant.
+
+Do not optimize for finishing the curriculum quickly. Do not jump ahead because a topic appears familiar. Do not compress a concept until understanding has been demonstrated. When the learner starts with zero knowledge, teach from first principles rather than using a diagnostic-only survey.
+
+### Rationale
+This program targets high-end ML/DL engineering capability. Durable mental models, transfer to unfamiliar problems, debugging ability, and correct reasoning are more important than covering a larger number of APIs or topics superficially.
+
+### Alternatives Considered
+- High-level API survey followed by later practice — rejected because it creates shallow familiarity and leaves the learner unable to derive or debug behavior.
+- Fast examples without mechanism-level explanation — rejected because examples are only useful when they clarify why the concept works.
+- Compressing based on prior exposure alone — rejected; compression is allowed only after demonstrated competence.
+
+### Consequences
+Lessons may take longer and use more intermediate checks. Topic completion dates are secondary to demonstrated understanding. Teaching state should record real gaps rather than silently progressing past them.
+
+### Revisit Trigger
+Revisit only if the learner explicitly changes the learning objective or requests a different teaching contract.
