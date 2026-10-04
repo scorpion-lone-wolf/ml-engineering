@@ -20,11 +20,11 @@ Begin **Track 1 Stage 1 — ML Python Ecosystem Checkpoint**. Deep Learning rema
 
 ## Exact Next Teaching Step
 
-Begin the SciPy-where-relevant checkpoint. Visualization diagnostic is complete.
+Continue SciPy from zero knowledge: begin sparse matrices from first principles. First derive dense-storage cost and sparse representation before introducing SciPy sparse APIs.
 
 ## Exact Next Practice / Engineering Step
 
-Next practice step: assess only the SciPy functionality needed for upcoming ML/data work; avoid a broad standalone SciPy course.
+Next practice step: build a tiny dense matrix, reason about wasted zero storage, derive a sparse representation by hand, then implement and inspect the equivalent SciPy sparse structure in the existing Stage 1 exercise area.
 
 ---
 
@@ -222,3 +222,12 @@ All must be true before changing Track 2 to `ACTIVE`:
 - Demonstrated line, bar, histogram, scatter, labels/titles, legends, plot selection, trend/distribution/relationship interpretation, misleading-axis awareness, clutter awareness, and association-vs-causation discipline.
 - Precision corrections retained: distinguish overall trend from linear/strictly increasing behavior; histogram y-axis is frequency per bin; bar height is any numeric metric, not only count; do not infer distribution family or causality from a chart alone.
 - Exact next topic: SciPy where relevant.
+
+
+### 2026-10-04 — Teaching contract made non-negotiable
+
+- ADR-002 records the program-wide understanding-first teaching contract.
+- Instruction must be step by step, use simple precise language, avoid unexplained jumps, and use examples that directly illuminate the mechanism being taught.
+- Topic completion is subordinate to demonstrated understanding.
+- Learner reports zero prior SciPy knowledge; SciPy will therefore be taught from first principles with code, not handled as a compressed diagnostic.
+- Exact next topic: sparse matrices from first principles.
