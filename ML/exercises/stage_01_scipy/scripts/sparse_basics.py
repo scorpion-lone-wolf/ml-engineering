@@ -1,5 +1,5 @@
 import numpy as np
-from scipy.sparse import coo_array
+from scipy.sparse import coo_array, csr_array
 
 dense_matrix = np.array(
     [
@@ -45,3 +45,28 @@ print("COO columns:", coo_matrix.col)
 
 print("\nCOO converted back to dense matrix:")
 print(coo_matrix.toarray())
+
+# ----------------------------------------------------------------------------------------------------------------------------------------
+# create a sparse matrix from coo_matrix
+csr_matrix = coo_matrix.tocsr()
+print("\nCSR sparse array:")
+print(csr_matrix)
+print("CSR shape :", csr_matrix.shape)
+print("CSR nnz(non-zero elements) :", csr_matrix.nnz)
+print("CSR data:", csr_matrix.data)
+print("CSR indices:", csr_matrix.indices)
+print("CSR indptr:", csr_matrix.indptr)
+
+print("\nCSR converted back to dense matrix:")
+print(csr_matrix.toarray())
+
+# lets inspect one CSR row
+row_index = 2
+start = csr_matrix.indptr[row_index]
+end = csr_matrix.indptr[row_index + 1]
+
+print("\n Inspecting CSR row 2 :")
+print("Start :", start)
+print("End :", end)
+print("Values", csr_matrix.data[start:end])
+print("Columns", csr_matrix.indices[start:end])
