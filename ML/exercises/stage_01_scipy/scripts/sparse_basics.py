@@ -1,72 +1,112 @@
 import numpy as np
-from scipy.sparse import coo_array, csr_array
+from scipy.sparse import coo_array
 
-dense_matrix = np.array(
-    [
-        [0, 0, 5, 0, 0],
-        [0, 0, 0, 0, 0],
-        [0, 8, 0, 0, 0],
-        [0, 0, 0, 0, 3],
-    ]
-)
-print("Dense matrix :\n", dense_matrix)
 
-# * let's inspect the dense matrix
-dense_matrix_shape = dense_matrix.shape
-total_elements = dense_matrix.size
-non_zero_elements = np.count_nonzero(dense_matrix)
-zero_elements = total_elements - non_zero_elements
-# fraction of zero elements from the total number of elements
-zero_fraction = zero_elements / total_elements
+SECTION_WIDTH = 72
 
-print("Shape :", dense_matrix_shape)
-print("Total elements :", total_elements)
-print("Non-zero elements :", non_zero_elements)
-print("Zero elements :", zero_elements)
-print("Fraction of element that are zero :", zero_fraction)
 
-# -----------------------------------------------------------------------------------------------------------------------------
-data = np.array([5, 8, 3])
-row = np.array([0, 2, 3])
-col = np.array([2, 1, 4])
+def print_section(title):
+    print(f"\n{'=' * SECTION_WIDTH}")
+    print(title)
+    print('=' * SECTION_WIDTH)
 
-coo_matrix = coo_array(
-    (data, (row, col)),  # values + coordinates
-    shape=(4, 5),  # shape of the matrix
-)
 
-print("\n COO sparse array:")
-print(coo_matrix)
-print("COO shape :", coo_matrix.shape)
-print("COO nnz(non-zero elements) :", coo_matrix.nnz)
-print("COO data:", coo_matrix.data)
-print("COO rows:", coo_matrix.row)
-print("COO columns:", coo_matrix.col)
+def create_dense_matrix():
+    return np.array(
+        [
+            [0, 0, 5, 0, 0],
+            [0, 0, 0, 0, 0],
+            [0, 8, 0, 0, 0],
+            [0, 0, 0, 0, 3],
+        ]
+    )
 
-print("\nCOO converted back to dense matrix:")
-print(coo_matrix.toarray())
 
-# ----------------------------------------------------------------------------------------------------------------------------------------
-# create a sparse matrix from coo_matrix
-csr_matrix = coo_matrix.tocsr()
-print("\nCSR sparse array:")
-print(csr_matrix)
-print("CSR shape :", csr_matrix.shape)
-print("CSR nnz(non-zero elements) :", csr_matrix.nnz)
-print("CSR data:", csr_matrix.data)
-print("CSR indices:", csr_matrix.indices)
-print("CSR indptr:", csr_matrix.indptr)
+def inspect_dense_matrix(dense_matrix):
+    print_section("1. DENSE NUMPY ARRAY")
 
-print("\nCSR converted back to dense matrix:")
-print(csr_matrix.toarray())
+    total_elements = dense_matrix.size
+    non_zero_elements = np.count_nonzero(dense_matrix)
+    zero_elements = total_elements - non_zero_elements
+    zero_fraction = zero_elements / total_elements
 
-# lets inspect one CSR row
-row_index = 2
-start = csr_matrix.indptr[row_index]
-end = csr_matrix.indptr[row_index + 1]
+    print("Matrix:")
+    print(dense_matrix)
+    print()
+    print("Shape            :", dense_matrix.shape)
+    print("Total elements   :", total_elements)
+    print("Non-zero elements:", non_zero_elements)
+    print("Zero elements    :", zero_elements)
+    print(f"Zero fraction    : {zero_fraction:.2f} ({zero_fraction:.1%})")
 
-print("\n Inspecting CSR row 2 :")
-print("Start :", start)
-print("End :", end)
-print("Values", csr_matrix.data[start:end])
-print("Columns", csr_matrix.indices[start:end])
+
+def create_coo_matrix():
+    data = np.array([5, 8, 3])
+    rows = np.array([0, 2, 3])
+    columns = np.array([2, 1, 4])
+
+    return coo_array(
+        (data, (rows, columns)),
+        shape=(4, 5),
+    )
+
+
+def inspect_coo_matrix(coo_matrix):
+    print_section("2. COO — COORDINATE FORMAT")
+
+    print("Sparse representation:")
+    print(coo_matrix)
+    print()
+    print("Shape  :", coo_matrix.shape)
+    print("nnz    :", coo_matrix.nnz)
+    print("Data   :", coo_matrix.data)
+    print("Rows   :", coo_matrix.row)
+    print("Columns:", coo_matrix.col)
+
+    print("\nReconstructed dense matrix:")
+    print(coo_matrix.toarray())
+
+
+def inspect_csr_matrix(csr_matrix):
+    print_section("3. CSR — COMPRESSED SPARSE ROW")
+
+    print("Sparse representation:")
+    print(csr_matrix)
+    print()
+    print("Shape  :", csr_matrix.shape)
+    print("nnz    :", csr_matrix.nnz)
+    print("Data   :", csr_matrix.data)
+    print("Indices:", csr_matrix.indices)
+    print("Indptr :", csr_matrix.indptr)
+
+    print("\nReconstructed dense matrix:")
+    print(csr_matrix.toarray())
+
+
+def inspect_csr_row(csr_matrix, row_index):
+    print_section(f"4. INSPECT CSR ROW {row_index}")
+
+    start = csr_matrix.indptr[row_index]
+    end = csr_matrix.indptr[row_index + 1]
+
+    print("Start boundary :", start)
+    print("End boundary   :", end)
+    print("Stored values  :", csr_matrix.data[start:end])
+    print("Column indices :", csr_matrix.indices[start:end])
+    print("Dense row      :", csr_matrix[row_index].toarray())
+
+
+def main():
+    dense_matrix = create_dense_matrix()
+    inspect_dense_matrix(dense_matrix)
+
+    coo_matrix = create_coo_matrix()
+    inspect_coo_matrix(coo_matrix)
+
+    csr_matrix = coo_matrix.tocsr()
+    inspect_csr_matrix(csr_matrix)
+    inspect_csr_row(csr_matrix, row_index=2)
+
+
+if __name__ == "__main__":
+    main()
