@@ -1,14 +1,13 @@
 import numpy as np
 from scipy.sparse import coo_array
 
-
 SECTION_WIDTH = 72
 
 
 def print_section(title):
     print(f"\n{'=' * SECTION_WIDTH}")
     print(title)
-    print('=' * SECTION_WIDTH)
+    print("=" * SECTION_WIDTH)
 
 
 def create_dense_matrix():
@@ -96,6 +95,23 @@ def inspect_csr_row(csr_matrix, row_index):
     print("Dense row      :", csr_matrix[row_index].toarray())
 
 
+def demonstrate_csr_matrix_vector_product(csr_matrix):
+    print_section("5. CSR MATRIX-VECTOR PRODUCT")
+
+    # vector will be of shape (5,) as we have 5 features
+    vector = np.array([1, 2, 3, 4, 5])
+
+    result = csr_matrix @ vector
+
+    print("Vector    :", vector)
+
+    print("\nCSR matrix:")
+    print(csr_matrix.toarray())
+
+    print("\nResult of CSR matrix @ vector:")
+    print(result)
+
+
 def main():
     dense_matrix = create_dense_matrix()
     inspect_dense_matrix(dense_matrix)
@@ -106,6 +122,8 @@ def main():
     csr_matrix = coo_matrix.tocsr()
     inspect_csr_matrix(csr_matrix)
     inspect_csr_row(csr_matrix, row_index=2)
+
+    demonstrate_csr_matrix_vector_product(csr_matrix)
 
 
 if __name__ == "__main__":
