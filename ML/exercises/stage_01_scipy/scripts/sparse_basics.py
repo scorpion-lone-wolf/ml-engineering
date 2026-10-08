@@ -112,6 +112,58 @@ def demonstrate_csr_matrix_vector_product(csr_matrix):
     print(result)
 
 
+def inspect_csc_matrix(csc_matrix):
+    print_section("6. CSC — COMPRESSED SPARSE COLUMN")
+
+    print("Sparse representation:")
+    print(csc_matrix)
+    print()
+    print("Shape  :", csc_matrix.shape)
+    print("nnz    :", csc_matrix.nnz)
+    print("Data   :", csc_matrix.data)
+    print("Indices:", csc_matrix.indices)
+    print("Indptr :", csc_matrix.indptr)
+
+    print("\nReconstructed dense matrix:")
+    print(csc_matrix.toarray())
+
+
+def inspect_csc_column(csc_matrix, column_index):
+    print_section(f"7. INSPECT CSC COLUMN {column_index}")
+
+    start = csc_matrix.indptr[column_index]
+    end = csc_matrix.indptr[column_index + 1]
+
+    print("Start boundary:", start)
+    print("End boundary  :", end)
+    print("Stored values :", csc_matrix.data[start:end])
+    print("Row indices   :", csc_matrix.indices[start:end])
+
+    dense_column = csc_matrix[:, column_index].toarray()
+    print("Dense Column:")
+    print(dense_column)
+
+
+def compare_memory_usage(dense_matrix, csr_matrix):
+    print_section("8. DENSE VS CSR MEMORY")
+
+    dense_bytes = dense_matrix.nbytes
+    csr_data_bytes = csr_matrix.data.nbytes
+    csr_indices_bytes = csr_matrix.indices.nbytes
+    csr_indptr_bytes = csr_matrix.indptr.nbytes
+
+    print("Dense array storage:")
+    print("  Total bytes :", dense_bytes)
+
+    csr_total_bytes = csr_data_bytes + csr_indices_bytes + csr_indptr_bytes
+
+    print("\nCSR array storage:")
+    print("  Data bytes   :", csr_data_bytes)
+    print("  Indices bytes:", csr_indices_bytes)
+    print("  Indptr bytes :", csr_indptr_bytes)
+    print("  Total bytes  :", csr_total_bytes)
+
+
 def main():
     dense_matrix = create_dense_matrix()
     inspect_dense_matrix(dense_matrix)
@@ -124,6 +176,13 @@ def main():
     inspect_csr_row(csr_matrix, row_index=2)
 
     demonstrate_csr_matrix_vector_product(csr_matrix)
+
+    csc_matrix = coo_matrix.tocsc()
+    inspect_csc_matrix(csc_matrix)
+
+    inspect_csc_column(csc_matrix, column_index=1)
+
+    compare_memory_usage(dense_matrix, csr_matrix)
 
 
 if __name__ == "__main__":
