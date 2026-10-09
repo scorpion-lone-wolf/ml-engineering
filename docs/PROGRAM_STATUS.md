@@ -9,22 +9,22 @@
 - **Track 1 state:** ACTIVE
 - **Track 2 state:** LOCKED
 - **Current Track 1 stage:** Stage 1 — ML Python Ecosystem Checkpoint
-- **Current sub-stage/topic:** Stage 1 SciPy where relevant
-- **Last verified completed item:** Stage 0 — Environment and Engineering Setup completed, including the reusable professional project-template deliverable and final notebook-vs-production-code mastery check
-- **Blocking prerequisite gap:** None blocking Stage 0. Probability/statistics baseline is near-zero and will be taught contextually in later stages as designed.
+- **Current sub-stage/topic:** Stage 1 SciPy where relevant — `scipy.spatial` distances next
+- **Last verified completed item:** SciPy sparse matrices completed for Stage 1 scope, including COO/CSR/CSC representation reasoning, sparse matrix-vector multiplication, memory reasoning, format selection, and final mastery gate
+- **Blocking prerequisite gap:** None blocking Stage 1. Probability/statistics baseline is near-zero and will be taught contextually when required.
 - **Initialized:** 2026-09-14
 
 ## Exact Global Next Action
 
-Begin **Track 1 Stage 1 — ML Python Ecosystem Checkpoint**. Deep Learning remains locked.
+Continue **Track 1 Stage 1 — ML Python Ecosystem Checkpoint**. Deep Learning remains locked.
 
 ## Exact Next Teaching Step
 
-Continue SciPy from zero knowledge: begin sparse matrices from first principles. First derive dense-storage cost and sparse representation before introducing SciPy sparse APIs.
+Begin `scipy.spatial` distances from first principles: establish what distance means in 1D and 2D, derive Euclidean distance manually, extend the reasoning to multiple features, and only then introduce SciPy distance APIs.
 
 ## Exact Next Practice / Engineering Step
 
-Next practice step: build a tiny dense matrix, reason about wasted zero storage, derive a sparse representation by hand, then implement and inspect the equivalent SciPy sparse structure in the existing Stage 1 exercise area.
+Work through manual distance calculations and prediction checks before adding any new code. Connect distance reasoning to ML use cases such as KNN and clustering, including why feature scale matters.
 
 ---
 
@@ -118,7 +118,7 @@ All must be true before changing Track 2 to `ACTIVE`:
 
 - Learner correctly distinguished `.venv/` as the Python environment from `src/` as the source-layout directory and `ml_stage0/` as the importable package.
 - Learner correctly identified `config.py` as a module and explained why a src-layout package may not be importable until the environment is configured through installation.
-- Learner correctly explained `python -m pip install -e .`: use pip from the selected Python, install the current project in editable/development mode, read project/build metadata from `pyproject.toml`, and make the development source importable.
+- Learner correctly explained `python -m pip install -e .`: use pip from the selected Python, install the project in the current directory in editable/development mode, read project/build metadata from `pyproject.toml`, and make the development source importable.
 - Important refinement retained: editable mode is still an installation; the exact mechanism is build-backend dependent and should not be memorized simply as “a symlink.”
 - Ordinary Python source edits are reflected without reinstalling after an editable install; packaging metadata or compiled-extension changes can require reinstall/rebuild.
 - Packaging/src-layout/editable-install review item is now closed.
@@ -231,3 +231,12 @@ All must be true before changing Track 2 to `ACTIVE`:
 - Topic completion is subordinate to demonstrated understanding.
 - Learner reports zero prior SciPy knowledge; SciPy will therefore be taught from first principles with code, not handled as a compressed diagnostic.
 - Exact next topic: sparse matrices from first principles.
+
+
+### 2026-10-09 — SciPy sparse matrices completed
+
+- Stage 1 SciPy sparse-matrix scope passed a strict final mastery gate.
+- Learner independently derived COO, CSR, and CSC representations; explained `data`, `indices`, and `indptr`; handled empty rows/columns; selected formats by construction/access pattern; and reasoned through sparse matrix-vector multiplication.
+- Learner demonstrated dense-vs-sparse memory reasoning, including that CSR stores one index per stored entry plus row-boundary metadata and that sparse storage is not automatically smaller than dense storage.
+- Verified pushed exercise at `ML/exercises/stage_01_scipy/scripts/sparse_basics.py`, covering dense inspection, COO, CSR, CSC, row/column inspection, matrix-vector multiplication, and dense-vs-CSR array-storage comparison.
+- Exact next teaching topic: `scipy.spatial` distances from first principles; do not skip directly to APIs.
