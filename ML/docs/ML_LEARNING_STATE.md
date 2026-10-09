@@ -7,11 +7,11 @@
 - **Track:** Track 1 — Classical ML + Production ML/MLOps
 - **State:** LEARNING
 - **Current stage:** Stage 1 — ML Python Ecosystem Checkpoint
-- **Current topic:** SciPy where relevant
-- **Last mastered topic:** Stage 0 — Environment and Engineering Setup
-- **Unresolved core prerequisite gaps:** Probability/statistics is near-zero by self-report; this is expected and will be taught from first principles contextually rather than blocking Stage 0
-- **Needs review:** No core NumPy/Pandas/visualization gap remains from Stage 1 diagnostics; continue with SciPy where relevant
-- **Last updated:** 2026-10-04
+- **Current topic:** SciPy where relevant — `scipy.spatial` distances next
+- **Last mastered topic:** SciPy sparse matrices for Stage 1 scope
+- **Unresolved core prerequisite gaps:** Probability/statistics is near-zero by self-report; this is expected and will be taught from first principles contextually rather than blocking Stage 1
+- **Needs review:** No core NumPy/Pandas/visualization gap remains from Stage 1 diagnostics; SciPy sparse matrices passed the final mastery gate
+- **Last updated:** 2026-10-09
 
 ## Learner Baseline
 
@@ -69,7 +69,7 @@ If a supposedly "basic" linear-algebra/calculus concept is shaky when needed, te
 | Area | Status | Evidence / Notes |
 |---|---|---|
 | Core Python | ASSUMED SUFFICIENT | Do not reteach as a prerequisite course |
-| NumPy/Pandas/scientific Python | NUMPY PASSED / PANDAS PASSED | Both NumPy and Pandas Stage 1 diagnostics passed; visualization next |
+| NumPy/Pandas/scientific Python | NUMPY PASSED / PANDAS PASSED / VISUALIZATION PASSED / SCIPY SPARSE PASSED | Continue SciPy with `scipy.spatial` distances from first principles |
 | SQL | BASIC | Simple queries only; Stage 2 will build ML-oriented SQL depth |
 | ML fundamentals | EARLY BEGINNER | Prior exposure to linear regression and basic classification |
 | Probability | NEAR-ZERO | Self-rated below 1/5; teach from first principles contextually |
@@ -87,8 +87,8 @@ If a supposedly "basic" linear-algebra/calculus concept is shaky when needed, te
 
 | Stage | Learning Status | Conceptual | Math/Stats | Coding | Applied Reasoning | Notes |
 |---|---|---:|---:|---:|---:|---|
-| 0 — Environment/Engineering Setup | MASTERED | Environment/dependency, configuration, logging, testing, debugging, Git, Linux/CLI, packaging, and clean-code basics demonstrated | N/A | Conda env, lock workflow, src-layout package/script, validated env config, logging, pytest tests, Git/ignore workflow, and clean-code refactor demonstrated | Understands focused responsibilities, accurate naming, shared preprocessing, type-hint intent, mutation awareness, and explicit application entry points | Next: reproducibility checkpoint |
-| 1 — ML Python Ecosystem | LEARNING | NumPy shapes/axes/broadcasting/vectorization/boolean masking demonstrated; indexing/slicing check remains before Pandas diagnostic | N/A | Diagnostic in progress | Applied NumPy reasoning improving with misconceptions corrected through counterexamples | |
+| 0 — Environment/Engineering Setup | MASTERED | Environment/dependency, configuration, logging, testing, debugging, Git, Linux/CLI, packaging, and clean-code basics demonstrated | N/A | Conda env, lock workflow, src-layout package/script, validated env config, logging, pytest tests, Git/ignore workflow, and clean-code refactor demonstrated | Understands focused responsibilities, accurate naming, shared preprocessing, type-hint intent, mutation awareness, and explicit application entry points | Complete |
+| 1 — ML Python Ecosystem | LEARNING | NumPy, Pandas, visualization, SciPy introduction, and sparse-matrix reasoning demonstrated; continue SciPy spatial/stats/optimize before remaining Stage 1 topics | Sparse memory arithmetic and matrix-vector reasoning demonstrated; probability/statistics still intentionally not assumed | `ML/exercises/stage_01_scipy/scripts/sparse_basics.py` verified | Can derive COO/CSR/CSC, choose formats by access pattern, reason about sparse multiplication and memory trade-offs | Next: `scipy.spatial` distances from first principles |
 | 2 — SQL/Data Handling | NOT STARTED | — | — | — | — | |
 | 3 — Contextual Math/Probability/Stats Bridge | NOT STARTED | — | — | — | — | Integration checkpoint, not standalone math course |
 | 4 — EDA/Preprocessing | NOT STARTED | — | — | — | — | |
@@ -178,8 +178,6 @@ For important topics, keep compact retention notes:
 
 ---
 
-
-
 ### Python Project Structure and Local Package Basics
 - **Problem it solves:** reusable ML logic should not be duplicated across notebooks, training scripts, inference code, and tests.
 - **Core intuition:** keep reusable Python logic in modules/packages; keep runnable workflows in scripts; notebooks remain useful for exploration.
@@ -233,15 +231,25 @@ For important topics, keep compact retention notes:
 - **Evidence/project where used:** repository commit `3f8999af2dce00c8e55e42311aa00ff2f20b2070`; verified `config.py` exception chaining and `demo_cleaning.py` `main()` refactor on 2026-09-21.
 
 
+### SciPy Sparse Matrices
+- **Problem it solves:** large matrices with mostly zero values waste storage and computation when represented densely.
+- **Core intuition:** preserve the same logical matrix while storing non-zero values plus only the metadata needed to recover their positions.
+- **Key concepts:** `nnz`; COO triplets; CSR row grouping with column `indices` and row-boundary `indptr`; CSC column grouping with row `indices` and column-boundary `indptr`; repeated boundaries for empty rows/columns; dense-vs-sparse storage trade-offs.
+- **Failure mode:** assuming sparse is always smaller, confusing `indices` with values, or using number of columns instead of `nnz` to determine CSR `indices` length.
+- **Implementation pattern:** construct with COO when coordinate triplets are natural; convert/use CSR for row-oriented access and many matrix-vector operations; use CSC for column-oriented access.
+- **Engineering implication:** sparse feature matrices can make high-dimensional text/categorical representations practical, but format choice should follow access/computation patterns rather than habit.
+- **Evidence/project where used:** `ML/exercises/stage_01_scipy/scripts/sparse_basics.py`; repository and runtime output verified through 2026-10-09; final mastery gate passed.
+
+
 ## Exact Continuation Point
 
 ### Next Teaching Step
 
-Begin the **Stage 1 ML Python Ecosystem Checkpoint** with a focused diagnostic of NumPy arrays/shapes/broadcasting/vectorization, Pandas data manipulation, visualization, and numerical/data debugging.
+Begin **`scipy.spatial` distances from first principles**. Start with what distance means in 1D, then 2D, derive Euclidean distance manually, extend to multiple features, and only after the reasoning is clear introduce SciPy APIs. Include pairwise distances, feature-scale effects, and ML relevance to KNN/clustering.
 
 ### Practice Before/With Next Lesson
 
-Run a short Stage 1 diagnostic and compress already-known material; teach only demonstrated gaps before moving into the Stage 1 mini-work.
+Use manual distance calculations and prediction checks before code. Do not repeat sparse-matrix basics unless a later application exposes a real gap.
 
 ---
 
@@ -480,3 +488,13 @@ Do not begin Pandas until these NumPy items are explicitly assessed or intention
 - Examples must expose the actual mechanism and connect to the concept being learned.
 - Progression requires demonstrated understanding rather than topic exposure.
 - SciPy continuation: sparse matrices from first principles, including dense-storage cost, sparse representation, concrete hand-worked examples, code, inspection, and ML relevance.
+
+
+### 2026-10-09 — SciPy sparse matrices mastery gate passed
+
+- Learner demonstrated dense-vs-sparse reasoning, `nnz`, COO construction, CSR row organization, CSC column organization, empty-row/column interpretation through `indptr`, sparse matrix-vector multiplication, and dense-vs-sparse memory trade-offs.
+- Final format-choice check passed: COO for coordinate-oriented construction, CSR for repeated row-oriented access, CSC for repeated column-oriented access.
+- Important precision corrections were absorbed: CSR/CSC `indices` are positions rather than data values; CSR `indices` length tracks stored entries (`nnz`), not total columns; sparse storage is not automatically smaller because metadata has a cost.
+- Verified exercise artifact: `ML/exercises/stage_01_scipy/scripts/sparse_basics.py` with organized dense, COO, CSR, CSC, matrix-vector, and memory sections.
+- Large random-memory demonstration was intentionally skipped because the learner had already demonstrated the underlying calculation; this exception applies only to that unnecessary demo, not to future coding practice generally.
+- Exact continuation for the next chat: begin `scipy.spatial` distances from first principles.
