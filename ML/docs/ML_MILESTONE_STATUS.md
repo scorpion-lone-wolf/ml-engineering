@@ -6,11 +6,11 @@
 
 - **Track state:** ACTIVE
 - **Current stage:** Stage 1 — ML Python Ecosystem Checkpoint
-- **Current implementation milestone:** Stage 1 scientific-Python diagnostic in progress; NumPy, Pandas, and visualization diagnostics complete
-- **Current project:** Stage 1 ML Python ecosystem checkpoint exercises
-- **Last verified completed deliverable:** Stage 0 reusable professional ML project template and mastery gate completed
-- **Exact next work step:** Begin SciPy-where-relevant checkpoint; create exercises only for demonstrated gaps
-- **Last updated:** 2026-10-02
+- **Current implementation milestone:** Stage 1 SciPy checkpoint in progress; sparse-matrix exercise and mastery gate complete
+- **Current project:** `ML/exercises/stage_01_scipy/`
+- **Last verified completed deliverable:** Stage 1 SciPy sparse-matrix exercise through COO/CSR/CSC, matrix-vector multiplication, and memory comparison
+- **Exact next work step:** Begin `scipy.spatial` distance reasoning from first principles; add code only after the distance mechanism is understood
+- **Last updated:** 2026-10-09
 
 ---
 
@@ -19,7 +19,7 @@
 | Stage | Status | Required Evidence / Deliverable | Evidence Location |
 |---|---|---|---|
 | 0 — Environment and Engineering Setup | COMPLETE | Reusable professional ML project template; environment/reproducibility/testing workflow demonstrated | `ML/exercises/stage_00_environment/`; `ML/exercises/stage_00_project_structure/` |
-| 1 — ML Python Ecosystem Checkpoint | LEARNING | Gap-focused scientific-Python/data tasks; messy-data mini work | — |
+| 1 — ML Python Ecosystem Checkpoint | LEARNING | Gap-focused scientific-Python/data tasks; messy-data mini work | `ML/exercises/stage_01_scipy/` plus diagnostic evidence |
 | 2 — SQL and Data Handling | NOT STARTED | Correct ML-oriented SQL tasks including point-in-time/leakage reasoning | — |
 | 3 — Contextual Math/Probability/Stats Bridge | NOT STARTED | Integration checkpoint demonstrating prerequisites needed for upcoming algorithms | — |
 | 4 — EDA and Preprocessing | NOT STARTED | Data-quality report + leakage-safe preprocessing pipeline | — |
@@ -66,6 +66,7 @@ Add evidence instead of writing "done" without proof.
 | ML-EVID-004 | Stage 0 | Clean-code refactor | `ML/exercises/stage_00_project_structure/` / commits `3f8999af2dce00c8e55e42311aa00ff2f20b2070`, `82b7e33dd4e8ffa34892c448c5102bcf2473a958` | Explicit script entry point, preserved exception cause, clearer comprehension naming, 9/9 passing tests, and expected script behavior after refactor | YES |
 | ML-EVID-005 | Stage 0 | Reproducibility dependency lock/sync | `ML/exercises/stage_00_project_structure/requirements.lock` / commit `60b6ab5c24f0913ffbe5a5812ccdad38b38de2da` | Exact direct/transitive dependency resolution, dry-run inspection, exact sync, editable project reinstall, 9/9 passing tests, and expected demo execution | YES |
 | ML-EVID-006 | Stage 0 | Reproducible setup artifacts + clean recreation | `ML/exercises/stage_00_project_structure/.env.example`; `ML/exercises/stage_00_project_structure/README.md` / commits `483412b9cdb9dd7068ef669b7a910d57a51da6cb`, `1b6ce2a24f72265c5e1d6277b73ce61f68f874e1` | Safe config template, tested-runtime/setup documentation, corrected expected output, and learner-reported successful fresh-clone recreation | YES (repo artifacts verified; recreation learner-reported) |
+| ML-EVID-007 | Stage 1 | SciPy sparse-matrix exercise | `ML/exercises/stage_01_scipy/scripts/sparse_basics.py` | Dense-vs-sparse inspection, COO construction, CSR/CSC conversion and structure inspection, CSR matrix-vector multiplication, row/column access reasoning, and dense-vs-CSR underlying-array memory comparison | YES |
 
 Evidence can include code, tests, experiment reports, design docs, benchmark reports, deployment manifests, dashboards, postmortems, project retrospectives, and mastery-review notes.
 
@@ -73,11 +74,11 @@ Evidence can include code, tests, experiment reports, design docs, benchmark rep
 
 ## Active Work
 
-Stage 0 environment/dependency, project-structure, configuration, logging, and core unit-testing exercises are implemented and verified. Debugging fundamentals and Git/GitHub + `.gitignore` fundamentals have been completed as learning/workflow checkpoints. The basic Linux/CLI, Python packaging, and clean-code checkpoints are complete. Stage 0 is complete after the final curriculum/reusable-template audit and notebook-vs-production-code mastery check. Active work has moved to Stage 1 — ML Python Ecosystem Checkpoint.
+Stage 0 is complete. Stage 1 NumPy, Pandas, and visualization diagnostics are complete. SciPy is being taught from first principles because prior SciPy knowledge was reported as zero. The sparse-matrix subsection is complete with both repository evidence and a strict final mastery gate; Stage 1 itself remains active.
 
 ### Exact Next Engineering / Practice Step
 
-Continue the Pandas diagnostic with row-count validation before/after merges, then the remaining Pandas topics; create exercises only for demonstrated gaps.
+Begin `scipy.spatial` distance reasoning manually: 1D distance → 2D Euclidean distance → multiple features → pairwise distance → feature-scale effect. Add a small Stage 1 SciPy code exercise only after the underlying distance reasoning is demonstrated.
 
 ---
 
@@ -108,6 +109,7 @@ Do not mark `COMPLETE` until all are evidenced:
 
 - No stage or project marked complete without evidence.
 - Track 1 positioned at Stage 0 initial setup.
+
 
 ### 2026-09-16 — Stage 0 environment isolation checkpoint
 
@@ -279,3 +281,13 @@ Do not mark `COMPLETE` until all are evidenced:
 
 - Visualization diagnostic passed; no repository implementation artifact required for this diagnostic-only checkpoint.
 - Exact next work: SciPy where relevant.
+
+
+### 2026-10-09 — SciPy sparse-matrix milestone completed
+
+- Verified pushed Stage 1 SciPy project at `ML/exercises/stage_01_scipy/` with project-local environment/dependency metadata and structured sparse exercise code.
+- Verified `scripts/sparse_basics.py` covers dense inspection, COO construction, CSR/CSC conversion and internal-array inspection, CSR row access, CSC column access, CSR matrix-vector multiplication, and dense-vs-CSR underlying-array memory comparison.
+- Learner passed a strict manual mastery gate on a fresh matrix: total positions/`nnz`, COO/CSR/CSC derivation, `indptr` interpretation, empty rows, matrix-vector multiplication, format selection, and dense-vs-sparse memory reasoning.
+- Large random-memory demo was intentionally not added because the learner had already demonstrated the calculation and did not need redundant code; this is a one-off omission, not a reduction in future coding requirements.
+- Added `ML-EVID-007` for the verified sparse-matrix exercise.
+- Exact next work: `scipy.spatial` distances from first principles.
